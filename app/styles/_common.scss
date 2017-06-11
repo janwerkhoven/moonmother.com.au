@@ -1,0 +1,52 @@
+html {
+  min-width: 320px;
+  height: 100%;
+}
+
+body {
+  min-width: 320px; // The smallest width any website should be optimised for (iPhone 5 width), below we don't support
+  height: 100%;
+  // The font styles all headings and paragraphs will inherit
+  font-family: $garamond-regular;
+  font-size: 16px;
+  line-height: 100%;
+  color: $paragraph-grey;
+  // Make browsers render fonts the same
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+strong {
+  margin: 0; // Overwrite the unpredictable default margins browsers add
+  font-weight: normal; // To avoid browsers from adding their onw awkward bolding to our already bold font families
+}
+strong {
+  font-family: $lato-bold;
+}
+
+// Prevent <img> and <iframe> from having awkward empty space underneath
+iframe,
+img {
+  display: block;
+}
+
+// Most of the time <ul> are not used as bullets, thus we overwrite default padding / margin
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    color: $paragraph-grey;
+  }
+}

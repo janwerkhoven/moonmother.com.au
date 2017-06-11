@@ -1,0 +1,15 @@
+// SASS
+@import "variables";
+@import "mixins";
+@import "animations";
+
+// Commons
+@import "normalize";
+@import "fonts";
+@import "common";
+
+// Components
+@import "app/pods/components/page-wrapper/style";
+@import "app/pods/components/home-page/style";
+@import "app/pods/components/about-page/style";
+@import "app/pods/components/services-page/style";
