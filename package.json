@@ -1,14 +1,18 @@
 {
   "name": "moonmother",
   "version": "0.0.0",
-  "description": "Small description for moonmother goes here",
-  "license": "MIT",
-  "author": "",
+  "description": "The website of an Australian company specialised in concert stage lighting, sound and equipment.",
+  "author": "Jan Werkhoven <jw@nabu.io> (https://github.com/janwerkhoven)",
+  "contributors": [
+    "Richard Verheyen <richard.verheyen@gmail.com> (https://github.com/richardverheyen)"
+  ],
+  "license": "UNLICENSED",
+  "private": true,
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/janwerkhoven/moonmother.com.au",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
@@ -40,6 +44,5 @@
   },
   "engines": {
     "node": ">= 4"
-  },
-  "private": true
+  }
 }
