@@ -6,7 +6,8 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
-    podModulePrefix: 'pods',
+    podModulePrefix: 'moonmother/pods',
+    // podModulePrefix: 'pods',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
