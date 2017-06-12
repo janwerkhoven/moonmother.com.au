@@ -1,6 +1,6 @@
 #home-page {
   section {
-    div {
+    > div {
       padding: 0 20px;
       display: flex;
       flex-direction: column;
@@ -8,6 +8,7 @@
       img.moon {
         width: 90px;
         margin-bottom: 20px;
+        margin-top: 100px;
       }
       h1 {
         text-transform: uppercase;
@@ -15,6 +16,7 @@
         font-size: 18px;
         letter-spacing: 1px;
         margin-bottom: 40px;
+        color: $galaxy-brown;
       }
       h3 {
         text-align: center;
@@ -29,6 +31,7 @@
         }
       }
       .oversize-text {
+        font-family: $garamond-regular;
         text-align: center;
         font-size: 36px;
         margin-bottom: 80px;
@@ -69,9 +72,6 @@
   #what-we-do {
     background-color: $light-grey;
     div {
-      img.moon {
-        margin-top: 100px;
-      }
       h1 {
         color: $dark-grey;
       }
@@ -121,7 +121,6 @@
             text-transform: uppercase;
             text-decoration: none;
             font-family: $lato-regular;
-            font-weight: bold;
             letter-spacing: 1px;
             font-size: 13px;
             margin-bottom: 25px;
@@ -155,9 +154,6 @@
   #services-and-equipment {
     background-color: $galaxy-brown;
     div {
-      img.moon {
-        margin-top: 100px;
-      }
       h1 {
         color: white;
       }
@@ -202,6 +198,68 @@
       h2 {
         max-width: 500px;
         color: white;
+      }
+    }
+  }
+  #testimonials {
+    background-color: $light-grey;
+    div {
+      h1 {}
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 200px;
+        img.navigate-arrow {
+          height: 70px;
+          cursor: pointer;
+          @media (max-width: 767px) {
+            height: 8vw;
+          }
+        }
+        ul {
+          blockquote {
+            position: relative;
+            text-align: center;
+            @media (max-width: 620px) {
+              margin: 0 10px;
+            }
+            .oversize-text {
+              max-width: 500px;
+              margin-bottom: 0;
+              color: $galaxy-black;
+            }
+            footer {
+              position: absolute;
+              bottom: -100px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 100%;
+              cite {
+                display: block;
+                text-transform: uppercase;
+                font-family: $lato-regular;
+                font-style: normal;
+                font-size: 18px;
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+                color: $galaxy-black;
+              }
+              p {}
+            }
+          }
+        }
+      }
+    }
+  }
+  section#photoreel {
+    overflow: scroll;
+    img {
+      width: 100vw;
+      @media (max-width: 600px) {
+        width: 166.66vw;
       }
     }
   }
