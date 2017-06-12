@@ -1,8 +1,11 @@
 import Ember from 'ember';
 
-const { computed } = Ember;
+const {
+  computed
+} = Ember;
 
 export default Ember.Component.extend({
+  tagName: 'main',
   elementId: 'home-page',
   currentQuote: 1,
 
