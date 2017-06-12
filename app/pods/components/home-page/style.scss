@@ -20,7 +20,6 @@
         text-align: center;
         font-size: 24px;
         margin-bottom: 40px;
-        max-width: 390px;
         line-height: 120%;
         @media (max-width: 450px) {
           font-size: 5.2vw;
@@ -51,6 +50,7 @@
       }
       h3 {
         color: $light-grey;
+        max-width: 390px;
       }
     }
   }
@@ -137,6 +137,32 @@
             }
           }
         }
+      }
+    }
+  }
+  #services-and-equipment {
+    background-color: $galaxy-brown;
+    div {
+      img.moon {
+        margin-top: 100px;
+      }
+      h1 {
+        color: white;
+      }
+      h3 {
+        color: white;
+        @media (max-width: 400px) {
+          font-size: 5.2vw;
+        }
+      }
+      img.full-width {
+        width: 100%;
+        margin-bottom: 40px;
+      }
+      .button {
+        color: $galaxy-black;
+        border-color: $light-grey;
+        background-color: $light-grey;
       }
     }
   }
