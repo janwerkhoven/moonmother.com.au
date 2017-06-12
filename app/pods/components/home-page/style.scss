@@ -28,6 +28,18 @@
           font-size: 5.4vw;
         }
       }
+      .oversize-text {
+        text-align: center;
+        font-size: 36px;
+        margin-bottom: 80px;
+        line-height: 120%;
+        @media (max-width: 600px) {
+          font-size: 6vw;
+        }
+        @media (max-width: 450px) {
+          font-size: 8vw;
+        }
+      }
       .button {
         text-align: center;
         color: $light-grey;
@@ -157,12 +169,39 @@
       }
       img.full-width {
         width: 100%;
+        max-width: 1000px;
         margin-bottom: 40px;
       }
       .button {
         color: $galaxy-black;
         border-color: $light-grey;
         background-color: $light-grey;
+      }
+    }
+  }
+  #background-video {
+    position: relative;
+    overflow: hidden;
+    iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: 102%;
+      min-width: 102%;
+      user-select: none;
+    }
+    div {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 60vw;
+      min-height: 400px;
+      z-index: 1;
+      h2 {
+        max-width: 500px;
+        color: white;
       }
     }
   }
