@@ -1,5 +1,7 @@
 /* eslint-env node */
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const env = EmberApp.env();
+const isProductionLikeBuild = ['production', 'staging'].includes(env);
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -14,13 +16,13 @@ module.exports = function(defaults) {
       remove: false
     },
     minifyCSS: {
-      enabled: true
+      enabled: isProductionLikeBuild
     },
     minifyJS: {
-      enabled: true
+      enabled: isProductionLikeBuild
     },
     sourcemaps: {
-      enabled: false
+      enabled: isProductionLikeBuild
     }
   });
 
