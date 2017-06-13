@@ -238,9 +238,16 @@
           }
         }
         ul {
+          display: flex;
+          width: 300%;
           blockquote {
             position: relative;
             text-align: center;
+            margin: 0 auto;
+            display: none;
+            &.currentQuote {
+              display: block;
+            }
             @media (max-width: 620px) {
               margin: 0 10px;
             }
