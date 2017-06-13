@@ -22,5 +22,7 @@ export default Ember.Component.extend({
 });
 
 // On how to get accessToken for Instafeed
+// https://www.instagram.com/developer/
+// https://www.instagram.com/moonmotherproductions/
 // https://github.com/adrianengine/jquery-spectragram/wiki/How-to-get-Instagram-API-access-token-and-fix-your-broken-feed
 // https://www.instagram.com/oauth/authorize/?client_id=12338153407546998e72a429b4dd5684&redirect_uri=http://localhost:4200&response_type=token&scope=public_content
