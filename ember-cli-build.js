@@ -22,11 +22,12 @@ module.exports = function(defaults) {
       enabled: isProductionLikeBuild
     },
     sourcemaps: {
-      enabled: isProductionLikeBuild
+      enabled: false
     }
   });
 
   app.import('vendor/google-analytics.js');
+  app.import('bower_components/instafeed.js/instafeed.min.js');
 
   return app.toTree();
 };
