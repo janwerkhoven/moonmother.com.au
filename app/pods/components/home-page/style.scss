@@ -16,13 +16,17 @@
         font-size: 18px;
         letter-spacing: 1px;
         margin-bottom: 40px;
-        color: $galaxy-brown;
+        color: dark-grey;
+        user-select: none;
+        cursor: default;
       }
       h3 {
         text-align: center;
         font-size: 24px;
         margin-bottom: 40px;
         line-height: 120%;
+        user-select: none;
+        cursor: default;
         @media (max-width: 450px) {
           font-size: 5.2vw;
         }
@@ -36,6 +40,8 @@
         font-size: 36px;
         margin-bottom: 80px;
         line-height: 120%;
+        user-select: none;
+        cursor: default;
         @media (max-width: 600px) {
           font-size: 6vw;
         }
@@ -58,6 +64,7 @@
         margin-bottom: 90px;
         width: 240px;
         transition: ease-in-out 200ms all;
+        user-select: none;
         &:hover {
           transform: scale(1.02);
         }
@@ -79,9 +86,7 @@
   #what-we-do {
     background-color: $light-grey;
     div {
-      h1 {
-        color: $dark-grey;
-      }
+      h1 {}
       ul {
         display: flex;
         flex-wrap: wrap;
@@ -119,6 +124,8 @@
             z-index: 1;
             color: $light-grey;
             margin-bottom: 5px;
+            user-select: none;
+            cursor: default;
             @media (max-width: 700px) {
               font-size: 3.8vw;
             }
@@ -136,6 +143,8 @@
             letter-spacing: 1px;
             font-size: 13px;
             margin-bottom: 25px;
+            user-select: none;
+            cursor: default;
             @media (max-width: 700px) {
               font-size: 2vw;
               margin-bottom: 10px;
@@ -164,7 +173,7 @@
     }
   }
   #services-and-equipment {
-    background-color: $galaxy-brown;
+    background-color: $dark-grey;
     div {
       h1 {
         color: white;
@@ -244,7 +253,7 @@
             .oversize-text {
               max-width: 500px;
               margin-bottom: 0;
-              color: $galaxy-black;
+              color: $dark-grey;
               @media (max-width: 400px) {
                 margin: 0 5px;
               }
@@ -263,9 +272,15 @@
                 font-size: 18px;
                 letter-spacing: 1px;
                 margin-bottom: 10px;
-                color: $galaxy-black;
+                color: $dark-grey;
+                user-select: none;
+                cursor: default;
               }
-              p {}
+              p {
+                color: $dark-grey;
+                user-select: none;
+                cursor: default;
+              }
             }
           }
         }
@@ -291,7 +306,7 @@
       }
       h3.oversize-text {
         margin-bottom: 40px;
-        color: $galaxy-black;
+        color: $dark-grey;
       }
       h4 {
         text-align: center;
@@ -301,7 +316,7 @@
         letter-spacing: 2px;
         line-height: 180%;
         margin-bottom: 40px;
-        color: $galaxy-black;
+        color: $dark-grey;
         @media (max-width: 450px) {
           font-size: 4vw;
         }
@@ -367,6 +382,8 @@
           }
           h4 {
             text-transform: capitalize;
+            user-select: none;
+            cursor: default;
             @media (max-width: 550px) {
               margin-bottom: 15px;
             }
@@ -377,10 +394,14 @@
             color: $galaxy-black;
             text-transform: none;
             padding: 0 0 0 5px;
+            user-select: none;
+            cursor: default;
           }
           p {
             color: $galaxy-black;
             text-align: center;
+            user-select: none;
+            cursor: default;
           }
         }
       }

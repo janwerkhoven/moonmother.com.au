@@ -29,6 +29,8 @@
         letter-spacing: 1px;
         margin-bottom: 40px;
         color: $light-grey;
+        user-select: none;
+        cursor: default;
       }
       ul#social-media {
         display: flex;
@@ -50,6 +52,8 @@
         color: $light-grey;
         font-size: 12px;
         margin: 40px auto;
+        user-select: none;
+        cursor: default;
         @media (max-width: 510px) {
           font-size: 2vw;
         }
