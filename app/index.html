@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Moonmother</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    {{content-for "head"}}
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {{content-for "head"}}
 
     <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link rel="stylesheet" href="{{rootURL}}assets/moonmother.css">
@@ -25,16 +24,15 @@
     <link rel="icon" type="image/png" href="{{rootURL}}assets/favicons/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="{{rootURL}}assets/favicons/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="{{rootURL}}assets/favicons/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="HotDoc"/>
+    <meta name="application-name" content="HotDoc" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="{{rootURL}}assets/favicons/mstile-144x144.png" />
     <meta name="msapplication-square70x70logo" content="{{rootURL}}assets/favicons/mstile-70x70.png" />
     <meta name="msapplication-square150x150logo" content="{{rootURL}}assets/favicons/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="{{rootURL}}assets/favicons/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="{{rootURL}}assets/favicons/mstile-310x310.png" />
-
-    {{content-for "head-footer"}}
+    <meta name="msapplication-square310x310logo" content="{{rootURL}}assets/favicons/mstile-310x310.png" /> {{content-for "head-footer"}}
   </head>
+
   <body>
     {{content-for "body"}}
 
@@ -54,7 +52,7 @@
           if (typeof window.onload != 'function') {
             window.onload = func;
           } else {
-            window.onload = function () {
+            window.onload = function() {
               if (oldonload) {
                 oldonload();
               }
@@ -62,8 +60,12 @@
             }
           }
         }
-        addLoadEvent(function () {
-          outdatedBrowser({bgColor: '#f25648', color: '#ffffff', lowerThan: 'transform'})
+        addLoadEvent(function() {
+          outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'transform'
+          })
         });
       </script>
     </div>
@@ -73,4 +75,5 @@
 
     {{content-for "body-footer"}}
   </body>
+
 </html>
