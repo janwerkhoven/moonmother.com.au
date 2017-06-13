@@ -245,7 +245,7 @@
             text-align: center;
             margin: 0 auto;
             display: none;
-            &.currentQuote {
+            &.active {
               display: block;
             }
             @media (max-width: 620px) {

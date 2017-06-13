@@ -20,11 +20,8 @@ export default Ember.Component.extend({
     i = i > max ? 1 : i;
     i = i < 1 ? max : i;
     this.set('currentQuote', i);
-    console.log(i);
-
-    // TODO: animate quotes
-    // this.$('#testimonials').addClass('something');
-    // Our use {{currentQuote}} in the template somehow
+    this.$('#testimonials blockquote:nth-child(' + i + ')').addClass('active');
+    this.$('#testimonials blockquote:nth-child(' + i + ')').siblings().removeClass('active');
   },
 
   actions: {
