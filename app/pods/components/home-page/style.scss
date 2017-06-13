@@ -17,7 +17,6 @@
         letter-spacing: 1px;
         margin-bottom: 40px;
         color: dark-grey;
-        user-select: none;
         cursor: default;
       }
       h3 {
@@ -25,7 +24,6 @@
         font-size: 24px;
         margin-bottom: 40px;
         line-height: 120%;
-        user-select: none;
         cursor: default;
         @media (max-width: 450px) {
           font-size: 5.2vw;
@@ -40,7 +38,6 @@
         font-size: 36px;
         margin-bottom: 80px;
         line-height: 120%;
-        user-select: none;
         cursor: default;
         @media (max-width: 600px) {
           font-size: 6vw;
@@ -124,7 +121,6 @@
             z-index: 1;
             color: $light-grey;
             margin-bottom: 5px;
-            user-select: none;
             cursor: default;
             @media (max-width: 700px) {
               font-size: 3.8vw;
@@ -143,7 +139,6 @@
             letter-spacing: 1px;
             font-size: 13px;
             margin-bottom: 25px;
-            user-select: none;
             cursor: default;
             @media (max-width: 700px) {
               font-size: 2vw;
@@ -206,7 +201,6 @@
       transform: translate(-50%, -50%);
       height: 102%;
       min-width: 102%;
-      user-select: none;
     }
     div {
       position: relative;
@@ -273,12 +267,10 @@
                 letter-spacing: 1px;
                 margin-bottom: 10px;
                 color: $dark-grey;
-                user-select: none;
                 cursor: default;
               }
               p {
                 color: $dark-grey;
-                user-select: none;
                 cursor: default;
               }
             }
@@ -317,6 +309,7 @@
         line-height: 180%;
         margin-bottom: 40px;
         color: $dark-grey;
+        cursor: default;
         @media (max-width: 450px) {
           font-size: 4vw;
         }
@@ -382,7 +375,6 @@
           }
           h4 {
             text-transform: capitalize;
-            user-select: none;
             cursor: default;
             @media (max-width: 550px) {
               margin-bottom: 15px;
@@ -394,13 +386,10 @@
             color: $galaxy-black;
             text-transform: none;
             padding: 0 0 0 5px;
-            user-select: none;
-            cursor: default;
           }
           p {
             color: $galaxy-black;
             text-align: center;
-            user-select: none;
             cursor: default;
           }
         }
