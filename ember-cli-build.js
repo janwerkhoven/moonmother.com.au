@@ -27,6 +27,7 @@ module.exports = function(defaults) {
   });
 
   app.import('vendor/google-analytics.js');
+  app.import('bower_components/instafeed.js/instafeed.min.js');
 
   return app.toTree();
 };
