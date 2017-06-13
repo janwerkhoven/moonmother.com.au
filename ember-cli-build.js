@@ -22,7 +22,7 @@ module.exports = function(defaults) {
       enabled: isProductionLikeBuild
     },
     sourcemaps: {
-      enabled: isProductionLikeBuild
+      enabled: false
     }
   });
 
