@@ -5,12 +5,12 @@ export default Ember.Component.extend({
   elementId: 'page-footer',
   didInsertElement() {
     let feed = new Instafeed({
-      // userId: '1437536913', // Hannah
-      // accessToken: '1437536913.1677ed0.02677d6ce703465e80498fcd44f92c54', // Hannah
+      userId: '1437536913', // Hannah
+      accessToken: '1437536913.1677ed0.02677d6ce703465e80498fcd44f92c54', // Hannah
       get: 'user',
       // userId: '2932372041',
-      userId: '1094777342',
-      accessToken: '1094777342.1233815.3fb820d15db741e798db3e7428461d43',
+      // userId: '1094777342',
+      // accessToken: '1094777342.1233815.3fb820d15db741e798db3e7428461d43',
       sortBy: 'random',
       links: true,
       limit: 10,
