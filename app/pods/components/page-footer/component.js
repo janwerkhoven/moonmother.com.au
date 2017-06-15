@@ -5,12 +5,11 @@ export default Ember.Component.extend({
   elementId: 'page-footer',
   didInsertElement() {
     let feed = new Instafeed({
-      userId: '1437536913', // Hannah
-      accessToken: '1437536913.1677ed0.02677d6ce703465e80498fcd44f92c54', // Hannah
+      // userId: '1437536913', // Hannah
+      // accessToken: '1437536913.1677ed0.02677d6ce703465e80498fcd44f92c54', // Hannah
       get: 'user',
-      // userId: '2932372041',
-      // userId: '1094777342',
-      // accessToken: '1094777342.1233815.3fb820d15db741e798db3e7428461d43',
+      userId: '2932372041',
+      accessToken: '2932372041.7c3728d.a7f05e286ab942c6b71b4c58d3f597e4',
       sortBy: 'random',
       links: true,
       limit: 10,
@@ -26,3 +25,4 @@ export default Ember.Component.extend({
 // https://www.instagram.com/moonmotherproductions/
 // https://github.com/adrianengine/jquery-spectragram/wiki/How-to-get-Instagram-API-access-token-and-fix-your-broken-feed
 // https://www.instagram.com/oauth/authorize/?client_id=12338153407546998e72a429b4dd5684&redirect_uri=http://localhost:4200&response_type=token&scope=public_content
+// http://localhost:4200/#access_token=2932372041.7c3728d.a7f05e286ab942c6b71b4c58d3f597e4
