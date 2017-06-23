@@ -2,21 +2,27 @@
   background: black;
   min-height: 700px;
   height: 100vh;
-  // border-bottom: 1px solid #222;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  &.index {
+    .planet#home span {
+      width: 2vw;
+      height: 2vw;
+    }
+  }
   #galaxy {
     position: absolute;
     z-index: 0;
     height: 100vw;
     width: 100vw;
-    left: 0;
-    top: 0;
-    // background: $galaxy-navy;
-    // background: radial-gradient(ellipse at center, $galaxy-navy 0%, $galaxy-navy 100%);
-    background: radial-gradient(ellipse at center, rgba(8,22,45,1) 0%,rgba(8,22,45,0) 100%);
+    height: 140vw;
+    width: 140vw;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-70vw) translateY(-70vw);
+    background: black radial-gradient(ellipse at center, rgba(8,22,45,1) 10%,rgba(8,22,45,0) 60%);
     img {
       width: 100%;
       height: 100%;
@@ -55,7 +61,6 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      // border: 1px dotted red;
       a {
         position: relative;
         display: flex;
@@ -68,9 +73,10 @@
         width: 16vw;
         transform: translateX(-8vw) translateY(11vw);
         border-radius: 50%;
-        // background: rgba(#F00, 0.1);
         &:hover {
-          // background: rgba(#F00, 0.2);
+          span {
+            box-shadow: 0 0 30px #81b2ff;
+          }
         }
         span {
           top: 5vw;
@@ -82,6 +88,7 @@
           transform: translateX(-0.5vw) translateY(-0.5vw);
           border-radius: 50%;
           background: black;
+          transition: all 600ms ease;
         }
         img {
           height: 10vw;
@@ -106,7 +113,8 @@
     text-align: center;
     margin: 20vw 0;
     line-height: 150%;
-    max-width: 38.5vw;
-    margin: 6vw 0 0;
+    margin: 9vw 0 0;
+    font-size: 2.6vw;
+    max-width: 27vw;
   }
 }

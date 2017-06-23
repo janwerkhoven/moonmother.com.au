@@ -1,4 +1,6 @@
 #page-footer {
+  z-index: 1;
+  position: relative;
   background-color: $darkest-grey;
   > div {
     padding: 0 10vw;

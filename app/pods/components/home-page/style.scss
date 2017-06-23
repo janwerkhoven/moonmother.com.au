@@ -69,7 +69,7 @@
     }
   }
   #who-we-are {
-    background-color: $galaxy-black;
+    // background-color: $galaxy-black;
     div {
       h1 {
         color: $light-grey;
@@ -194,6 +194,7 @@
   #background-video {
     position: relative;
     overflow: hidden;
+    // TODO: add background image in case video does not work
     #bg-video {
       position: absolute;
       top: 50%;
@@ -296,6 +297,7 @@
     }
   }
   #contact-us {
+    background: white;
     div {
       h1 {
         margin-bottom: 80px;
