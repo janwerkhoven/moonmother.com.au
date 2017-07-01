@@ -1,17 +1,4 @@
 #services-page {
-  section.heading {
-    background: $page-wide-heading-bg;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      display: block;
-    }
-    h2 {
-      text-transform: uppercase;
-      color: $page-wide-heading-text;
-    }
-  }
   #intro {
     p {
       max-width: 520px;

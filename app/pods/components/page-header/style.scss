@@ -23,9 +23,9 @@
     }
   }
   #constelation {
-    top: 50%;
+    top: 43vh;
     left: 50%;
-    transform: translateY(-33vh) translateX(-24vh);
+    transform: translate(-24vh, -24vh);
     position: absolute;
     z-index: 1;
     display: flex;
@@ -160,15 +160,53 @@
     }
   }
   &.moon {
-    height: 50vh;
+    height: 29vh;
     h1 {
       display: none;
     }
+    #logo {
+      img:not(:first-child) {
+        display: none;
+      }
+      transform: translateY(8.8vw) scale(0.75);
+    }
     #constelation {
       top: 0;
+      height: 38vh;
+      width: 38vh;
+      transform: translate(-19vh, -19vh);
+      background: none;
+      .planet a {
+        height: 16vw;
+        width: 16vw;
+      }
     }
     #galaxy {
       top: 0;
+    }
+    &.index {
+      #about {
+        transform: rotate(60deg);
+      }
+      #services {
+        transform: rotate(-60deg);
+      }
+    }
+    &.about {
+      #home {
+        transform: rotate(60deg);
+      }
+      #services {
+        transform: rotate(-60deg);
+      }
+    }
+    &.services {
+      #home {
+        transform: rotate(60deg);
+      }
+      #about {
+        transform: rotate(-60deg);
+      }
     }
   }
 }
