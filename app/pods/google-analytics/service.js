@@ -10,7 +10,7 @@ export default Ember.Service.extend({
   }),
 
   startListening() {
-    if (!this.get('enabled')) { return; };
+    if (!this.get('enabled')) { return; }
     ga('create', {
       trackingId: config.googleAnalytics.trackingId
     });
@@ -20,7 +20,7 @@ export default Ember.Service.extend({
   },
 
   hit(currentRoute) {
-    if (!this.get('enabled')) { return; };
+    if (!this.get('enabled')) { return; }
     ga('set', {
       page: window.location.pathname,
       hostname: window.location.host,

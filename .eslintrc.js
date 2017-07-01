@@ -1,5 +1,9 @@
 module.exports = {
   root: true,
+  globals: {
+    ga: true,
+    Instafeed: true
+  },
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module'
@@ -9,5 +13,6 @@ module.exports = {
     browser: true
   },
   rules: {
+    'no-console': 1
   }
 };
