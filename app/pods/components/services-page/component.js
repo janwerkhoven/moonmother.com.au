@@ -6,12 +6,12 @@ export default Ember.Component.extend({
   actions: {
     scrollToContact() {
       Ember.$('#contact').velocity('scroll', {
-        duration: 1000,
-        easing: 'easeOutExpo',
-        begin: function() {
+        duration: 3200,
+        easing: 'easeInOutQuint',
+        begin() {
           Ember.$('body').addClass('prevent-scroll');
         },
-        complete: function() {
+        complete() {
           Ember.$('body').removeClass('prevent-scroll');
         }
       });

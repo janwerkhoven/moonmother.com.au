@@ -14,6 +14,9 @@ body {
   // Make browsers render fonts the same
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  &.prevent-scroll {
+    overflow: hidden;
+  }
 }
 
 h1,
