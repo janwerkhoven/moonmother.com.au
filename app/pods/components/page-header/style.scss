@@ -1,3 +1,14 @@
+// svg {
+//   position: absolute;
+//   z-index: 1;
+//   text {
+//     fill: white;
+//     font-family: $lato-regular;
+//     text-transform: uppercase;
+//     // text-anchor= "middle";
+//   }
+// }
+
 #page-header {
   background: black;
   height: 100vh;
@@ -5,6 +16,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  transition: all 4000ms ease;
   #galaxy {
     position: absolute;
     z-index: 0;
@@ -12,10 +24,10 @@
     width: 140vh;
     left: 50%;
     top: 50%;
-    transform: translateX(-70vw) translateY(-70vw);
     transform: translateX(-70vh) translateY(-60vh);
     background: black radial-gradient(ellipse at center, rgba(8,22,45,1) 10%,rgba(8,22,45,0) 60%);
     background: black radial-gradient(ellipse at center, rgba(8, 22, 45, 0.75) 10%, rgba(8, 22, 45, 0) 60%);
+    transition: all 4000ms ease;
     img {
       width: 100%;
       height: 100%;
@@ -23,6 +35,7 @@
     }
   }
   #constelation {
+    transition: all 4000ms ease;
     top: 43vh;
     left: 50%;
     transform: translate(-24vh, -24vh);
@@ -42,6 +55,7 @@
       z-index: 1;
     }
     #logo {
+      transition: all 4000ms ease;
       top: 8.2vh;
       width: 23vh;
       z-index: 2;

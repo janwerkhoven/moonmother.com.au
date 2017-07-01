@@ -108,6 +108,8 @@ section.in-the-stars {
   justify-content: center;
   text-align: center;
   padding: 100px 30px;
+  transition: height 4000ms ease;
+  box-sizing: border-box;
   h2 {
     color: white;
     text-transform: uppercase;
@@ -133,6 +135,9 @@ section.in-the-stars {
   .button,
   button {
     margin: 54px auto 0;
+  }
+  body.moon & {
+    min-height: 71vh;
   }
 }
 section.photoreel {
