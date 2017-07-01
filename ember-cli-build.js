@@ -26,6 +26,7 @@ module.exports = function(defaults) {
     }
   });
 
+  app.import('bower_components/velocity/velocity.min.js');
   app.import('vendor/google-analytics.js');
   app.import('bower_components/instafeed.js/instafeed.min.js');
 
