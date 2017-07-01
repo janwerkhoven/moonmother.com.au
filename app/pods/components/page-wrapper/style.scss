@@ -4,4 +4,23 @@
     z-index: 1;
     position: relative;
   }
+  section.in-the-stars {
+    h2 {
+      color: white;
+      text-transform: uppercase;
+    }
+    p {
+      color: #dedddd;
+    }
+  }
+  section.photoreel {
+    overflow: hidden;
+    img {
+      width: 100vw;
+      height: auto;
+      @media (max-width: 600px) {
+        width: 166.66vw;
+      }
+    }
+  }
 }

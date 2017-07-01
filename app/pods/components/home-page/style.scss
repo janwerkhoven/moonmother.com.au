@@ -287,15 +287,6 @@
       }
     }
   }
-  section#photoreel {
-    overflow: hidden;
-    img {
-      width: 100vw;
-      @media (max-width: 600px) {
-        width: 166.66vw;
-      }
-    }
-  }
   #contact-us {
     background: white;
     div {

@@ -1,1 +1,52 @@
-#services-page {}
+#services-page {
+  section.heading {
+    background: $page-wide-heading-bg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      display: block;
+    }
+    h2 {
+      text-transform: uppercase;
+      color: $page-wide-heading-text;
+    }
+  }
+  #equipment {
+    background: white;
+    ul {
+      li {
+        display: flex;
+        > * {
+          width: 33.33333%;
+          flex: auto 0 0;
+        }
+        > div {
+          padding: 30px;
+          box-sizing: border-box;
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+      }
+    }
+    img {
+      height: 20vw;
+    }
+    h3 {
+      font-size: 30px;
+      line-height: 140%;
+      margin-bottom: 20px;
+    }
+    p {
+      letter-spacing: 1px;
+    }
+  }
+  #services {
+    background: white;
+    padding: 50px;
+    min-height: 500px;
+  }
+}
