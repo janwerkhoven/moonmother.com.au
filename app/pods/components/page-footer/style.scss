@@ -1,111 +1,59 @@
 #page-footer {
   #contact {
     background: white;
-    div {
-      h1 {
-        margin-bottom: 80px;
-        @media (max-width: 450px) {
-          margin-bottom: 60px;
-        }
-      }
-      h3.oversize-text {
-        margin-bottom: 40px;
-        color: $dark-grey;
-      }
-      h4 {
-        text-align: center;
-        text-transform: uppercase;
-        font-family: $lato-regular;
-        font-size: 18px;
-        letter-spacing: 2px;
-        line-height: 180%;
-        margin-bottom: 40px;
-        color: $dark-grey;
-        cursor: default;
-        @media (max-width: 450px) {
-          font-size: 4vw;
-        }
-        @media (max-width: 400px) {
-          font-size: 3.8vw;
-        }
-      }
+    > div {
+      padding: 90px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    img.moon + h2 {
+      margin-bottom: 80px;
+    }
+    h3 {
+      font-size: 36px;
+      color: #242221;
+      margin-bottom: 31px;
+    }
+    h4 {
+      font-family: $lato-regular;
+      color: #242221;
+      font-size: 22px;
+      line-height: 190%;
+      letter-spacing: 2px;
+      margin-bottom: 50px;
+    }
+    img.jenny {
+      width: 200px;
+      margin: 40px 0;
+    }
+    h5 {
+      color: #242221;
+      font-size: 28px;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    h5 + p {
+      margin-bottom: 50px;
+    }
+    p {
+      letter-spacing: 2px;
+      color: #242221;
+      font-size: 20px;
+      margin-bottom: 10px;
       a {
-        text-transform: uppercase;
         text-decoration: none;
-        font-family: $lato-regular;
-        font-size: 18px;
-        letter-spacing: 1px;
-        line-height: 180%;
-        margin-bottom: 80px;
-        color: white;
-        background: $galaxy-black;
-        padding: 15px 30px;
-        transition: ease-in-out 200ms all;
+        color: #242221;
         &:hover {
-          transform: scale(1.02);
-        }
-        @media (max-width: 700px) {
-          margin-bottom: 60px;
-        }
-        @media (max-width: 450px) {
-          margin-bottom: 40px;
+          opacity: 0.5;
         }
       }
-      ul {
-        display: flex;
-        width: 100vw;
-        max-width: 1000px;
-        @media (max-width: 550px) {
-          flex-direction: column;
-        }
-        @media (max-width: 450px) {
-          margin-bottom: 0;
-        }
-        li {
-          flex-direction: column;
-          align-items: center;
-          margin: 0 auto 100px;
-          @media (max-width: 700px) {
-            margin-bottom: 60px;
-          }
-          @media (max-width: 450px) {
-            margin-bottom: 40px;
-          }
-          img {
-            width: 200px;
-            margin: 0 auto 40px;
-            @media (max-width: 550px) {
-              margin-bottom: 10px;
-            }
-          }
-          h3 {
-            color: $galaxy-black;
-            margin-bottom: 10px;
-            @media (max-width: 550px) {
-              margin-bottom: 0;
-            }
-          }
-          h4 {
-            text-transform: capitalize;
-            cursor: default;
-            @media (max-width: 550px) {
-              margin-bottom: 15px;
-            }
-          }
-          a {
-            text-align: center;
-            background: none;
-            color: $galaxy-black;
-            text-transform: none;
-            padding: 0 0 0 5px;
-          }
-          p {
-            color: $galaxy-black;
-            text-align: center;
-            cursor: default;
-          }
-        }
-      }
+    }
+    .button {
+      margin-bottom: 24px;
+      width: 170px;
     }
   }
   #social {
