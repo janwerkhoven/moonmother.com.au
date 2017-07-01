@@ -40,6 +40,10 @@ img {
   display: block;
 }
 
+figure {
+  margin: 0;
+}
+
 // Most of the time <ul> are not used as bullets, thus we overwrite default padding / margin
 ol,
 ul {

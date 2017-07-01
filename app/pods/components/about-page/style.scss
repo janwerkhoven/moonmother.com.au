@@ -1,1 +1,45 @@
-#about-page {}
+#about-page {
+  section.two-third {
+    display: flex;
+    background: white;
+    figure {
+      position: relative;
+      width: 61vw;
+      img {
+        width: 100%;
+      }
+      figcaption {
+        position: absolute;
+        text-transform: uppercase;
+        font-size: 12px;
+        bottom: 18px;
+        color: white;
+        font-family: $lato-regular;
+        letter-spacing: 1px;
+        line-height: 100%;
+      }
+    }
+    > div {
+      width: 39vw;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+    h2 {
+      line-height: 140%;
+    }
+    > * {
+      flex: auto 0 0;
+    }
+    &.text-left {
+      flex-direction: row-reverse;
+      figcaption {
+        right: 20px;
+      }
+    }
+    &.text-right {
+      figcaption {
+        left: 20px;
+      }
+    }
+  }
+}
