@@ -40,8 +40,20 @@ img {
   display: block;
 }
 
+// Remove default margins
 figure {
   margin: 0;
+}
+
+// Avoid browsers from adding their own blue glow around buttons
+a,
+button {
+  outline: 0;
+}
+
+// Not all buttons get hover over cursor...
+button {
+  cursor: pointer;
 }
 
 // Most of the time <ul> are not used as bullets, thus we overwrite default padding / margin
@@ -58,6 +70,7 @@ ul {
   }
 }
 
+// For this project only
 p {
   font-family: $lato-regular;
 }

@@ -44,23 +44,14 @@
           font-size: 7.6vw;
         }
       }
-      a.button {
-        text-align: center;
-        color: $light-grey;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-family: $lato-regular;
-        font-size: 13px;
-        border: 1.5px solid $light-grey;
-        padding: 15px 0;
-        margin-bottom: 90px;
-        width: 240px;
-        transition: ease-in-out 200ms all;
-        user-select: none;
-        &:hover {
-          transform: scale(1.02);
-        }
-      }
+    }
+  }
+  #intro {
+    .button {
+      font-size: 14px;
+      line-height: 50px;
+      padding: 0 20px;
+      margin-bottom: 20px;
     }
   }
   #what-we-do {

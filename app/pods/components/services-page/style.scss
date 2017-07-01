@@ -12,6 +12,11 @@
       color: $page-wide-heading-text;
     }
   }
+  #intro {
+    p {
+      max-width: 520px;
+    }
+  }
   #equipment {
     background: white;
     ul {
