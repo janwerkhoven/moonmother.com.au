@@ -15,7 +15,11 @@
     h3 {
       font-size: 36px;
       color: #242221;
-      margin-bottom: 31px;
+      margin: 0 auto 31px;
+      line-height: 130%;
+      @media (max-width: 420px) {
+        max-width: 240px;
+      }
     }
     h4 {
       font-family: $lato-regular;
@@ -24,6 +28,7 @@
       line-height: 190%;
       letter-spacing: 2px;
       margin-bottom: 50px;
+      max-width: 450px;
     }
     img.jenny {
       width: 200px;
