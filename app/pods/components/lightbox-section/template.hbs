@@ -1,0 +1,80 @@
+<div>
+  <img class="moon" src="/assets/img/moon-icons/waning-cresent.svg">
+  <h2>What we do</h2>
+  <div id="figures" onmouseleave={{action 'mouseLeave'}}>
+    <figure id="music" onclick={{action 'openLightbox'}} onmouseenter={{action 'mouseEnter'}}>
+      <img src="/assets/img/musicfestivals@2x.jpg" alt="moon mother productions music festival">
+      <figcaption>
+        <h3>Music Festivals</h3>
+        <h4>Concerts &amp; Events</h4>
+      </figcaption>
+    </figure>
+    <figure id="community" onclick={{action 'openLightbox'}} onmouseenter={{action 'mouseEnter'}}>
+      <img src="/assets/img/communitylocal@2x.jpg" alt="moon mother productions local community government festivals">
+      <figcaption>
+        <h3>Community &amp; Local</h3>
+        <h4>Government Events &amp; Festivals</h4>
+      </figcaption>
+    </figure>
+    <figure id="sports" onclick={{action 'openLightbox'}} onmouseenter={{action 'mouseEnter'}}>
+      <img src="/assets/img/major-sporting@2x.jpg" alt="moon mother productions major sporting events">
+      <figcaption>
+        <h3>Major Sporting Events</h3>
+      </figcaption>
+    </figure>
+    <figure id="themes" onclick={{action 'openLightbox'}} onmouseenter={{action 'mouseEnter'}}>
+      <img src="/assets/img/themed-events@2x.jpg" alt="moon mother productions product venue launches">
+      <figcaption>
+        <h3>Themed Events</h3>
+        <h4>&amp; product / venue launches</h4>
+      </figcaption>
+    </figure>
+  </div>
+  {{#if lightbox}}
+    <div id="lightbox">
+      <div>
+        <button {{action 'closeLightbox'}}>X</button>
+        {{#if (eq lightbox 'music')}}
+          <div>
+            <h5>Music Festivals, Concerts &amp; Events:</h5>
+            <p>Moon Mother Productions strive for excellence in sound quality, utilising the most advanced audio technology available. Whether you need audio production for a small choir in a hall or indoor venue, or a complete package of stage, audio and lighting system for an outdoor music festival, Moon Mother can provide all your requirements.</p>
+            <figure>
+              <img src="/assets/img/musicfestivals@2x.jpg" alt="moon mother productions music festival">
+              <figcaption>Melbourne International Jazz Festival</figcaption>
+            </figure>
+          </div>
+        {{/if}}
+        {{#if (eq lightbox 'community')}}
+          <div>
+            <h5>Community something</h5>
+            <p>Lorem something</p>
+            <figure>
+              <img src="/assets/img/communitylocal@2x.jpg" alt="moon mother productions local community government festivals">
+              <figcaption>Something something</figcaption>
+            </figure>
+          </div>
+        {{/if}}
+        {{#if (eq lightbox 'sports')}}
+          <div>
+            <h5>Sporting something</h5>
+            <p>Lorem something</p>
+            <figure>
+              <img src="/assets/img/major-sporting@2x.jpg" alt="moon mother productions major sporting events">
+              <figcaption>Something something</figcaption>
+            </figure>
+          </div>
+        {{/if}}
+        {{#if (eq lightbox 'themes')}}
+          <div>
+            <h5>Themes something</h5>
+            <p>Lorem something</p>
+            <figure>
+              <img src="/assets/img/themed-events@2x.jpg" alt="moon mother productions product venue launches">
+              <figcaption>Something something</figcaption>
+            </figure>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+</div>

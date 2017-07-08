@@ -1,0 +1,111 @@
+section#what-we-do {
+  position: relative;
+  z-index: 5;
+  background-color: $light-grey;
+  > div {
+    padding: 10vw;
+    box-sizing: border-box;
+    @media (min-width: 1301px) {
+      padding: 130px;
+    }
+    @media (max-width: 1000px) {
+      padding: 10vw 5vw 5vw;
+    }
+    @media (max-width: 800px) {
+      padding: 10vw 0 0;
+    }
+    h2 {
+      margin-bottom: 10vw;
+      @media (min-width: 1301px) {
+        margin-bottom: 130px;
+      }
+    }
+    #figures {
+      display: flex;
+      flex-wrap: wrap;
+      width: 80vw;
+      max-width: 1200px;
+      min-width: 320px;
+      margin: 0 auto;
+      cursor: pointer;
+      @media (max-width: 1000px) {
+        width: 90vw;
+      }
+      @media (max-width: 800px) {
+        width: 100vw;
+      }
+      figure {
+        position: relative;
+        width: 50%;
+        @media (max-width: 720px) {
+          width: 100%;
+        }
+        img {
+          width: 100%;
+          height: auto;
+        }
+        figcaption {
+          position: absolute;
+          bottom: 22px;
+          width: 100%;
+          h3,
+          h4 {
+            text-align: center;
+            color: white;
+            line-height: 150%;
+          }
+          h3 {
+            font-size: 27px;
+          }
+          h4 {
+            text-transform: uppercase;
+            font-family: $lato-bold;
+            letter-spacing: 1px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    #lightbox {
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 0;
+      background: black;
+      width: 100%;
+      min-height: 100%;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > div {
+        position: relative;
+        max-width: 1200px;
+        width: 90vw;
+      }
+      h5 {
+        color: white;
+        font-size: 26px;
+      }
+      p {
+        color: white;
+        line-height: 140%;
+        letter-spacing: 1px;
+        margin: 30px 0 40px;
+        font-size: 15px;
+        max-width: 90%;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+      button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: white;
+        font-size: 50px;
+      }
+    }
+  }
+}

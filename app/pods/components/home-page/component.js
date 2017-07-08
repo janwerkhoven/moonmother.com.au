@@ -9,9 +9,6 @@ export default Ember.Component.extend({
   actions: {
     scrollToContact() {
       this.get('contact').scrollToMe();
-    },
-    openLightbox(name) {
-      console.log('openLightbox', name);
     }
   }
 });
