@@ -2,72 +2,29 @@ section#testimonials {
   position: relative;
   background-color: $light-grey;
   > div {
-    padding: 85px 0 120px;
+    padding: 85px 0 100px;
     width: 64vw;
-    max-width: 700px;
+    max-width: 600px;
     box-sizing: border-box;
     margin: 0 auto;
-    > div {
-      display: flex;
+    @media (max-width: 600px) {
+      width: 80vw;
+      padding: 65px 0 140px;
     }
   }
   img.moon + h2 {
     margin-bottom: 85px;
-  }
-  .quotes {
-    position: relative;
-    blockquote {
-      text-align: center;
-      margin: 0;
-      &:not(:first-child) {
-        display: none;
-      }
-      p.quote {
-        color: $dark-grey;
-        font-family: $garamond-regular;
-        font-size: 36px;
-        margin-bottom: 60px;
-        line-height: 120%;
-        cursor: default;
-        @media (max-width: 600px) {
-          font-size: 6vw;
-        }
-        @media (max-width: 450px) {
-          font-size: 8vw;
-        }
-        @media (max-width: 400px) {
-          font-size: 7.6vw;
-        }
-      }
-      footer {
-        cite,
-        p {
-          color: $dark-grey;
-          letter-spacing: 1px;
-          line-height: 150%;
-        }
-        cite {
-          display: block;
-          text-transform: uppercase;
-          font-family: $lato-regular;
-          font-style: normal;
-          font-size: 20px;
-          margin-bottom: 10px;
-        }
-        p {
-          font-size: 18px;
-        }
-      }
+    @media (max-width: 600px) {
+      margin-bottom: 65px;
     }
   }
-
   nav {
     .arrow {
       position: absolute;
       top: 0;
-      width: 18vw;
+      width: 15vw;
       height: 100%;
-      max-width: 240px;
+      max-width: 200px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -75,6 +32,13 @@ section#testimonials {
       background: rgba(black, 0);
       cursor: pointer;
       user-select: none;
+      @media (max-width: 600px) {
+        top: auto;
+        bottom: 0;
+        width: 50vw;
+        height: 100px;
+        max-width: none;
+      }
       &.prev {
         left: 0;
         img {
@@ -96,9 +60,66 @@ section#testimonials {
       img {
         width: 3vw;
         transition: transform 200ms ease;
-        min-width: 24px;
-        max-width: 37px;
+        min-width: 22px;
+        max-width: 34px;
         height: auto;
+      }
+    }
+  }
+  .quotes {
+    position: relative;
+    width: 100%;
+    // .velocity-animating {
+    //   blockquote {
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //   }
+    // }
+    blockquote {
+      text-align: center;
+      margin: 0;
+      &:not(.active) {
+        display: none;
+      }
+      p.quote {
+        color: $dark-grey;
+        font-family: $garamond-regular;
+        font-size: 36px;
+        margin-bottom: 60px;
+        line-height: 120%;
+        cursor: default;
+        @media (max-width: 400px) {
+          font-size: 9vw;
+          margin-bottom: 12vw;
+        }
+      }
+      footer {
+        cite,
+        p {
+          color: $dark-grey;
+          letter-spacing: 1px;
+          line-height: 150%;
+        }
+        cite {
+          display: block;
+          text-transform: uppercase;
+          font-family: $lato-regular;
+          font-style: normal;
+          font-size: 20px;
+          margin-bottom: 10px;
+          @media (max-width: 333px) {
+            font-size: 6vw;
+          }
+        }
+        p {
+          font-size: 18px;
+          @media (max-width: 400px) {
+            font-size: 5vw;
+          }
+        }
       }
     }
   }

@@ -25,11 +25,28 @@ export default Ember.Component.extend({
     profession: 'Dutch painter'
   }],
 
+  activeQuote: 1,
+
   numberOfQuotes: computed(function() {
     return this.get('quotes').length;
   }),
 
-  activeQuote: 1,
+  init() {
+    this._super(...arguments);
+    const max = this.get('numberOfQuotes');
+    const random = Math.floor(Math.random() * max) + 1;
+    this.set('activeQuote', random);
+  },
+
+  didInsertElement() {
+    const i = this.get('activeQuote');
+    const $activeQuote = this.$('blockquote').eq(i - 1);
+    const height = $activeQuote.height();
+    $activeQuote.addClass('active');
+    this.$('.quotes').velocity('stop').velocity({
+      height: height + 'px'
+    }, 0);
+  },
 
   showQuote(target) {
     const max = this.get('numberOfQuotes');
