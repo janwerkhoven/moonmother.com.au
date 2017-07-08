@@ -1,0 +1,25 @@
+<div>
+  <img class="moon" src="/assets/img/moon-icons/moon4.svg">
+  <h2>Testimonials</h2>
+  <div>
+    <div class="quotes">
+      {{#each quotes as |quote|}}
+        <blockquote class="active">
+          <p class="quote">&ldquo;{{quote.text}}&rdquo;</p>
+          <footer>
+            <cite>{{quote.person}}</cite>
+            <p>{{quote.profession}}</p>
+          </footer>
+        </blockquote>
+      {{/each}}
+    </div>
+  </div>
+</div>
+<nav>
+  <div class="arrow prev" onclick={{action 'prevQuote'}}>
+    <img src="/assets/img/arrow-left.svg">
+  </div>
+  <div class="arrow next" onclick={{action 'nextQuote'}}>
+    <img src="/assets/img/arrow-right.svg">
+  </div>
+</nav>
