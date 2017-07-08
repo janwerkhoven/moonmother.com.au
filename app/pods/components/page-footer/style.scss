@@ -17,8 +17,9 @@
       color: #242221;
       margin: 0 auto 31px;
       line-height: 130%;
-      @media (max-width: 420px) {
-        max-width: 240px;
+      @media (max-width: 440px) {
+        font-size: 9vw;
+        max-width: 60vw;
       }
     }
     h4 {
@@ -29,6 +30,9 @@
       letter-spacing: 2px;
       margin-bottom: 50px;
       max-width: 450px;
+      @media (max-width: 366px) {
+        font-size: 6vw;
+      }
     }
     img.jenny {
       width: 200px;

@@ -43,9 +43,12 @@ export default Ember.Component.extend({
     const $activeQuote = this.$('blockquote').eq(i - 1);
     const height = $activeQuote.height();
     $activeQuote.addClass('active');
-    this.$('.quotes').velocity('stop').velocity({
-      height: height + 'px'
-    }, 0);
+
+    // TODO: animate
+    // this.$('.quotes').velocity('stop').velocity({
+    //   height: height + 'px'
+    // }, 0);
+
   },
 
   showQuote(target) {
@@ -56,7 +59,10 @@ export default Ember.Component.extend({
     i = i > max ? 1 : i;
     i = i < 1 ? max : i;
     this.set('activeQuote', i);
-    this.$('blockquote').eq(i - 1).show().siblings().hide();
+    this.$('blockquote').eq(i - 1).addClass('active').siblings().removeClass('active');
+
+    // TODO: animate
+
   },
 
   actions: {

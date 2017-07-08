@@ -1,63 +1,7 @@
 #home-page {
-  section {
-    > div {
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      h1 {
-        text-transform: uppercase;
-        font-family: $lato-regular;
-        font-size: 18px;
-        letter-spacing: 1px;
-        margin-bottom: 40px;
-        color: dark-grey;
-        cursor: default;
-      }
-      h3 {
-        text-align: center;
-        font-size: 24px;
-        margin-bottom: 40px;
-        line-height: 120%;
-        cursor: default;
-        @media (max-width: 450px) {
-          font-size: 5.2vw;
-        }
-        @media (max-width: 400px) {
-          font-size: 5.4vw;
-        }
-      }
-      .oversize-text {
-        font-family: $garamond-regular;
-        text-align: center;
-        font-size: 36px;
-        margin-bottom: 80px;
-        line-height: 120%;
-        cursor: default;
-        @media (max-width: 600px) {
-          font-size: 6vw;
-        }
-        @media (max-width: 450px) {
-          font-size: 8vw;
-        }
-        @media (max-width: 400px) {
-          font-size: 7.6vw;
-        }
-      }
-    }
-  }
-  #intro {
-    .button {
-      font-size: 14px;
-      line-height: 50px;
-      padding: 0 20px;
-      margin-bottom: 20px;
-    }
-  }
   #what-we-do {
     background-color: $light-grey;
     div {
-      h1 {}
       ul {
         display: flex;
         flex-wrap: wrap;
@@ -143,32 +87,43 @@
   }
   #services-and-equipment {
     background-color: $dark-grey;
-    div {
-      h1 {
+    > div {
+      padding: 80px 0;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      h2 {
         color: white;
+        margin-bottom: 60px;
       }
       h3 {
-        color: white;
-        @media (max-width: 400px) {
-          font-size: 5.2vw;
-        }
-      }
-      img.full-width {
-        width: 100%;
-        max-width: 1000px;
+        text-align: center;
+        font-size: 24px;
         margin-bottom: 40px;
+        line-height: 130%;
+        color: white;
+        margin-bottom: 60px;
+        @media (max-width: 342px) {
+          font-size: 7vw;
+        }
+        // @media (max-width: 400px) {
+        //   font-size: 5.4vw;
+        // }
+        padding: 0 20px;
       }
-      .button {
-        color: $galaxy-black;
-        border-color: $light-grey;
-        background-color: $light-grey;
+      img.wireframe {
+        width: 100%;
+        max-width: 1100px;
+        margin-bottom: 40px;
       }
     }
   }
   #background-video {
     position: relative;
     overflow: hidden;
-    // TODO: add background image in case video does not work
+    height: 60vw;
+    min-height: 500px;
+    max-height: 800px;
     #bg-video {
       position: absolute;
       top: 50%;
@@ -176,18 +131,35 @@
       transform: translate(-50%, -50%);
       height: 102%;
       min-width: 102%;
+
+      // TODO: add background image in case video does not work
+
     }
-    div {
+    > div {
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      height: 60vw;
-      min-height: 400px;
+      align-items: center;
+      height: 100%;
       z-index: 1;
+      padding: 10vw;
+      box-sizing: border-box;
+      @media (min-width: 1301px) {
+        padding: 130px;
+      }
       h2 {
         max-width: 500px;
         color: white;
+        text-align: center;
+        line-height: 130%;
+        font-size: 36px;
+        @media (max-width: 800px) {
+          font-size: 4.5vw;
+        }
+        @media (max-width: 577px) {
+          font-size: 26px;
+        }
       }
     }
   }

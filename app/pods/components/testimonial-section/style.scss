@@ -38,9 +38,13 @@ section#testimonials {
         width: 50vw;
         height: 100px;
         max-width: none;
+        border-top: 1px solid #CCC;
       }
       &.prev {
         left: 0;
+        @media (max-width: 600px) {
+          border-right: 1px solid #CCC;
+        }
         img {
           transform: translateX(1vw);
         }
