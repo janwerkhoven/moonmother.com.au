@@ -41,7 +41,7 @@ export default Ember.Component.extend({
   didInsertElement() {
     const i = this.get('activeQuote');
     const $activeQuote = this.$('blockquote').eq(i - 1);
-    const height = $activeQuote.height();
+    // const height = $activeQuote.height();
     $activeQuote.addClass('active');
 
     // TODO: animate

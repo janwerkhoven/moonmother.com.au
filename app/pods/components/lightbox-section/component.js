@@ -22,8 +22,7 @@ export default Ember.Component.extend({
         opacity: 0.6
       }, 300, 'ease-out');
     },
-    mouseLeave(event) {
-      const id = event.currentTarget.id;
+    mouseLeave() {
       this.$('figure').velocity('stop').velocity({
         opacity: 1
       }, 300, 'ease-out');

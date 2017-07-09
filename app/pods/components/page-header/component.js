@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { computed, inject, run } = Ember;
+const { computed, inject } = Ember;
 
 export default Ember.Component.extend({
   tagName: 'header',
