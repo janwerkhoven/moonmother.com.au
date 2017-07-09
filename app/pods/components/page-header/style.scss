@@ -10,6 +10,7 @@
 // }
 
 #page-header {
+  position: relative;
   background: black;
   height: 100vh;
   display: flex;
@@ -20,18 +21,36 @@
   #galaxy {
     position: absolute;
     z-index: 0;
-    height: 140vh;
-    width: 140vh;
+    height: 0;
+    width: 0;
     left: 50%;
-    top: 50%;
-    transform: translateX(-70vh) translateY(-60vh);
-    background: black radial-gradient(ellipse at center, rgba(8,22,45,1) 10%,rgba(8,22,45,0) 60%);
-    background: black radial-gradient(ellipse at center, rgba(8, 22, 45, 0.75) 10%, rgba(8, 22, 45, 0) 60%);
+    top: 68%;
     transition: all 4000ms ease;
-    img {
-      width: 100%;
-      height: 100%;
-      animation: rotate 200000ms linear infinite;
+    .clip {
+      width: 100vw;
+      height: 140vh;
+      overflow: hidden;
+      transform: translate(-50vw, -70vh);
+      .center {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 0;
+        width: 0;
+        .glow {
+          position: absolute;
+          height: 140vh;
+          width: 140vh;
+          top: -70vh;
+          left: -70vh;
+          animation: rotate 200000ms linear infinite;
+          background: black radial-gradient(ellipse at center, rgba(8, 22, 45, 0.75) 10%, rgba(8, 22, 45, 0) 60%);
+          img {
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
     }
   }
   #constelation {
