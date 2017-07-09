@@ -19,7 +19,7 @@ export default Ember.Component.extend({
       this.$(`figure#${id}`).velocity('stop').velocity({
         opacity: 1
       }, 300, 'ease-out').siblings().velocity('stop').velocity({
-        opacity: 0.3
+        opacity: 0.6
       }, 300, 'ease-out');
     },
     mouseLeave(event) {
