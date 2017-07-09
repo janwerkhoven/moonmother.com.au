@@ -13,17 +13,18 @@
     height: 100%;
   }
   > div {
-    position: relative;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    height: 100%;
     z-index: 1;
-    padding: 10vw;
+    padding: 0 10vw 10vw;
     box-sizing: border-box;
     @media (min-width: 1301px) {
-      padding: 130px;
+      padding: 0 130px 130px;
     }
     h2 {
       max-width: 500px;
@@ -31,6 +32,8 @@
       text-align: center;
       line-height: 130%;
       font-size: 36px;
+      text-shadow: 0 0 10px black;
+      pointer-events: none;
       @media (max-width: 800px) {
         font-size: 4.5vw;
       }
