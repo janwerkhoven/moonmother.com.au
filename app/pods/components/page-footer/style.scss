@@ -135,6 +135,9 @@
           justify-content: center;
           align-items: center;
           background: $dark-grey;
+          &:hover {
+            outline: 1px solid $light-grey;
+          }
           img {
             height: 100%;
           }

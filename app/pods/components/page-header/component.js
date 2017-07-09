@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const { computed, inject } = Ember;
+const { computed, inject, run } = Ember;
 
 export default Ember.Component.extend({
   tagName: 'header',
@@ -14,6 +14,23 @@ export default Ember.Component.extend({
     moonGlow(boolean) {
       this.set('moonGlow', boolean);
       Ember.$('body').toggleClass('moon', boolean);
+
+      // Ember.$('body').addClass('prevent-scroll');
+      //
+      // run.later(this, function() {
+      //   Ember.$('body').removeClass('prevent-scroll');
+      // }, 4000);
+
+      Ember.$('header').velocity('scroll', {
+        duration: 4000,
+        easing: 'easeOutQuint',
+        begin() {
+          Ember.$('body').addClass('prevent-scroll');
+        },
+        complete() {
+          Ember.$('body').removeClass('prevent-scroll');
+        }
+      });
 
       // const $pageHeader = this.$();
       // const $constelation = this.$('#constelation');

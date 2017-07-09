@@ -55,9 +55,9 @@
   }
   #constelation {
     transition: all 4000ms ease;
-    top: 43vh;
+    bottom: 0;
     left: 50%;
-    transform: translate(-24vh, -24vh);
+    transform: translateX(-24vh);
     position: absolute;
     z-index: 1;
     display: flex;
@@ -204,10 +204,9 @@
       transform: translateY(8.8vw) scale(0.75);
     }
     #constelation {
-      top: 0;
       height: 38vh;
       width: 38vh;
-      transform: translate(-19vh, -19vh);
+      transform: translateX(-19vh);
       background: none;
       .planet a {
         height: 16vw;
@@ -215,7 +214,7 @@
       }
     }
     #galaxy {
-      top: 0;
+      top: 19vh;
     }
     &.index {
       #about {

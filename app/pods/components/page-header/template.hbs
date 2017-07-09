@@ -6,6 +6,34 @@
 </svg> --}}
 
 <div id="galaxy">
+  <div id="constelation">
+    <div id="logo" onclick={{action 'moonGlow' false}}>
+      {{#link-to 'index'}}
+        <img src="/assets/img/logo/owl-and-moon.svg" alt="Logo of Moonmother Productions">
+        <img src="/assets/img/logo/moon.svg" alt="Moon">
+        <img src="/assets/img/logo/mother.svg" alt="Mother">
+        <img src="/assets/img/logo/productions.svg" alt="Productions">
+      {{/link-to}}
+    </div>
+    <div id="home" class="planet" onclick={{action 'moonGlow' true}}>
+      {{#link-to 'index'}}
+        <img src="/assets/img/galaxy/home.svg" alt="home">
+        <span></span>
+      {{/link-to}}
+    </div>
+    <div id="about" class="planet" onclick={{action 'moonGlow' true}}>
+      {{#link-to 'about'}}
+        <img src="/assets/img/galaxy/about.svg" alt="about">
+        <span></span>
+      {{/link-to}}
+    </div>
+    <div id="services" class="planet" onclick={{action 'moonGlow' true}}>
+      {{#link-to 'services'}}
+        <img src="/assets/img/galaxy/services.svg" alt="services">
+        <span></span>
+      {{/link-to}}
+    </div>
+  </div>
   <div class="clip">
     <div class="center">
       <div class="glow">
@@ -14,34 +42,7 @@
     </div>
   </div>
 </div>
-<div id="constelation">
-  <div id="logo" onclick={{action 'moonGlow' false}}>
-    {{#link-to 'index'}}
-      <img src="/assets/img/logo/owl-and-moon.svg" alt="Logo of Moonmother Productions">
-      <img src="/assets/img/logo/moon.svg" alt="Moon">
-      <img src="/assets/img/logo/mother.svg" alt="Mother">
-      <img src="/assets/img/logo/productions.svg" alt="Productions">
-    {{/link-to}}
-  </div>
-  <div id="home" class="planet" onclick={{action 'moonGlow' true}}>
-    {{#link-to 'index'}}
-      <img src="/assets/img/galaxy/home.svg" alt="home">
-      <span></span>
-    {{/link-to}}
-  </div>
-  <div id="about" class="planet" onclick={{action 'moonGlow' true}}>
-    {{#link-to 'about'}}
-      <img src="/assets/img/galaxy/about.svg" alt="about">
-      <span></span>
-    {{/link-to}}
-  </div>
-  <div id="services" class="planet" onclick={{action 'moonGlow' true}}>
-    {{#link-to 'services'}}
-      <img src="/assets/img/galaxy/services.svg" alt="services">
-      <span></span>
-    {{/link-to}}
-  </div>
-</div>
+
 <div id="tagline">
   <h1>Going above and beyond to bring your event to life.</h1>
 </div>
