@@ -146,12 +146,19 @@ section.in-the-stars {
 }
 section.photoreel {
   overflow: hidden;
-  img {
-    width: 100vw;
-    height: auto;
-    @media (max-width: 600px) {
-      width: 166.66vw;
-    }
+  width: 100vw;
+  height: 20vw;
+  background: url("/assets/img/photoreel@2x.jpg") repeat 50% 50% / cover;
+  @media (min-width: 1600px) {
+    height: 320px;
+    background-size: auto 100%;
+  }
+  @media (max-width: 1200px) {
+    background-image: url("/assets/img/photoreel.jpg");
+  }
+  @media (max-width: 600px) {
+    height: 33.333vw;
+    background-size: 166.66vw 100%;
   }
 }
 hr {
