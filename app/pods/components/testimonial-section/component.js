@@ -12,17 +12,17 @@ export default Ember.Component.extend({
     person: 'Andy Higgins',
     profession: 'Former International Events Manager, Rip Curl'
   }, {
-    text: 'The artist is nothing without the gift, but the gift is nothing without work.',
-    person: 'Emile Zola',
-    profession: 'French Novelist'
+    text: 'Of all the Event Managers, Jenny Moon and her Crew at Moon Mother Productions is BEST IN CLASS. They have a very special personal touch and it was obvious that every crew person was very passionate about what they did, which is a rarity in this industry.',
+    person: 'David Champion',
+    profession: 'Parade Management'
   }, {
-    text: `A ship is always safe at shore, but that is not what it's built for`,
-    person: 'Albert Einstein',
-    profession: 'Theoretical physicist'
+    text: `Moon Mother Productions put the love back into live sound. Professional technically brilliant and most importantly, spiritually connected with their work and the music they help to create.`,
+    person: 'Josh Cunningham',
+    profession: 'The Waifs'
   }, {
-    text: `If you hear a voice within you say 'You cannot paint' then by all means paint, and that voice will be silenced`,
-    person: 'Vincent Van Gogh',
-    profession: 'Dutch painter'
+    text: `Our experience with Moon Mother, and Jenny in particular has been refreshing, and I would recommend Moon Mother to people who need an innovative, quality product that is professional from 'start to finish' of the project`,
+    person: 'Chris Ball',
+    profession: 'Venue Operations Manager, Cycling Australia'
   }],
 
   activeQuote: 1,
@@ -41,13 +41,9 @@ export default Ember.Component.extend({
   didInsertElement() {
     const i = this.get('activeQuote');
     const $activeQuote = this.$('blockquote').eq(i - 1);
-    // const height = $activeQuote.height();
     $activeQuote.addClass('active');
 
     // TODO: animate
-    // this.$('.quotes').velocity('stop').velocity({
-    //   height: height + 'px'
-    // }, 0);
 
   },
 
