@@ -31,46 +31,49 @@
     </figure>
   </div>
   {{#if lightbox}}
-    <div id="lightbox">
+    <div id="lightbox" onclick={{action 'closeLightbox'}}>
       <div>
-        <button {{action 'closeLightbox'}}>X</button>
+        <button id="close" onclick={{action 'closeLightbox'}}>
+          <span>close</span>
+        </button>
         {{#if (eq lightbox 'music')}}
           <div>
             <h5>Music Festivals, Concerts &amp; Events:</h5>
             <p>Moon Mother Productions strive for excellence in sound quality, utilising the most advanced audio technology available. Whether you need audio production for a small choir in a hall or indoor venue, or a complete package of stage, audio and lighting system for an outdoor music festival, Moon Mother can provide all your requirements.</p>
             <figure>
-              <img src="/assets/img/musicfestivals@2x.jpg" alt="moon mother productions music festival">
+              <img src="/assets/img/lightbox-musicfestivals@2x.jpg" alt="Melbourne International Jazz Festival organised with Moon Mother Production">
               <figcaption>Melbourne International Jazz Festival</figcaption>
             </figure>
           </div>
         {{/if}}
         {{#if (eq lightbox 'community')}}
           <div>
-            <h5>Community something</h5>
-            <p>Lorem something</p>
+            <h5>Community &amp; Local Government Events &amp; Festivals:</h5>
+            <p>Moon Mother has worked all over Australia on a range of successful events for local governments, corporations, community groups and charitable organisations. From providing the portable staging, audio and theming, to sourcing talent, vendors and equipment, Moon Mother Productions can work closely with your Committee, organising group or club to bring your next event to fruition.</p>
             <figure>
-              <img src="/assets/img/communitylocal@2x.jpg" alt="moon mother productions local community government festivals">
-              <figcaption>Something something</figcaption>
+              <img src="/assets/img/lightbox-community@2x.jpg" alt="Australia Day community event in Melton organised with Moon Mother Production">
+              <figcaption>Australia Day - Melton</figcaption>
             </figure>
           </div>
         {{/if}}
         {{#if (eq lightbox 'sports')}}
           <div>
-            <h5>Sporting something</h5>
-            <p>Lorem something</p>
+            <h5>Major Sporting Events:</h5>
+            <p>Moon Mother Productions specialise in providing the latest in audio technology for major sporting events. From start / finish lines, transition areas, VIP enclosures, satellite sites, etc, Moon Mother Productions can tailor a package to suit your audio and AV requirements - no matter the size of your site.</p>
             <figure>
-              <img src="/assets/img/major-sporting@2x.jpg" alt="moon mother productions major sporting events">
-              <figcaption>Something something</figcaption>
+              <img src="/assets/img/lightbox-sporting@2x.jpg" alt="Rip Curl Pro sporting event organised with Moon Mother Production">
+              <figcaption>Rip Curl Pro</figcaption>
             </figure>
           </div>
         {{/if}}
         {{#if (eq lightbox 'themes')}}
           <div>
-            <h5>Themes something</h5>
-            <p>Lorem something</p>
+            <h5>Themed Events &amp; Product / Venue Launches:</h5>
+            <p>Whether it's a corporate event, staff party, launch, exhibition or fundraiser, that first impression is what will make your event memorable. Whether through music, lighting, entertainment, props or the venue, Moon Mother Productions will work with you, and your budget to make your event 'stand out from the pack'.
+            </p>
             <figure>
-              <img src="/assets/img/themed-events@2x.jpg" alt="moon mother productions product venue launches">
-              <figcaption>Something something</figcaption>
+              <img src="/assets/img/lightbox-themed@2x.jpg" alt="Themed Willy Wonka event in Warralily organised with Moon Mother Productions">
+              <figcaption>Willy Wonka - Warralily</figcaption>
             </figure>
           </div>
         {{/if}}

@@ -95,16 +95,64 @@ section#what-we-do {
         font-size: 15px;
         max-width: 90%;
       }
+      figure {
+        position: relative;
+        &:after {
+          content: ' ';
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to bottom, rgba(0,0,0,0) 56%,rgba(0,0,0,0.65) 100%);
+        }
+        figcaption {
+          position: absolute;
+          z-index: 2;
+          bottom: 7vw;
+          text-align: center;
+          width: 100%;
+          color: white;
+          font-size: 26px;
+          line-height: 130%;
+        }
+      }
+
       img {
         width: 100%;
         height: auto;
       }
-      button {
+      button#close {
         position: absolute;
         right: 0;
         top: 0;
         color: white;
         font-size: 50px;
+        width: 6vw;
+        height: 6vw;
+        padding: 2vw;
+        &:after,
+        &:before {
+          content: ' ';
+          position: absolute;
+          width: 100%;
+          height: 1px;
+          background: white;
+          transform-origin: center;
+          left: 0;
+          top: 50%;
+          transition: width 300ms ease;
+        }
+        &:after {
+          transform: rotate(45deg);
+        }
+        &:before {
+          transform: rotate(-45deg);
+        }
+        span {
+          display: none;
+        }
       }
     }
   }
