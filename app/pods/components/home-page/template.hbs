@@ -15,7 +15,14 @@
     <img class="moon" src="/assets/img/moon-icons/waxing-gibbous-white.svg">
     <h2>Services &amp; Equipment</h2>
     <h3>Technical Production &amp; <nobr>Av Equipment Hire</nobr></h3>
-    <img class="wireframe" src="/assets/img/equipment@2x.png" alt="moon mother productions equipment">
+    {{!-- <img class="wireframe" src="/assets/img/equipment.svg" alt="moon mother productions equipment"> --}}
+    {{!-- <img class="wireframe" src="/assets/img/equipment-mobile@2x.png" alt="moon mother productions equipment"> --}}
+
+    <picture>
+      <source media="(max-width: 700px)" srcset="/assets/img/equipment-mobile.svg">
+      <img src="/assets/img/equipment.svg" alt="Equipment diagram of stage setup by Moon Mother Productions">
+    </picture>
+
     <h3>Like a quote or help on finding the best fit <nobr>for your event?</nobr></h3>
     <button class="white-background" onclick={{action 'scrollToContact'}}>Contact us</button>
   </div>
