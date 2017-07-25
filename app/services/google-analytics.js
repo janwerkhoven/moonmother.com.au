@@ -1,12 +1,12 @@
 import Ember from 'ember';
 import config from '../config/environment';
 
-const enabled = config.googleAnalytics && config.googleAnalytics.trackingId && ga ? true : false;
+const ready = config.googleAnalytics && config.googleAnalytics.trackingId && ga ? true : false;
 
 export default Ember.Service.extend({
 
   startTracking() {
-    if (enabled) { return; }
+    if (!ready) { return; }
     ga('create', {
       trackingId: config.googleAnalytics.trackingId
     });
@@ -17,7 +17,7 @@ export default Ember.Service.extend({
   },
 
   sendPageView(currentRoute) {
-    if (enabled) { return; }
+    if (!ready) { return; }
     ga('set', {
       page: window.location.pathname,
       hostname: window.location.host,
