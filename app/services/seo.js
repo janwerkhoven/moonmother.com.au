@@ -38,7 +38,7 @@ export default Ember.Service.extend({
     return document.head.querySelector('link[rel=canonical]').href = url;
   },
 
-  setRobotMeta(robotIndex, robotFollow) {
+  setRobot(robotIndex, robotFollow) {
     const index = robotIndex === false ? 'noindex' : 'index';
     const follow = robotFollow === false ? 'nofollow' : 'follow';
     return document.head.querySelector('meta[name=robots]').content = `${index}, ${follow}`;

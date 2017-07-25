@@ -6,7 +6,6 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'history',
-    podModulePrefix: 'moonmother/pods',
     googleAnalytics: {
       trackingId: 'UA-34474019-12'
     },

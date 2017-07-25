@@ -7,7 +7,7 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Makes SASS listent to file changes in the component folders
     sassOptions: {
-      includePaths: ['app/pods/components']
+      includePaths: ['app/components']
     },
     // Adds CSS browser prefixes
     autoprefixer: {
