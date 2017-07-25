@@ -2,25 +2,23 @@ import Ember from 'ember';
 import config from '../../config/environment';
 
 const { computed } = Ember;
+const enabled = config.googleAnalytics && config.googleAnalytics.trackingId && ga;
 
 export default Ember.Service.extend({
 
-  enabled: computed(function() {
-    return config.googleAnalytics && config.googleAnalytics.trackingId && ga;
-  }),
-
-  startListening() {
-    if (!this.get('enabled')) { return; }
+  startTracking() {
+    if (enabled) { return; }
     ga('create', {
       trackingId: config.googleAnalytics.trackingId
     });
     ga('set', {
-      dimension1: config.environment
+      dimension1: config.modulePrefix,
+      dimension2: config.environment
     });
   },
 
-  hit(currentRoute) {
-    if (!this.get('enabled')) { return; }
+  sendPageView(currentRoute) {
+    if (enabled) { return; }
     ga('set', {
       page: window.location.pathname,
       hostname: window.location.host,

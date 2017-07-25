@@ -9,11 +9,12 @@ const Router = Ember.Router.extend({
   seo: inject.service(),
   googleAnalytics: inject.service(),
   onInit: Ember.on('init', function() {
-    this.get('googleAnalytics').startListening();
+    this.get('googleAnalytics').startTracking();
   }),
   onEachDidTransition: Ember.on('didTransition', function() {
     const currentRoute = Ember.getOwner(this).lookup('route:' + this.currentRouteName);
-    this.get('googleAnalytics').hit(currentRoute);
+    this.get('seo').setMetaTags(currentRoute);
+    this.get('googleAnalytics').sendPageView(currentRoute);
   })
 });
 

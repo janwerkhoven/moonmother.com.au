@@ -3,10 +3,13 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'moonmother',
-    environment: environment,
+    environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'history',
     podModulePrefix: 'moonmother/pods',
+    googleAnalytics: {
+      trackingId: 'UA-34474019-12'
+    },
     EmberENV: {
       FEATURES: {},
       EXTEND_PROTOTYPES: {
@@ -15,6 +18,14 @@ module.exports = function(environment) {
     },
     APP: {}
   };
+
+  if (environment === 'production') {
+
+  }
+
+  if (environment === 'staging') {
+
+  }
 
   if (environment === 'development') {
 
@@ -25,10 +36,6 @@ module.exports = function(environment) {
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
     ENV.APP.rootElement = '#ember-testing';
-  }
-
-  if (environment === 'production') {
-    ENV.googleAnalytics = { trackingId: 'UA-34474019-12' };
   }
 
   return ENV;
