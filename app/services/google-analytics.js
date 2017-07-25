@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import config from '../config/environment';
 
-const enabled = config.googleAnalytics && config.googleAnalytics.trackingId && ga;
+const enabled = config.googleAnalytics && config.googleAnalytics.trackingId && ga ? true : false;
 
 export default Ember.Service.extend({
 
