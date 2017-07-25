@@ -22,7 +22,7 @@ export default Ember.Service.extend({
       page: window.location.pathname,
       hostname: window.location.host,
       title: document.title,
-      dimension2: currentRoute.routeName.replace(/\./g, '/'),
+      dimension3: currentRoute.routeName.replace(/\./g, '/'),
     });
     ga('send', 'pageview');
   }
