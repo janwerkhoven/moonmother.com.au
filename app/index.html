@@ -3,10 +3,16 @@
 
   <head>
     <meta charset="utf-8">
+    <meta name="fragment" content="!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Moonmother</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1"> {{content-for "head"}}
+
+    <title>Moon Mother Production</title>
+    <meta name="description" content="With an experienced, passionate crew and over 60 years experience, Moon Mother offer production services for events throughout Australia from local community gatherings to major world class events. We pride ourselves in delivering beautiful audio &amp; visual experiences backed by top-of-the-range technology and expert management.">
+    <meta name="robots" content="index, follow">
+    <meta name="developer" content="Jan Werkhoven - https://github.com/janwerkhoven">
+
+    {{content-for "head"}}
 
     <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
     <link rel="stylesheet" href="{{rootURL}}assets/moonmother.css">
@@ -24,16 +30,20 @@
     <link rel="icon" type="image/png" href="{{rootURL}}assets/favicons/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="{{rootURL}}assets/favicons/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="{{rootURL}}assets/favicons/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="HotDoc" />
+    <meta name="application-name" content="Moon Mother Production" />
     <meta name="msapplication-TileColor" content="#FFFFFF" />
     <meta name="msapplication-TileImage" content="{{rootURL}}assets/favicons/mstile-144x144.png" />
     <meta name="msapplication-square70x70logo" content="{{rootURL}}assets/favicons/mstile-70x70.png" />
     <meta name="msapplication-square150x150logo" content="{{rootURL}}assets/favicons/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="{{rootURL}}assets/favicons/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="{{rootURL}}assets/favicons/mstile-310x310.png" /> {{content-for "head-footer"}}
+    <meta name="msapplication-square310x310logo" content="{{rootURL}}assets/favicons/mstile-310x310.png" />
+
+    {{content-for "head-footer"}}
+
   </head>
 
   <body>
+
     {{content-for "body"}}
 
     <div id="outdated">
@@ -74,6 +84,7 @@
     <script src="{{rootURL}}assets/moonmother.js"></script>
 
     {{content-for "body-footer"}}
+
   </body>
 
 </html>
