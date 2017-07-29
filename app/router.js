@@ -21,6 +21,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('services');
   this.route('about');
+  this.route('catchall', { path: '*:' });
 });
 
 export default Router;

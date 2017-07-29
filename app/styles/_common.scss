@@ -148,17 +148,37 @@ section.photoreel {
   overflow: hidden;
   width: 100vw;
   height: 20vw;
+  background-position: 50% 50%;
+  background-repeat: repeat;
+  background-size: cover;
   background: url("/assets/img/photoreel@2x.jpg") repeat 50% 50% / cover;
+  &.homepage {
+    background-image: url("/assets/img/homepage/photoreel@2x.jpg");
+  }
+  &.services {
+    background-image: url("/assets/img/services-photoreel@2x.jpg");
+  }
   @media (min-width: 1600px) {
     height: 320px;
     background-size: auto 100%;
   }
   @media (max-width: 1200px) {
-    background-image: url("/assets/img/photoreel.jpg");
+    &.homepage {
+      background-image: url("/assets/img/homepage/photoreel.jpg");
+    }
+    &.services {
+      background-image: url("/assets/img/services-photoreel.jpg");
+    }
   }
   @media (max-width: 600px) {
     height: 33.333vw;
-    background-size: 166.66vw 100%;
+    // background-size: 166.66vw 100%;
+    &.homepage {
+      background-image: url("/assets/img/homepage/photoreel-mobile@2x.jpg");
+    }
+    &.services {
+      background-image: url("/assets/img/services-photoreel-mobile@2x.jpg");
+    }
   }
 }
 hr {
