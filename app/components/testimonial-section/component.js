@@ -23,6 +23,14 @@ export default Ember.Component.extend({
     text: `Our experience with Moon Mother, and Jenny in particular has been refreshing, and I would recommend Moon Mother to people who need an innovative, quality product that is professional from 'start to finish' of the project`,
     person: 'Chris Ball',
     profession: 'Venue Operations Manager, Cycling Australia'
+  }, {
+    text: `In our experience, Moon Mother Productions provide the best quality sound for children and family events. This is because they understand the needs of young families and take the time to fully understand the needs and requirements of the artist in order to produce the best quality sound possible.`,
+    person: 'Joel McInnes',
+    profession: `The MikMaks`
+  }, {
+    text: `Jenny and the whole MoonMother Team are always spoken of very highly in events circles and I can certainly see why. The pre-production advice is fantastic and you feel as though Jenny is on your side in finding effective and affordable solutions that will present the event and the organisation in the best light.`,
+    person: `Michael 'smasha' Pollard`,
+    profession: `Smash'n'Sound, Melbourne`
   }],
 
   activeQuote: 1,
