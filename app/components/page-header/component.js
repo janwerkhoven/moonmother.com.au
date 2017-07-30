@@ -5,37 +5,45 @@ import $ from "jquery";
 
 const { computed, inject } = Ember;
 
-// Big -90 0 90
-// Small -60 0 60
-
 let positions = [-90, 0, 90];
 let degrees = [-90, 0, 90];
+const baseDuration = 2600;
 
 export default Ember.Component.extend({
   tagName: 'header',
   elementId: 'page-header',
-  classNameBindings: ['currentRoute', 'moonGlow:moon:owl'],
+  classNameBindings: ['currentRoute', 'collapsed:collapsed'],
   router: inject.service('-routing'),
   currentRoute: computed.alias('router.currentRouteName'),
-  moonGlow: false,
 
-  rotateCelestialsTo(id) {
-    if (id === 'about') {
-      positions = [-90, 0, 90];
-    } else if (id === 'services') {
-      positions = [90, -90, 0];
+  rotateCelestialsTo(id, first) {
+    if (first) {
+      if (id === 'about') {
+        positions = [-90, 0, 90];
+      } else if (id === 'services') {
+        positions = [90, -90, 0];
+      } else {
+        positions = [0, 90, -90];
+      }
     } else {
-      positions = [0, 90, -90];
+      if (id === 'about') {
+        positions = [-60, 0, 60];
+      } else if (id === 'services') {
+        positions = [60, -60, 0];
+      } else {
+        positions = [0, 60, -60];
+      }
     }
+    const duration = first ? 0 : baseDuration;
     $(`.planet`).each(function(i) {
       if ($(this).hasClass('velocity-animating')) { return; }
       const currentPos = degrees[i];
       let targetPos = positions[i];
-      let newPos = targetPos < currentPos ? targetPos + 360 : targetPos;
+      let newPos = targetPos <= currentPos ? targetPos + 360 : targetPos;
       $(this).velocity('stop').velocity({
         rotateZ: `${newPos}deg`
       }, {
-        duration: 2600,
+        duration,
         easing: 'easeInOutCubic',
         complete: function() {
           $(this).velocity({ rotateZ: `${targetPos}deg` }, 0);
@@ -45,14 +53,33 @@ export default Ember.Component.extend({
     });
   },
 
+  scrollToTop() {
+    const duration = baseDuration;
+    $('header').velocity('scroll', {
+      duration,
+      easing: 'easeOutQuint',
+      begin() {
+        $('body').addClass('prevent-scroll');
+      },
+      complete() {
+        $('body').removeClass('prevent-scroll');
+      }
+    });
+  },
+
   actions: {
 
     collapseGalaxy(event) {
-      this.rotateCelestialsTo(event.currentTarget.id);
+      const id = event.currentTarget.id;
+      if (id === this.get('currentRoute')) { return; }
+      this.rotateCelestialsTo(id);
+      this.scrollToTop();
+      this.set('collapsed', true);
     },
 
     expandGalaxy() {
       this.rotateCelestialsTo('index');
+      this.set('collapsed', false);
     },
 
     moonGlow(boolean) {
@@ -97,6 +124,6 @@ export default Ember.Component.extend({
   },
 
   didInsertElement() {
-    this.rotateCelestialsTo(this.get('currentRoute'));
+    this.rotateCelestialsTo(this.get('currentRoute'), true);
   }
 });
