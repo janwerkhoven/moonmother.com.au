@@ -30,7 +30,7 @@
           width: 88vw;
         }
         @media (max-width: 700px) {
-          width: 98vw;
+          width: 130vw; // To compensate for badly cropped SVG
         }
         img {
           width: 100%;
