@@ -1,10 +1,33 @@
 #about-page {
   section.two-third {
-    display: flex;
     background: white;
+    display: flex;
+    @media (max-width: 900px) {
+      flex-flow: column nowrap;
+    }
+    &.text-right {
+      @media (min-width: 901px) {
+        text-align: right;
+        flex-direction: row-reverse;
+        h3 {
+          &:after {
+            left: auto !important;
+            right: 0;
+          }
+        }
+        figcaption {
+          left: auto;
+          right: 3.3vw;
+        }
+      }
+    }
     figure {
       position: relative;
       width: 61vw;
+      flex: auto 0 0;
+      @media (max-width: 900px) {
+        width: 100vw;
+      }
       img {
         width: 100%;
       }
@@ -12,33 +35,82 @@
         position: absolute;
         text-transform: uppercase;
         font-size: 12px;
-        bottom: 18px;
+        bottom: 3vw;
         color: white;
-        font-family: $lato-regular;
+        font-family: $lato-bold;
         letter-spacing: 1px;
         line-height: 100%;
+        text-shadow: 0 0 4px rgba(black, 0.3);
+        left: 3.3vw;
       }
     }
-    > div {
+    .text {
       width: 39vw;
-      padding: 30px;
+      padding: 3vw 5vw;
       box-sizing: border-box;
-    }
-    h2 {
-      line-height: 140%;
-    }
-    > * {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       flex: auto 0 0;
-    }
-    &.text-left {
-      flex-direction: row-reverse;
-      figcaption {
-        right: 20px;
+      @media (max-width: 1100px) {
+        padding: 3vw;
       }
-    }
-    &.text-right {
-      figcaption {
-        left: 20px;
+      @media (max-width: 900px) {
+        width: 100vw;
+        padding: 100px 5vw;
+      }
+      > div {
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      h3 {
+        position: relative;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-family: $lato-bold;
+        line-height: 140%;
+        color: #424241;
+        &:after {
+          content: ' ';
+          width: 30px;
+          position: absolute;
+          height: 1px;
+          background: #424241;
+          bottom: -14px;
+          left: 0;
+        }
+      }
+      h2 {
+        font-size: 26px;
+        line-height: 140%;
+        margin: 40px 0 30px;
+        color: #424241;
+        @media (max-width: 1100px) {
+          font-size: 22px;
+          margin: 36px 0 20px;
+        }
+      }
+      p {
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 150%;
+        color: #333333;
+        @media (max-width: 1100px) {
+          font-size: 13px;
+        }
+      }
+      hr {
+        display: inline-block;
+        max-width: 100px;
+        width: 100%;
+        margin-top: 30px;
+        @media (max-width: 1100px) {
+          margin-top: 26px;
+        }
+        @media (max-width: 900px) {
+          display: none;
+        }
       }
     }
   }
