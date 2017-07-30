@@ -86,7 +86,7 @@ img.moon {
 img.moon + h2 {
   text-transform: uppercase;
   font-family: $lato-bold;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 100%;
   letter-spacing: 2px;
   text-align: center;
@@ -98,11 +98,10 @@ img.moon + h2 {
 
 section.heading {
   background: $page-wide-heading-bg;
-  padding: 120px 0;
+  padding: 110px 20px;
   h2 {
-    font-size: 20px;
-    text-transform: uppercase;
     color: $page-wide-heading-text;
+    line-height: 140%;
   }
 }
 section.in-the-stars {

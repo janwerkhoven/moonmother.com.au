@@ -25,18 +25,15 @@
           justify-content: center;
           align-items: center;
           flex-direction: column;
-          @media (max-width: 1400px) {
+          @media (max-width: 1220px) {
             width: 100%;
-            padding: 12vw 4vw;
-          }
-          @media (max-width: 1400px) {
             order: 1;
-            padding: 14vw 4vw;
+            padding: 100px 4vw;
           }
         }
         > img {
           height: 20vw;
-          @media (max-width: 1400px) {
+          @media (max-width: 1220px) {
             width: 50vw;
             height: 31.25vw;
             order: 2;
@@ -49,26 +46,28 @@
       }
     }
     h3 {
-      font-size: 32px;
+      font-size: 23px;
       line-height: 140%;
       margin-bottom: 20px;
       color: #424241;
     }
     p {
-      letter-spacing: 1px;
-      line-height: 150%;
       max-width: 500px;
       margin: 0 auto;
-      color: #333333;
-      font-size: 16px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      line-height: 150%;
     }
   }
   #services {
     background: white;
     padding: 50px;
     min-height: 500px;
+    @media (max-width: 900px) {
+      padding: 50px 4vw;
+    }
     > div {
-      max-width: 1000px;
+      max-width: 880px;
       display: flex;
       flex-flow: row wrap;
       margin: 0 auto;
@@ -77,24 +76,39 @@
         text-align: center;
         display: flex;
         flex-flow: column nowrap;
-        justify-content: center;
+        justify-content: flex-start;
+        box-sizing: border-box;
+        padding: 22px 40px;
+        @media (max-width: 900px) {
+          padding: 22px 3vw;
+        }
         @media (max-width: 600px) {
           width: 100%;
         }
+        > div {
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          height: 52px;
+        }
       }
-    }
-    img {
-      height: 26px;
-      width: auto;
     }
     h3 {
       font-size: 30px;
+      margin: 28px auto;
+      max-width: 240px;
+      color: #424241;
     }
     h4 {
-      font-size: 20px;
+      font-size: 23px;
+      margin: 20px auto 16px;
+      line-height: 140%;
+      color: #424241;
     }
     p {
-      letter-spacing: 2px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      line-height: 150%;
     }
   }
 }

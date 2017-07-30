@@ -9,13 +9,10 @@
       align-items: center;
       text-align: center;
     }
-    img.moon + h2 {
-      margin-bottom: 80px;
-    }
     h3 {
-      font-size: 36px;
+      font-size: 32px;
       color: #242221;
-      margin: 0 auto 31px;
+      margin: 59px auto 28px;
       line-height: 130%;
       @media (max-width: 440px) {
         font-size: 9vw;
@@ -25,7 +22,7 @@
     h4 {
       font-family: $lato-regular;
       color: #242221;
-      font-size: 22px;
+      font-size: 19px;
       line-height: 190%;
       letter-spacing: 2px;
       margin-bottom: 50px;
