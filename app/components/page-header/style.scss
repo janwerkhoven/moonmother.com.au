@@ -95,7 +95,7 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      transition: transform 2000ms ease;
+      // transition: transform 2000ms ease;
       a {
         position: relative;
         display: flex;
@@ -147,98 +147,98 @@
       font-size: 3.2vh;
     }
   }
-  &.index {
-    #home {
-      transform: rotate(0deg);
-      span {
-        width: 2vw !important;
-        height: 2vw !important;
-      }
-    }
-    #about {
-      transform: rotate(90deg);
-    }
-    #services {
-      transform: rotate(-90deg);
-    }
-  }
-  &.about {
-    #home {
-      transform: rotate(-90deg);
-    }
-    #about {
-      transform: rotate(0deg);
-      span {
-        width: 2vw !important;
-        height: 2vw !important;
-      }
-    }
-    #services {
-      transform: rotate(-270deg);
-    }
-  }
-  &.services {
-    #home {
-      transform: rotate(90deg);
-    }
-    #about {
-      transform: rotate(270deg);
-    }
-    #services {
-      transform: rotate(0deg);
-      span {
-        width: 2vw !important;
-        height: 2vw !important;
-      }
-    }
-  }
-  &.moon {
-    height: 29vh;
-    h1 {
-      display: none;
-    }
-    #logo {
-      img:not(:first-child) {
-        display: none;
-      }
-      transform: translateY(8.8vw) scale(0.75);
-    }
-    #constelation {
-      height: 38vh;
-      width: 38vh;
-      transform: translateX(-19vh);
-      background: none;
-      .planet a {
-        height: 16vw;
-        width: 16vw;
-      }
-    }
-    #galaxy {
-      top: 19vh;
-    }
-    &.index {
-      #about {
-        transform: rotate(60deg);
-      }
-      #services {
-        transform: rotate(-60deg);
-      }
-    }
-    &.about {
-      #home {
-        transform: rotate(60deg);
-      }
-      #services {
-        transform: rotate(-60deg);
-      }
-    }
-    &.services {
-      #home {
-        transform: rotate(60deg);
-      }
-      #about {
-        transform: rotate(-60deg);
-      }
-    }
-  }
+  // &.indexx {
+  //   #home {
+  //     transform: rotate(0deg);
+  //     span {
+  //       width: 2vw !important;
+  //       height: 2vw !important;
+  //     }
+  //   }
+  //   #about {
+  //     transform: rotate(90deg);
+  //   }
+  //   #services {
+  //     transform: rotate(-90deg);
+  //   }
+  // }
+  // &.aboutx {
+  //   #home {
+  //     transform: rotate(-90deg);
+  //   }
+  //   #about {
+  //     transform: rotate(0deg);
+  //     span {
+  //       width: 2vw !important;
+  //       height: 2vw !important;
+  //     }
+  //   }
+  //   #services {
+  //     transform: rotate(-270deg);
+  //   }
+  // }
+  // &.servicesx {
+  //   #home {
+  //     transform: rotate(90deg);
+  //   }
+  //   #about {
+  //     transform: rotate(270deg);
+  //   }
+  //   #services {
+  //     transform: rotate(0deg);
+  //     span {
+  //       width: 2vw !important;
+  //       height: 2vw !important;
+  //     }
+  //   }
+  // }
+  // &.moonx {
+  //   height: 29vh;
+  //   h1 {
+  //     display: none;
+  //   }
+  //   #logo {
+  //     img:not(:first-child) {
+  //       display: none;
+  //     }
+  //     transform: translateY(8.8vw) scale(0.75);
+  //   }
+  //   #constelation {
+  //     height: 38vh;
+  //     width: 38vh;
+  //     transform: translateX(-19vh);
+  //     background: none;
+  //     .planet a {
+  //       height: 16vw;
+  //       width: 16vw;
+  //     }
+  //   }
+  //   #galaxy {
+  //     top: 19vh;
+  //   }
+  //   &.index {
+  //     #about {
+  //       transform: rotate(60deg);
+  //     }
+  //     #services {
+  //       transform: rotate(-60deg);
+  //     }
+  //   }
+  //   &.about {
+  //     #home {
+  //       transform: rotate(60deg);
+  //     }
+  //     #services {
+  //       transform: rotate(-60deg);
+  //     }
+  //   }
+  //   &.services {
+  //     #home {
+  //       transform: rotate(60deg);
+  //     }
+  //     #about {
+  //       transform: rotate(-60deg);
+  //     }
+  //   }
+  // }
 }
