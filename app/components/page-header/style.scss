@@ -3,6 +3,8 @@ $speed: 2400ms;
   position: relative;
   background: black;
   height: 100vh;
+  min-height: 700px;
+  min-width: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -54,6 +56,10 @@ $speed: 2400ms;
       height: 140vh;
       overflow: hidden;
       transform: translate(-50vw, -70vh);
+      @media (max-height: 700px) {
+        height: 980px;
+        transform: translate(-50vw, -490px);
+      }
       .center {
         position: absolute;
         left: 50%;
@@ -66,6 +72,12 @@ $speed: 2400ms;
           width: 140vh;
           top: -70vh;
           left: -70vh;
+          @media (max-height: 700px) {
+            height: 980px;
+            width: 980px;
+            top: -490px;
+            left: -490px;
+          }
           animation: rotate 200000ms linear infinite;
           background: black radial-gradient(ellipse at center, rgba(8, 22, 45, 0.75) 10%, rgba(8, 22, 45, 0) 60%);
           img {
@@ -80,7 +92,6 @@ $speed: 2400ms;
     transition: all $speed ease;
     bottom: 0;
     left: 50%;
-    transform: translateX(-24vh);
     position: absolute;
     z-index: 1;
     display: flex;
@@ -88,19 +99,28 @@ $speed: 2400ms;
     align-items: center;
     border: 1px solid $galaxy-orbit-line-grey;
     border-radius: 50%;
-    height: 48vh;
-    width: 48vh;
     box-sizing: border-box;
     background: rgba(black, 0.35);
+    height: 48vh;
+    width: 48vh;
+    max-width: 70vw;
+    max-height: 70vw;
+    min-width: 224px;
+    min-height: 224px;
+    transform: translateX(-50%);
+    @media (max-height: 700px) {
+      height: 336px;
+      width: 336px;
+    }
     > * {
       position: absolute;
       z-index: 1;
     }
     #logo {
       transition: all $speed ease;
-      top: 8.2vh;
-      width: 23vh;
       z-index: 2;
+      width: 50%;
+      top: 20%;
       a {
         display: block;
         width: 100%;
@@ -187,8 +207,11 @@ $speed: 2400ms;
   #tagline {
     position: absolute;
     z-index: 1;
-    top: 50%;
+    top: 55%;
     transform: translateY(25vh);
+    @media (max-height: 700px) {
+      transform: translateY(175px);
+    }
     h1 {
       margin: 0 auto;
       max-width: 32.5vh;
@@ -196,6 +219,10 @@ $speed: 2400ms;
       text-align: center;
       line-height: 150%;
       font-size: 3.2vh;
+      @media (max-height: 700px) {
+        font-size: 22.4px;
+        max-width: 227.5px;
+      }
     }
   }
 }
