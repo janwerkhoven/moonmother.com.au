@@ -42,6 +42,7 @@ $speed: 2400ms;
         #logo {
           top: 58%;
           width: 43%;
+          left: 28.5%;
           #moon {
             transform: scale(0.1) translateY(-270px);
             opacity: 0;
@@ -136,6 +137,7 @@ $speed: 2400ms;
       z-index: 2;
       width: 50%;
       top: 20%;
+      left: 25%;
       a {
         display: block;
         width: 100%;
@@ -234,6 +236,7 @@ $speed: 2400ms;
     z-index: 1;
     top: 55%;
     transform: translateY(25vh);
+    width: 100%;
     @media (max-height: 700px) {
       transform: translateY(175px);
     }
