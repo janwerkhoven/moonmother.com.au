@@ -42,8 +42,17 @@ $speed: 2400ms;
         #logo {
           top: 58%;
           width: 43%;
-          img:not(:first-child) {
-            display: none;
+          #moon {
+            transform: scale(0.1) translateY(-270px);
+            opacity: 0;
+          }
+          #mother {
+            transform: scale(0.1) translateY(-470px);
+            opacity: 0;
+          }
+          #production {
+            transform: scale(0.1) translateY(-640px);
+            opacity: 0;
           }
         }
       }
@@ -132,6 +141,16 @@ $speed: 2400ms;
         width: 100%;
         img {
           width: 100%;
+          &#owl {
+            position: relative;
+            z-index: 2;
+          }
+          &:not(#owl) {
+            position: relative;
+            z-index: 1;
+            transition: all 2400ms ease;
+            transition-property: transform, opacity;
+          }
         }
       }
     }
