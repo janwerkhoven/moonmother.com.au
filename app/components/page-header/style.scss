@@ -2,7 +2,6 @@ $speed: 2400ms;
 #page-header {
   position: relative;
   background: black;
-  height: 100vh;
   min-height: 700px;
   min-width: 320px;
   display: flex;
@@ -10,8 +9,15 @@ $speed: 2400ms;
   align-items: center;
   flex-direction: column;
   transition: all $speed ease;
+  height: 100vh;
+  @media (max-width: 700px) {
+    height: 150vw;
+    max-height: 100vh;
+    min-height: auto;
+  }
   &.collapsed {
     height: 240px;
+    min-height: auto;
     @media (max-width: 700px) {
       height: 34.28vw;
     }

@@ -126,10 +126,14 @@ section.in-the-stars {
     color: #dedddd;
     color: $light-grey;
     font-family: $garamond-regular;
-    font-size: 27px;
-    max-width: 540px;
+    font-size: 25px;
+    max-width: 520px;
     line-height: 150%;
     margin-top: 34px;
+    @media (max-width: 700px) {
+      font-size: 22px;
+      max-width: 320px !important;
+    }
   }
   hr {
     max-width: 240px;
