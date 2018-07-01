@@ -4,13 +4,15 @@
     <h2>Contact us</h2>
     <h3>Contact our helpful staff.</h3>
     <h4>PO BOX 6196 <nobr>St Kilda Rd Central</nobr>, <nobr>Melbourne, VIC, 8008</nobr></h4>
-    <a class="button dark-grey" target="_blank" href="mailto:biz@moonmother.com.au">Email us</a>
-    <a class="button dark-grey" target="_blank" href="tel:1300556264">1300 556 264</a>
+    {{!-- <a class="button dark-grey" target="_blank" href="mailto:biz@moonmother.com.au">Email us</a> --}}
+    <button class="dark-grey" onclick={{action 'showEmail'}}>Email us</button>
+    <p><a href="mailto:biz@moonmother.com.au" target="_blank">biz@moonmother.com.au</a></p>
+    {{!-- <a class="button dark-grey" target="_blank" href="tel:1300556264">1300 556 264</a> --}}
+    <button class="dark-grey" onclick={{action 'showPhone'}}>Call us</button>
+    <p><a href="tel:0419388646" target="_blank">M 0419 388 646</a></p>
     <img src="/assets/img/jenny-moon.jpg" alt="Jenny Moon in person" class="jenny">
     <h5>Jenny Moon</h5>
     <p>Managing Director</p>
-    <p><a href="tel:0419388646" target="_blank">M 0419 388 646</a></p>
-    <p><a href="mailto:biz@moonmother.com.au" target="_blank">biz@moonmother.com.au</a></p>
   </div>
 </section>
 
