@@ -1,12 +1,16 @@
 import Service from '@ember/service';
 import config from '../config/environment';
 
-const ready = config.googleAnalytics && config.googleAnalytics.trackingId && ga ? true : false;
+const ready =
+  config.googleAnalytics && config.googleAnalytics.trackingId && ga
+    ? true
+    : false;
 
 export default Service.extend({
-
   startTracking() {
-    if (!ready) { return; }
+    if (!ready) {
+      return;
+    }
     ga('create', {
       trackingId: config.googleAnalytics.trackingId
     });
@@ -17,14 +21,15 @@ export default Service.extend({
   },
 
   sendPageView(currentRoute) {
-    if (!ready) { return; }
+    if (!ready) {
+      return;
+    }
     ga('set', {
       page: window.location.pathname,
       hostname: window.location.host,
       title: document.title,
-      dimension3: currentRoute.routeName.replace(/\./g, '/'),
+      dimension3: currentRoute.routeName.replace(/\./g, '/')
     });
     ga('send', 'pageview');
   }
-
 });

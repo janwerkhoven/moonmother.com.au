@@ -19,15 +19,12 @@ module.exports = function(environment) {
   };
 
   if (environment === 'production') {
-
   }
 
   if (environment === 'staging') {
-
   }
 
   if (environment === 'development') {
-
   }
 
   if (environment === 'test') {

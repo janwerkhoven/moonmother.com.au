@@ -14,7 +14,8 @@ export default Component.extend({
       links: true,
       limit: 10,
       resolution: 'standard_resolution',
-      template: '<div><a href={{link}} target="_blank"><img src={{image}} alt="{{caption}}"/></a></div>'
+      template:
+        '<div><a href={{link}} target="_blank"><img src={{image}} alt="{{caption}}"/></a></div>'
     });
     feed.run();
   }

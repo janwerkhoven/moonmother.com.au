@@ -15,7 +15,9 @@ const Router = EmberRouter.extend({
     this.get('googleAnalytics').startTracking();
   }),
   onEachDidTransition: on('didTransition', function() {
-    const currentRoute = getOwner(this).lookup('route:' + this.currentRouteName);
+    const currentRoute = getOwner(this).lookup(
+      'route:' + this.currentRouteName
+    );
     this.get('seo').setMetaTags(currentRoute);
     this.get('googleAnalytics').sendPageView(currentRoute);
   })

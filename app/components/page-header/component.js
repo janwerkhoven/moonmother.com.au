@@ -1,7 +1,7 @@
 import { inject as service } from '@ember/service';
 import { alias } from '@ember/object/computed';
 import Component from '@ember/component';
-import $ from "jquery";
+import $ from 'jquery';
 
 let positions = [-90, 0, 90];
 let degrees = [-90, 0, 90];
@@ -40,20 +40,28 @@ export default Component.extend({
 
     const duration = instant ? 0 : baseDuration;
     $(`.planet`).each(function(i) {
-      if ($(this).hasClass('velocity-animating')) { return; }
+      if ($(this).hasClass('velocity-animating')) {
+        return;
+      }
       const currentPos = degrees[i];
       let targetPos = positions[i];
       let newPos = targetPos <= currentPos ? targetPos + 360 : targetPos;
-      $(this).velocity('stop').delay(i * 100).velocity({
-        rotateZ: `${newPos}deg`
-      }, {
-        duration,
-        easing,
-        complete: function() {
-          $(this).velocity({ rotateZ: `${targetPos}deg` }, 0);
-          degrees[i] = targetPos;
-        }
-      })
+      $(this)
+        .velocity('stop')
+        .delay(i * 100)
+        .velocity(
+          {
+            rotateZ: `${newPos}deg`
+          },
+          {
+            duration,
+            easing,
+            complete: function() {
+              $(this).velocity({ rotateZ: `${targetPos}deg` }, 0);
+              degrees[i] = targetPos;
+            }
+          }
+        );
     });
   },
 
@@ -78,7 +86,9 @@ export default Component.extend({
   actions: {
     collapseGalaxy(event) {
       const id = event.currentTarget.id;
-      if (id === this.get('currentRoute')) { return; }
+      if (id === this.get('currentRoute')) {
+        return;
+      }
       this.set('collapsed', true);
       this.rotateCelestialsTo(id);
       this.scrollToTop();

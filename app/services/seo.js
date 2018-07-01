@@ -5,10 +5,10 @@ import config from '../config/environment';
 
 // Set the defaults to whatever is in index.html
 const defaultTitle = document.title;
-const defaultDescription = document.head.querySelector('meta[name=description]').content;
+const defaultDescription = document.head.querySelector('meta[name=description]')
+  .content;
 
 export default Service.extend({
-
   setMetaTags(route) {
     const title = route.get('seoTitle') || defaultTitle;
     const description = route.get('seoDescription') || defaultDescription;
@@ -27,21 +27,24 @@ export default Service.extend({
   },
 
   setTitle(string) {
-    return document.title = string;
+    return (document.title = string);
   },
 
   setDescription(string) {
-    return document.head.querySelector('meta[name=description]').content = string;
+    return (document.head.querySelector(
+      'meta[name=description]'
+    ).content = string);
   },
 
   setCanonical(url) {
-    return document.head.querySelector('link[rel=canonical]').href = url;
+    return (document.head.querySelector('link[rel=canonical]').href = url);
   },
 
   setRobot(robotIndex, robotFollow) {
     const index = robotIndex === false ? 'noindex' : 'index';
     const follow = robotFollow === false ? 'nofollow' : 'follow';
-    return document.head.querySelector('meta[name=robots]').content = `${index}, ${follow}`;
+    return (document.head.querySelector(
+      'meta[name=robots]'
+    ).content = `${index}, ${follow}`);
   }
-
 });

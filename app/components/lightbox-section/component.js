@@ -17,16 +17,35 @@ export default Component.extend({
     },
     mouseEnter(event) {
       const id = event.currentTarget.id;
-      this.$(`figure#${id}`).velocity('stop').velocity({
-        opacity: 1
-      }, 300, 'ease-out').siblings().velocity('stop').velocity({
-        opacity: 0.6
-      }, 300, 'ease-out');
+      this.$(`figure#${id}`)
+        .velocity('stop')
+        .velocity(
+          {
+            opacity: 1
+          },
+          300,
+          'ease-out'
+        )
+        .siblings()
+        .velocity('stop')
+        .velocity(
+          {
+            opacity: 0.6
+          },
+          300,
+          'ease-out'
+        );
     },
     mouseLeave() {
-      this.$('figure').velocity('stop').velocity({
-        opacity: 1
-      }, 300, 'ease-out');
-    },
+      this.$('figure')
+        .velocity('stop')
+        .velocity(
+          {
+            opacity: 1
+          },
+          300,
+          'ease-out'
+        );
+    }
   }
 });

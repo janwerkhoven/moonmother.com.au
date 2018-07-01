@@ -2,7 +2,6 @@ import $ from 'jquery';
 import Service from '@ember/service';
 
 export default Service.extend({
-
   scrollToMe() {
     $('#contact').velocity('scroll', {
       duration: 3200,
@@ -15,5 +14,4 @@ export default Service.extend({
       }
     });
   }
-
 });
