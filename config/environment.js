@@ -19,15 +19,12 @@ module.exports = function(environment) {
   };
 
   if (environment === 'production') {
-
   }
 
   if (environment === 'staging') {
-
   }
 
   if (environment === 'development') {
-
   }
 
   if (environment === 'test') {
@@ -35,6 +32,7 @@ module.exports = function(environment) {
     ENV.APP.LOG_ACTIVE_GENERATION = false;
     ENV.APP.LOG_VIEW_LOOKUPS = false;
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
   return ENV;

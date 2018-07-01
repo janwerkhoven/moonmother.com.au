@@ -1,29 +1,29 @@
-import Component from "@ember/component";
-import { get } from "@ember/object";
-import { inject as service } from "@ember/service";
+import Component from '@ember/component';
+import { get } from '@ember/object';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
-  tagName: "footer",
-  elementId: "page-footer",
+  tagName: 'footer',
+  elementId: 'page-footer',
 
   googleAnalytics: service(),
 
   actions: {
     showEmail() {
       // TODO: trigger once per page
-      get("googleAnalytics").sendEvent(
-        "conversions",
+      get('googleAnalytics').sendEvent(
+        'conversions',
         'user clicked "Email us"',
-        get(this, "currentRoute")
+        get(this, 'currentRoute')
       );
       // Send conversion event
       // Show email
     },
     showPhone() {
-      get("googleAnalytics").sendEvent(
-        "conversions",
+      get('googleAnalytics').sendEvent(
+        'conversions',
         'user clicked "Email us"',
-        get(this, "currentRoute")
+        get(this, 'currentRoute')
       );
       // Send conversion event
       // Show phone
@@ -40,13 +40,13 @@ export default Component.extend({
     let feed = new Instafeed({
       // userId: '1437536913', // Hannah
       // accessToken: '1437536913.1677ed0.02677d6ce703465e80498fcd44f92c54', // Hannah
-      get: "user",
-      userId: "2932372041",
-      accessToken: "2932372041.7c3728d.a7f05e286ab942c6b71b4c58d3f597e4",
-      sortBy: "random",
+      get: 'user',
+      userId: '2932372041',
+      accessToken: '2932372041.7c3728d.a7f05e286ab942c6b71b4c58d3f597e4',
+      sortBy: 'random',
       links: true,
       limit: 10,
-      resolution: "standard_resolution",
+      resolution: 'standard_resolution',
       template:
         '<div><a href={{link}} target="_blank"><img src={{image}} alt="{{caption}}"/></a></div>'
     });

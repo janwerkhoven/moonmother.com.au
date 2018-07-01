@@ -95,7 +95,12 @@ $speed: 2400ms;
             left: -490px;
           }
           animation: rotate 200000ms linear infinite;
-          background: black radial-gradient(ellipse at center, rgba(8, 22, 45, 0.75) 10%, rgba(8, 22, 45, 0) 60%);
+          background: black
+            radial-gradient(
+              ellipse at center,
+              rgba(8, 22, 45, 0.75) 10%,
+              rgba(8, 22, 45, 0) 60%
+            );
           img {
             height: 100%;
             width: 100%;

@@ -1,6 +1,7 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'section',
   elementId: 'what-we-do',
   lightbox: null,
@@ -8,24 +9,43 @@ export default Ember.Component.extend({
     openLightbox(event) {
       const id = event.currentTarget.id;
       this.set('lightbox', id);
-      Ember.$('body').addClass('prevent-scroll');
+      $('body').addClass('prevent-scroll');
     },
     closeLightbox() {
       this.set('lightbox', null);
-      Ember.$('body').removeClass('prevent-scroll');
+      $('body').removeClass('prevent-scroll');
     },
     mouseEnter(event) {
       const id = event.currentTarget.id;
-      this.$(`figure#${id}`).velocity('stop').velocity({
-        opacity: 1
-      }, 300, 'ease-out').siblings().velocity('stop').velocity({
-        opacity: 0.6
-      }, 300, 'ease-out');
+      this.$(`figure#${id}`)
+        .velocity('stop')
+        .velocity(
+          {
+            opacity: 1
+          },
+          300,
+          'ease-out'
+        )
+        .siblings()
+        .velocity('stop')
+        .velocity(
+          {
+            opacity: 0.6
+          },
+          300,
+          'ease-out'
+        );
     },
     mouseLeave() {
-      this.$('figure').velocity('stop').velocity({
-        opacity: 1
-      }, 300, 'ease-out');
-    },
+      this.$('figure')
+        .velocity('stop')
+        .velocity(
+          {
+            opacity: 1
+          },
+          300,
+          'ease-out'
+        );
+    }
   }
 });

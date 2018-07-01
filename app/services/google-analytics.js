@@ -1,36 +1,39 @@
-import Ember from "ember";
-import config from "../config/environment";
+import Service from '@ember/service';
+import config from '../config/environment';
 
 const ready =
   config.googleAnalytics && config.googleAnalytics.trackingId && ga
     ? true
     : false;
 
-export default Ember.Service.extend({
+export default Service.extend({
+  // Set up the GA tracking object
   startTracking() {
     if (!ready) {
       return;
     }
-    ga("create", {
+    ga('create', {
       trackingId: config.googleAnalytics.trackingId
     });
-    ga("set", {
+    ga('set', {
       dimension1: config.modulePrefix,
       dimension2: config.environment
     });
   },
 
+  // Send a page view to GA
+  // Documentation: https://developers.google.com/analytics/devguides/collection/analyticsjs/pages
   sendPageView(currentRoute) {
     if (!ready) {
       return;
     }
-    ga("set", {
+    ga('set', {
       page: window.location.pathname,
       hostname: window.location.host,
       title: document.title,
-      dimension3: currentRoute.routeName.replace(/\./g, "/")
+      dimension3: currentRoute.routeName.replace(/\./g, '/')
     });
-    ga("send", "pageview");
+    ga('send', 'pageview');
   },
 
   // Send event to Google Analytics
@@ -40,7 +43,7 @@ export default Ember.Service.extend({
       return;
     }
     const obj = {
-      hitType: "event",
+      hitType: 'event',
       eventCategory: category,
       eventAction: action
     };
@@ -50,6 +53,6 @@ export default Ember.Service.extend({
     if (value) {
       obj.eventValue = value;
     }
-    ga("send", obj);
+    ga('send', obj);
   }
 });

@@ -154,12 +154,12 @@ section.photoreel {
   background-position: 50% 50%;
   background-repeat: repeat;
   background-size: cover;
-  background: url("/assets/img/photoreel@2x.jpg") repeat 50% 50% / cover;
+  background: url('/assets/img/photoreel@2x.jpg') repeat 50% 50% / cover;
   &.homepage {
-    background-image: url("/assets/img/homepage/photoreel@2x.jpg");
+    background-image: url('/assets/img/homepage/photoreel@2x.jpg');
   }
   &.services {
-    background-image: url("/assets/img/services-photoreel@2x.jpg");
+    background-image: url('/assets/img/services-photoreel@2x.jpg');
   }
   @media (min-width: 1600px) {
     height: 320px;
@@ -167,19 +167,19 @@ section.photoreel {
   }
   @media (max-width: 1200px) {
     &.homepage {
-      background-image: url("/assets/img/homepage/photoreel.jpg");
+      background-image: url('/assets/img/homepage/photoreel.jpg');
     }
     &.services {
-      background-image: url("/assets/img/services-photoreel.jpg");
+      background-image: url('/assets/img/services-photoreel.jpg');
     }
   }
   @media (max-width: 600px) {
     height: 33.333vw;
     &.homepage {
-      background-image: url("/assets/img/homepage/photoreel-mobile@2x.jpg");
+      background-image: url('/assets/img/homepage/photoreel-mobile@2x.jpg');
     }
     &.services {
-      background-image: url("/assets/img/services-photoreel-mobile@2x.jpg");
+      background-image: url('/assets/img/services-photoreel-mobile@2x.jpg');
     }
   }
 }
@@ -249,7 +249,7 @@ button {
   box-sizing: border-box;
   white-space: nowrap;
   &.white-background {
-    background: #F4F4F4;
+    background: #f4f4f4;
     line-height: 52px;
     padding: 0 50px;
     letter-spacing: 1px;
@@ -261,7 +261,7 @@ button {
     }
   }
   &.white-border {
-    border: 1px solid #FFF;
+    border: 1px solid #fff;
     color: white;
     line-height: 60px;
     padding: 0 50px;
@@ -272,7 +272,7 @@ button {
     transition: all 200ms ease;
     transition-property: background, padding;
     &:hover {
-      background: RGBA(255,255,255,0.2);
+      background: RGBA(255, 255, 255, 0.2);
       padding: 0 60px;
     }
   }
