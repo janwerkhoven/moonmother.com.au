@@ -1,28 +1,44 @@
 /* eslint-env node */
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 const env = EmberApp.env();
-const isProductionLikeBuild = ['production', 'staging'].includes(env);
+const isProductionLike = ['production', 'staging'].includes(env);
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Makes SASS listent to file changes in the component folders
     sassOptions: {
-      includePaths: ['app/components']
+      includePaths: ['app/components'],
+      overwrite: true
     },
     // Adds CSS browser prefixes
     autoprefixer: {
-      browsers: ['> 1%', 'Explorer > 9', 'Firefox >= 17', 'Chrome >= 10', 'Safari >= 6', 'iOS >= 6'],
+      browsers: [
+        '> 1%',
+        'Explorer > 10',
+        'Firefox >= 17',
+        'Chrome >= 10',
+        'Safari >= 6',
+        'iOS >= 6'
+      ],
       cascade: false,
       remove: false
     },
+    // Prevent CSS minification in development and tests
     minifyCSS: {
-      enabled: isProductionLikeBuild
+      enabled: isProductionLike
     },
+    // Prevent JS minification in development and tests
     minifyJS: {
-      enabled: isProductionLikeBuild
+      enabled: isProductionLike
     },
+    // Enable source maps for debugging and Sentry
     sourcemaps: {
-      enabled: false
+      enabled: true,
+      extensions: ['js']
+    },
+    // Include polyfills for old browsers
+    'ember-cli-babel': {
+      includePolyfill: true
     }
   });
 
