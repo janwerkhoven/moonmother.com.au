@@ -8,25 +8,26 @@ export default Component.extend({
 
   googleAnalytics: service(),
 
+  // Email and phone are hidden until clicked so we can measure conversions
+  showEmail: false,
+  showPhone: false,
+
+  sendConversion(button) {
+    get(this, 'googleAnalytics').sendEvent(
+      'conversions',
+      `user clicked "${button}"`,
+      location.href
+    );
+  },
+
   actions: {
     showEmail() {
-      // TODO: trigger once per page
-      get('googleAnalytics').sendEvent(
-        'conversions',
-        'user clicked "Email us"',
-        get(this, 'currentRoute')
-      );
-      // Send conversion event
-      // Show email
+      this.toggleProperty('showEmail');
+      this.sendConversion('Email us');
     },
     showPhone() {
-      get('googleAnalytics').sendEvent(
-        'conversions',
-        'user clicked "Email us"',
-        get(this, 'currentRoute')
-      );
-      // Send conversion event
-      // Show phone
+      this.toggleProperty('showPhone');
+      this.sendConversion('Call us');
     }
   },
 
@@ -38,8 +39,6 @@ export default Component.extend({
     // https://www.instagram.com/oauth/authorize/?client_id=12338153407546998e72a429b4dd5684&redirect_uri=http://localhost:4200&response_type=token&scope=public_content
     // http://localhost:4200/#access_token=2932372041.7c3728d.a7f05e286ab942c6b71b4c58d3f597e4
     let feed = new Instafeed({
-      // userId: '1437536913', // Hannah
-      // accessToken: '1437536913.1677ed0.02677d6ce703465e80498fcd44f92c54', // Hannah
       get: 'user',
       userId: '2932372041',
       accessToken: '2932372041.7c3728d.a7f05e286ab942c6b71b4c58d3f597e4',

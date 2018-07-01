@@ -25,11 +25,14 @@
       font-size: 19px;
       line-height: 190%;
       letter-spacing: 2px;
-      margin-bottom: 50px;
+      margin-bottom: 30px;
       max-width: 450px;
       @media (max-width: 366px) {
         font-size: 6vw;
       }
+    }
+    button {
+      margin: 20px 0;
     }
     img.jenny {
       width: 200px;
@@ -49,6 +52,10 @@
       color: #242221;
       font-size: 20px;
       margin-bottom: 10px;
+      &#email,
+      &#phone {
+        margin: 20px 0 40px;
+      }
       a {
         text-decoration: none;
         color: #242221;
