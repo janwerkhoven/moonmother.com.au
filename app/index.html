@@ -14,8 +14,8 @@
 
     {{content-for "head"}}
 
-    <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
-    <link rel="stylesheet" href="{{rootURL}}assets/moonmother.css">
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/vendor.css">
+    <link integrity="" rel="stylesheet" href="{{rootURL}}assets/moonmother.css">
 
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="{{rootURL}}assets/favicons/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{rootURL}}assets/favicons/apple-touch-icon-114x114.png" />
@@ -57,26 +57,26 @@
       <link href="{{rootURL}}assets/css/outdatedbrowser.min.css" type="text/css" rel="stylesheet" />
       <script src="{{rootURL}}assets/js/outdatedbrowser.min.js" type="text/javascript"></script>
       <script type="text/javascript">
-        function addLoadEvent(func) {
-          var oldonload = window.onload;
-          if (typeof window.onload != 'function') {
-            window.onload = func;
-          } else {
-            window.onload = function() {
-              if (oldonload) {
-                oldonload();
-              }
-              func();
+      function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != "function") {
+          window.onload = func;
+        } else {
+          window.onload = function() {
+            if (oldonload) {
+              oldonload();
             }
-          }
+            func();
+          };
         }
-        addLoadEvent(function() {
-          outdatedBrowser({
-            bgColor: '#f25648',
-            color: '#ffffff',
-            lowerThan: 'transform'
-          })
+      }
+      addLoadEvent(function() {
+        outdatedBrowser({
+          bgColor: "#f25648",
+          color: "#ffffff",
+          lowerThan: "transform"
         });
+      });
       </script>
     </div>
 
