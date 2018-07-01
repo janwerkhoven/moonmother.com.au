@@ -1,35 +1,14 @@
 module.exports = {
   root: true,
-  globals: {
-    ga: true,
-    Instafeed: true
-  },
   parserOptions: {
     ecmaVersion: 2017,
     sourceType: 'module'
   },
-  extends: 'eslint:recommended',
-  env: {
-    browser: true
-  },
-  rules: {
-    'no-console': 1
-  }
-};
-
-
-module.exports = {
-  root: true,
-  parserOptions: {
-    ecmaVersion: 2017,
-    sourceType: 'module'
-  },
-  plugins: [
-    'ember'
-  ],
+  plugins: ['ember', 'prettier'],
   extends: [
     'eslint:recommended',
-    'plugin:ember/recommended'
+    'plugin:ember/recommended',
+    'plugin:prettier/recommended'
   ],
   env: {
     browser: true
@@ -39,6 +18,7 @@ module.exports = {
     Instafeed: true
   },
   rules: {
+    'prettier/prettier': 'error',
     'no-debugger': 'warn',
     'no-console': 'warn'
   },
