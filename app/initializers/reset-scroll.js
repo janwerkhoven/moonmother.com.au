@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
 export function initialize() {
-  Ember.Route.reopen({
+  Route.reopen({
     activate() {
       this._super();
       // window.scrollTo(0, 0);

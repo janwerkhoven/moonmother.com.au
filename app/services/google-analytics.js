@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import Service from '@ember/service';
 import config from '../config/environment';
 
 const ready = config.googleAnalytics && config.googleAnalytics.trackingId && ga ? true : false;
 
-export default Ember.Service.extend({
+export default Service.extend({
 
   startTracking() {
     if (!ready) { return; }

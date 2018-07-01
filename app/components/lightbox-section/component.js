@@ -1,6 +1,7 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'section',
   elementId: 'what-we-do',
   lightbox: null,
@@ -8,11 +9,11 @@ export default Ember.Component.extend({
     openLightbox(event) {
       const id = event.currentTarget.id;
       this.set('lightbox', id);
-      Ember.$('body').addClass('prevent-scroll');
+      $('body').addClass('prevent-scroll');
     },
     closeLightbox() {
       this.set('lightbox', null);
-      Ember.$('body').removeClass('prevent-scroll');
+      $('body').removeClass('prevent-scroll');
     },
     mouseEnter(event) {
       const id = event.currentTarget.id;

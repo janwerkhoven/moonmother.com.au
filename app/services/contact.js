@@ -1,16 +1,17 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import Service from '@ember/service';
 
-export default Ember.Service.extend({
+export default Service.extend({
 
   scrollToMe() {
-    Ember.$('#contact').velocity('scroll', {
+    $('#contact').velocity('scroll', {
       duration: 3200,
       easing: 'easeInOutQuint',
       begin() {
-        Ember.$('body').addClass('prevent-scroll');
+        $('body').addClass('prevent-scroll');
       },
       complete() {
-        Ember.$('body').removeClass('prevent-scroll');
+        $('body').removeClass('prevent-scroll');
       }
     });
   }

@@ -1,21 +1,21 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import { getOwner } from '@ember/application';
+import { on } from '@ember/object/evented';
 import EmberRouter from '@ember/routing/router';
 import config from './config/environment';
-
-const { inject } = Ember;
 
 const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.rootURL,
 
-  seo: inject.service(),
-  googleAnalytics: inject.service(),
+  seo: service(),
+  googleAnalytics: service(),
 
-  onInit: Ember.on('init', function() {
+  onInit: on('init', function() {
     this.get('googleAnalytics').startTracking();
   }),
-  onEachDidTransition: Ember.on('didTransition', function() {
-    const currentRoute = Ember.getOwner(this).lookup('route:' + this.currentRouteName);
+  onEachDidTransition: on('didTransition', function() {
+    const currentRoute = getOwner(this).lookup('route:' + this.currentRouteName);
     this.get('seo').setMetaTags(currentRoute);
     this.get('googleAnalytics').sendPageView(currentRoute);
   })

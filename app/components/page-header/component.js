@@ -1,19 +1,19 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import { alias } from '@ember/object/computed';
+import Component from '@ember/component';
 import $ from "jquery";
-
-const { computed, inject } = Ember;
 
 let positions = [-90, 0, 90];
 let degrees = [-90, 0, 90];
 const baseDuration = 2600;
 const easing = 'easeInOutCubic';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'header',
   elementId: 'page-header',
   classNameBindings: ['currentRoute', 'collapsed:collapsed'],
-  router: inject.service('-routing'),
-  currentRoute: computed.alias('router.currentRouteName'),
+  router: service('-routing'),
+  currentRoute: alias('router.currentRouteName'),
   collapsed: false,
 
   rotateCelestialsTo(id, instant) {

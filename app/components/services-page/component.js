@@ -1,11 +1,10 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import Component from '@ember/component';
 
-const { inject } = Ember;
-
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'main',
   elementId: 'services-page',
-  contact: inject.service(),
+  contact: service(),
   actions: {
     scrollToContact() {
       this.get('contact').scrollToMe();
