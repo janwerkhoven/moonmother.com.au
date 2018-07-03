@@ -1,0 +1,24 @@
+// For maintaining the height to width ratio 1:1 we use the padding-top hack.
+// https://css-tricks.com/aspect-ratio-boxes/
+// https://www.w3schools.com/howto/howto_css_aspect_ratio.asp
+picture.responsive-picture {
+  position: relative;
+  padding-top: 100%;
+  width: 100%;
+  &.loading {
+    background: grey;
+  }
+  &.done {
+    background: green;
+  }
+  &.error {
+    background: red;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

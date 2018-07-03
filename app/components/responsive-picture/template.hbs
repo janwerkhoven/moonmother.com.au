@@ -1,0 +1,11 @@
+{{#each sources as |source|}}
+  <source srcset="{{source.srcset}}" media="{{source.media}}">
+{{/each}}
+<img
+  src="{{src}}"
+  alt="{{alt}}"
+  width="200px"
+  height="200px"
+  onload={{action onLoad}}
+  onerror={{action onError}}
+>
