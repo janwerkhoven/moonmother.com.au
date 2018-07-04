@@ -13,7 +13,7 @@ export default Component.extend({
   showPhone: false,
 
   sendConversion(button) {
-    get(this, 'googleAnalytics').sendEvent(
+    this.googleAnalytics.sendEvent(
       'conversions',
       `user clicked "${button}"`,
       location.href

@@ -12,14 +12,14 @@ const Router = EmberRouter.extend({
   googleAnalytics: service(),
 
   onInit: on('init', function() {
-    this.get('googleAnalytics').startTracking();
+    this.googleAnalytics.startTracking();
   }),
   onEachDidTransition: on('didTransition', function() {
     const currentRoute = getOwner(this).lookup(
       'route:' + this.currentRouteName
     );
-    this.get('seo').setMetaTags(currentRoute);
-    this.get('googleAnalytics').sendPageView(currentRoute);
+    this.seo.setMetaTags(currentRoute);
+    this.googleAnalytics.sendPageView(currentRoute);
   })
 });
 

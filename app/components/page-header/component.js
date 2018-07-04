@@ -17,7 +17,7 @@ export default Component.extend({
   collapsed: false,
 
   rotateCelestialsTo(id, instant) {
-    const collapsed = this.get('collapsed');
+    const collapsed = this.collapsed;
 
     // TODO: Find better way to do this
     if (collapsed) {
@@ -80,13 +80,13 @@ export default Component.extend({
   },
 
   didInsertElement() {
-    this.rotateCelestialsTo(this.get('currentRoute'), true);
+    this.rotateCelestialsTo(this.currentRoute, true);
   },
 
   actions: {
     collapseGalaxy(event) {
       const id = event.currentTarget.id;
-      if (id === this.get('currentRoute')) {
+      if (id === this.currentRoute) {
         return;
       }
       this.set('collapsed', true);

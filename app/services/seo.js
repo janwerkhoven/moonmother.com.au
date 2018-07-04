@@ -10,10 +10,10 @@ const defaultDescription = document.head.querySelector('meta[name=description]')
 
 export default Service.extend({
   setMetaTags(route) {
-    const title = route.get('seoTitle') || defaultTitle;
-    const description = route.get('seoDescription') || defaultDescription;
-    let robotIndex = route.get('robotIndex') || true;
-    let robotFollow = route.get('robotFollow') || true;
+    const title = route.seoTitle || defaultTitle;
+    const description = route.seoDescription || defaultDescription;
+    let robotIndex = route.robotIndex || true;
+    let robotFollow = route.robotFollow || true;
 
     // Only set robot to index and follow in production environment
     if (config.environment !== 'production') {

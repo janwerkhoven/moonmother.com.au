@@ -43,18 +43,18 @@ export default Component.extend({
   activeQuote: 1,
 
   numberOfQuotes: computed(function() {
-    return this.get('quotes').length;
+    return this.quotes.length;
   }),
 
   init() {
     this._super(...arguments);
-    const max = this.get('numberOfQuotes');
+    const max = this.numberOfQuotes;
     const random = Math.floor(Math.random() * max) + 1;
     this.set('activeQuote', random);
   },
 
   didInsertElement() {
-    const i = this.get('activeQuote');
+    const i = this.activeQuote;
     const $activeQuote = this.$('blockquote').eq(i - 1);
     $activeQuote.addClass('active');
 
@@ -62,8 +62,8 @@ export default Component.extend({
   },
 
   showQuote(target) {
-    const max = this.get('numberOfQuotes');
-    let i = this.get('activeQuote');
+    const max = this.numberOfQuotes;
+    let i = this.activeQuote;
     if (target === 'next') {
       i++;
     }

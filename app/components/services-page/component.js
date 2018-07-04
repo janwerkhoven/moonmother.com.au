@@ -7,7 +7,7 @@ export default Component.extend({
   contact: service(),
   actions: {
     scrollToContact() {
-      this.get('contact').scrollToMe();
+      this.contact.scrollToMe();
     }
   }
 });
