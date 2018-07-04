@@ -36,6 +36,11 @@ module.exports = function(defaults) {
       enabled: true,
       extensions: ['js']
     },
+    // Only fingerprint assets for production builds that aren't the native app
+    fingerprint: {
+      enabled: true,
+      extensions: ['js', 'css']
+    },
     // Include polyfills for old browsers
     'ember-cli-babel': {
       includePolyfill: true
