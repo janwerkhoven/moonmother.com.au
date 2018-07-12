@@ -3,7 +3,14 @@
     <img class="moon" src="/assets/img/moon-icons/new-moon.svg">
     <h2>Contact us</h2>
     <h3>Contact our helpful staff.</h3>
-    <h4>PO BOX 6196 <nobr>St Kilda Rd Central</nobr>, <nobr>Melbourne, VIC, 8008</nobr></h4>
+    <meta itemprop="name" content="Moon Mother">
+    <meta itemprop="url" content="https://moonmother.com.au">
+    <meta itemprop="email" content="biz@moonmother.com.au">
+    <meta itemprop="telephone" content="+61419388646">
+    <h4 itemprop="location" itemscope itemtype="https://schema.org/PostalAddress">
+      <span itemprop="postOfficeBoxNumber">PO BOX 6196</span> <nobr itemprop="streetAddress">St Kilda Rd Central</nobr>, <nobr><span itemprop="addressLocality">Melbourne</span>, <span itemprop="addressRegion">VIC</span>, <span itemprop="postalCode">3182</span></nobr>
+      <meta itemprop="addressCountry" content="AU">
+    </h4>
     <button class="dark-grey" onclick={{action 'showEmail'}}>Email us</button>
     {{#if showEmail}}
       <p id="email"><a href="mailto:biz@moonmother.com.au" target="_blank">biz@moonmother.com.au</a></p>
@@ -12,9 +19,11 @@
     {{#if showPhone}}
       <p id="phone"><a href="tel:0419388646" target="_blank">M 0419 388 646</a></p>
     {{/if}}
-    <img src="/assets/img/jenny-moon.jpg" alt="Jenny Moon in person" class="jenny">
-    <h5>Jenny Moon</h5>
-    <p>Managing Director</p>
+    <div itemprop="founder" itemtype="https://schema.org/Person" itemscope>
+      <img src="/assets/img/jenny-moon.jpg" alt="Jenny Moon in person" class="jenny" itemprop="image">
+      <h5 itemprop="name">Jenny Moon</h5>
+      <p itemprop="jobTitle">Managing Director</p>
+    </div>
   </div>
 </section>
 
@@ -23,10 +32,10 @@
     <img class="moon" src="/assets/img/moon-icons/moon1.svg">
     <h2>Follow Moon Mother</h2>
     <ul id="social-media">
-      <a href="https://www.facebook.com/moonmotherproductions/" target="_blank" onclick={{action sendConversion 'Facebook'}}><img src="/assets/img/facebook.svg"></a>
-      <a href="https://www.instagram.com/moonmotherproductions/" target="_blank" onclick={{action sendConversion 'Instagram'}}><img src="/assets/img/instagram.svg"></a>
+      <a href="https://www.facebook.com/moonmotherproductions" target="_blank" onclick={{action sendConversion 'Facebook'}} itemprop="sameAs"><img src="/assets/img/facebook.svg"></a>
+      <a href="https://www.instagram.com/moonmotherproductions" target="_blank" onclick={{action sendConversion 'Instagram'}} itemprop="sameAs"><img src="/assets/img/instagram.svg"></a>
     </ul>
     <div id="instafeed" onclick={{action sendConversion 'Instagram feed'}}></div>
-    <p>&copy;2017 Moon Mother Productions. <nobr>All rights reserved.</nobr> <nobr>Website by <a href="https://www.hannahsuttondesign.com" target="_blank" onclick={{action sendConversion 'Hannah Sutton Design'}}>Hannah Sutton Design</a></nobr></p>
+    <p>&copy;2017 Moon Mother Productions. <nobr>All rights reserved.</nobr> <nobr itemscope itemtype="http://schema.org/WebSite">Website by <a href="https://www.hannahsuttondesign.com" target="_blank" onclick={{action sendConversion 'Hannah Sutton Design'}} itemprop="url"><span itemprop="name">Hannah Sutton Design</span></a></nobr></p>
   </div>
 </section>
