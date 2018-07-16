@@ -6,13 +6,10 @@ export default Route.extend({
   seo: service(),
 
   afterModel() {
-    const seoService = get(this, 'seo');
-    seoService.setMetaTags(this, {
-      title: 'aaa',
-      description: 'uuu',
-      canonical: 'https://moonmother.com.au/',
-      index: true,
-      follow: true
+    get(this, 'seo').setMetaTags(this, {
+      title: 'Moon Mother',
+      description: 'some generic description',
+      canonical: 'https://moonmother.com.au/'
     });
   }
 });

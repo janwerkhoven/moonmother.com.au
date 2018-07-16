@@ -18,9 +18,6 @@ export default HeadTagsService.extend({
   // });
   setMetaTags(route, options = {}) {
     // The index.html has static tags that will be read in the non-rendered index by Google
-
-    debugger;
-
     this._clearStaticMetaTags();
 
     // The tags we set with Ember will only be read after Google bots render our JS.
@@ -32,6 +29,8 @@ export default HeadTagsService.extend({
     // 2. Set all other <meta>
     const headTags = this._buildHeadTags(options);
     set(route, 'headTags', headTags);
+
+    console.log(route.routeName, options, headTags);
   },
 
   _clearStaticMetaTags() {
@@ -42,11 +41,21 @@ export default HeadTagsService.extend({
   },
 
   _buildHeadTags(options = {}) {
-    return [
-      this._buildDescriptioTag(options.description),
-      this._buildRobotsTag(options.index, options.follow),
-      this._buildCanonicalTag(options.canonical)
-    ];
+    const arr = [];
+
+    if (options.description) {
+      arr.push(this._buildDescriptioTag(options.description));
+    }
+
+    if (options.index && options.follow) {
+      arr.push(this._buildRobotsTag(options.index, options.follow));
+    }
+
+    if (options.canonical) {
+      arr.push(this._buildCanonicalTag(options.canonical));
+    }
+
+    return arr;
   },
 
   _buildDescriptioTag(description) {
@@ -76,7 +85,7 @@ export default HeadTagsService.extend({
   _buildCanonicalTag(url) {
     return {
       type: 'link',
-      tagId: 'canonical',
+      tagId: 'canonical-link',
       attrs: {
         rel: 'canonical',
         content: url
