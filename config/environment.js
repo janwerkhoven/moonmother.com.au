@@ -9,6 +9,9 @@ module.exports = function(environment) {
     googleAnalytics: {
       trackingId: 'UA-34474019-12'
     },
+    seo: {
+      appName: 'Moon Mother'
+    },
     EmberENV: {
       FEATURES: {},
       EXTEND_PROTOTYPES: {
@@ -18,14 +21,14 @@ module.exports = function(environment) {
     APP: {}
   };
 
-  if (environment === 'production') {
-  }
-
-  if (environment === 'staging') {
-  }
-
-  if (environment === 'development') {
-  }
+  // if (environment === 'production') {
+  // }
+  //
+  // if (environment === 'staging') {
+  // }
+  //
+  // if (environment === 'development') {
+  // }
 
   if (environment === 'test') {
     ENV.locationType = 'none';
