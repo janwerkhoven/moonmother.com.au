@@ -1,5 +1,7 @@
 #page-footer {
   #contact {
+    z-index: 1;
+    position: relative;
     background: white;
     > div {
       padding: 90px 30px;

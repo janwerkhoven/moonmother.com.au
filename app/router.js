@@ -24,8 +24,21 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  // The main 3 pages found in galaxy header
+  // this.route('index');
   this.route('services');
   this.route('about');
+
+  // The 7 SEO friendly landing pages
+  this.route('event-hire');
+  this.route('festival-stage-hire');
+  this.route('mobile-trailer-stage');
+  this.route('sound-system');
+  this.route('lighting-hire');
+  this.route('truss-hire');
+  this.route('av-hire');
+
+  // Catch and redirect all other paths
   this.route('catchall', { path: '*:' });
 });
 

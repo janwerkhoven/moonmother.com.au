@@ -3,7 +3,7 @@ import Component from '@ember/component';
 
 export default Component.extend({
   tagName: 'main',
-  elementId: 'home-page',
+  elementId: 'index-page',
   contact: service(),
   actions: {
     scrollToContact() {
