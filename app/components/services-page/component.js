@@ -1,7 +1,7 @@
+import PageContent from 'moonmother/components/page-content/component';
 import { inject as service } from '@ember/service';
-import Component from '@ember/component';
 
-export default Component.extend({
+export default PageContent.extend({
   tagName: 'main',
   elementId: 'services-page',
   contact: service(),

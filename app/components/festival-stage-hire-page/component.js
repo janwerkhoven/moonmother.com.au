@@ -1,6 +1,5 @@
-import Component from '@ember/component';
+import PageContent from 'moonmother/components/page-content/component';
 
-export default Component.extend({
-  tagName: 'main',
+export default PageContent.extend({
   elementId: 'festival-stage-hire-page'
 });

@@ -1,0 +1,133 @@
+main {
+  // section.title {
+  //   padding: 90px 30px;
+  //   position: relative;
+  //   background-color: $light-grey;
+  // }
+
+  section.heading {
+    background: $page-wide-heading-bg;
+    padding: 110px 20px;
+    h2 {
+      color: $page-wide-heading-text;
+      line-height: 140%;
+    }
+  }
+
+  section.in-the-stars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 30px;
+    transition: height 4000ms ease;
+    box-sizing: border-box;
+    h2 {
+      color: white;
+      text-transform: uppercase;
+      font-family: $lato-bold;
+      font-size: 20px;
+      line-height: 100%;
+      letter-spacing: 3px;
+      margin: 28px 0 42px;
+    }
+    p {
+      color: #dedddd;
+      color: $light-grey;
+      font-family: $garamond-regular;
+      font-size: 25px;
+      max-width: 520px;
+      line-height: 150%;
+      margin-top: 34px;
+      margin: 34px auto 0;
+      @media (max-width: 700px) {
+        font-size: 22px;
+        max-width: 320px !important;
+      }
+    }
+    hr {
+      max-width: 240px;
+      margin: 58px auto 0;
+    }
+    .button,
+    button {
+      margin: 54px auto 0;
+    }
+    body.moon & {
+      min-height: 71vh;
+    }
+  }
+
+  section.photoreel {
+    overflow: hidden;
+    width: 100vw;
+    height: 20vw;
+    background-position: 50% 50%;
+    background-repeat: repeat;
+    background-size: cover;
+    background: url('/assets/img/photoreel@2x.jpg') repeat 50% 50% / cover;
+    &.homepage {
+      background-image: url('/assets/img/homepage/photoreel@2x.jpg');
+    }
+    &.services {
+      background-image: url('/assets/img/services-photoreel@2x.jpg');
+    }
+    @media (min-width: 1600px) {
+      height: 320px;
+      background-size: auto 100%;
+    }
+    @media (max-width: 1200px) {
+      &.homepage {
+        background-image: url('/assets/img/homepage/photoreel.jpg');
+      }
+      &.services {
+        background-image: url('/assets/img/services-photoreel.jpg');
+      }
+    }
+    @media (max-width: 600px) {
+      height: 33.333vw;
+      &.homepage {
+        background-image: url('/assets/img/homepage/photoreel-mobile@2x.jpg');
+      }
+      &.services {
+        background-image: url('/assets/img/services-photoreel-mobile@2x.jpg');
+      }
+    }
+  }
+
+  section.plain-text {
+    background: white;
+    h1 {
+      font-size: 42px;
+      line-height: 120%;
+      margin: 80px 0 40px;
+    }
+    h2 {
+      font-size: 30px;
+      line-height: 150%;
+      margin: 60px 0 20px;
+    }
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin: 0 0 20px;
+      li {
+        font-family: $lato-regular;
+        font-size: 16px;
+        line-height: 150%;
+        margin: 0;
+      }
+    }
+    p {
+      font-size: 16px;
+      line-height: 150%;
+      margin: 0 0 20px;
+    }
+    > div {
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 50px;
+    }
+  }
+}
