@@ -6,21 +6,21 @@ import config from './config/environment';
 
 const Router = EmberRouter.extend({
   location: config.locationType,
-  rootURL: config.rootURL,
+  rootURL: config.rootURL
 
-  seo: service(),
-  googleAnalytics: service(),
+  // seo: service()
+  // googleAnalytics: service()
 
-  onInit: on('init', function() {
-    this.googleAnalytics.startTracking();
-  }),
-  onEachDidTransition: on('didTransition', function() {
-    const currentRoute = getOwner(this).lookup(
-      'route:' + this.currentRouteName
-    );
-    this.seo.setMetaTags(currentRoute);
-    this.googleAnalytics.sendPageView(currentRoute);
-  })
+  // onInit: on('init', function() {
+  //   this.googleAnalytics.startTracking();
+  // }),
+  // onEachDidTransition: on('didTransition', function() {
+  //   const currentRoute = getOwner(this).lookup(
+  //     'route:' + this.currentRouteName
+  //   );
+  //   this.seo.setMetaTags(currentRoute);
+  //   this.googleAnalytics.sendPageView(currentRoute);
+  // })
 });
 
 Router.map(function() {

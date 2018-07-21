@@ -42,7 +42,8 @@ export default Component.extend({
   // this.element.parentElement.getBoundingClientRect()
   // Benefit is that the above incorporates CSS.
   pictureWidth: computed(function() {
-    return parseInt(window.getComputedStyle(this.element.parentElement).width);
+    // TODO: this.element breaks Fastboot
+    // return parseInt(window.getComputedStyle(this.element.parentElement).width);
   }),
 
   // Output an array of { srcset, media } for the <source> elements in this <picture>
@@ -133,11 +134,13 @@ export default Component.extend({
   // 2. Show user the missing image placeholder
   // 3. Log the missing image error
   onError() {
-    if (!this.element) {
-      return; // Guard against error that appears after breaking down this component
-    }
+    // TODO: this.element breaks Fastboot
+    // if (!this.element) {
+    //   return; // Guard against error that appears after breaking down this component
+    // }
     set(this, 'state', 'error');
-    const src = this.element.getElementsByTagName('img')[0].currentSrc;
+    // TODO: this.element breaks Fastboot
+    // const src = this.element.getElementsByTagName('img')[0].currentSrc;
     const vw = window.innerWidth;
     const dppx = window.devicePixelRatio;
     get(this, 'errors').log('Missing image', { src, vw, dppx });

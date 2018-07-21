@@ -3,6 +3,8 @@ import { alias } from '@ember/object/computed';
 import Component from '@ember/component';
 import $ from 'jquery';
 
+// TODO: Remove jQuery from this page (does not run in Fastboot)
+
 let positions = [-90, 0, 90];
 let degrees = [-90, 0, 90];
 const baseDuration = 2600;
@@ -39,46 +41,49 @@ export default Component.extend({
     }
 
     const duration = instant ? 0 : baseDuration;
-    $(`.planet`).each(function(i) {
-      if ($(this).hasClass('velocity-animating')) {
-        return;
-      }
-      const currentPos = degrees[i];
-      let targetPos = positions[i];
-      let newPos = targetPos <= currentPos ? targetPos + 360 : targetPos;
-      $(this)
-        .velocity('stop')
-        .delay(i * 100)
-        .velocity(
-          {
-            rotateZ: `${newPos}deg`
-          },
-          {
-            duration,
-            easing,
-            complete: function() {
-              $(this).velocity({ rotateZ: `${targetPos}deg` }, 0);
-              degrees[i] = targetPos;
-            }
-          }
-        );
-    });
+    // TODO: velocity breaks Fastboot
+    // $(`.planet`).each(function(i) {
+    //   if ($(this).hasClass('velocity-animating')) {
+    //     return;
+    //   }
+    //   const currentPos = degrees[i];
+    //   let targetPos = positions[i];
+    //   let newPos = targetPos <= currentPos ? targetPos + 360 : targetPos;
+    //   $(this)
+    //     .velocity('stop')
+    //     .delay(i * 100)
+    //     .velocity(
+    //       {
+    //         rotateZ: `${newPos}deg`
+    //       },
+    //       {
+    //         duration,
+    //         easing,
+    //         complete: function() {
+    //           $(this).velocity({ rotateZ: `${targetPos}deg` }, 0);
+    //           degrees[i] = targetPos;
+    //         }
+    //       }
+    //     );
+    // });
   },
 
   scrollToTop() {
     const duration = baseDuration;
-    $('header').velocity('scroll', {
-      duration,
-      easing,
-      begin() {
-        $('body').addClass('prevent-scroll');
-      },
-      complete() {
-        $('body').removeClass('prevent-scroll');
-      }
-    });
+    // TODO: Velocity breaks Fastboot
+    // $('header').velocity('scroll', {
+    //   duration,
+    //   easing,
+    //   begin() {
+    //     $('body').addClass('prevent-scroll');
+    //   },
+    //   complete() {
+    //     $('body').removeClass('prevent-scroll');
+    //   }
+    // });
   },
 
+  // Not called in Fastboot
   didInsertElement() {
     this.rotateCelestialsTo(this.currentRoute, true);
   },

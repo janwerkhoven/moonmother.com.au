@@ -31,6 +31,7 @@ export default Component.extend({
     }
   },
 
+  // Not called in Fastboot
   didInsertElement() {
     // On how to get accessToken for Instafeed
     // https://www.instagram.com/developer/

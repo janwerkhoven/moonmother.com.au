@@ -83,10 +83,14 @@ export default Component.extend({
     this.set('activeQuote', random);
   },
 
+  // Not called in Fastboot
   didInsertElement() {
     const i = this.activeQuote;
-    const $activeQuote = this.$('blockquote').eq(i - 1);
-    $activeQuote.addClass('active');
+
+    // TODO: Remove jQuery (does not run in Fastboot)
+
+    // const $activeQuote = this.$('blockquote').eq(i - 1);
+    // $activeQuote.addClass('active');
 
     // TODO: animate
   },
@@ -103,11 +107,12 @@ export default Component.extend({
     i = i > max ? 1 : i;
     i = i < 1 ? max : i;
     this.set('activeQuote', i);
-    this.$('blockquote')
-      .eq(i - 1)
-      .addClass('active')
-      .siblings()
-      .removeClass('active');
+    // TODO: Remove jQuery, breaks Fastboot
+    // this.$('blockquote')
+    //   .eq(i - 1)
+    //   .addClass('active')
+    //   .siblings()
+    //   .removeClass('active');
 
     // TODO: animate
   },
