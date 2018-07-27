@@ -15,7 +15,16 @@ module.exports = function(environment) {
         Date: false
       }
     },
-    APP: {}
+    APP: {},
+
+    fastboot: {
+      hostWhitelist: [
+        'moonmother.com.au',
+        'www.moonmother.com.au',
+        'moonmother.hannahsuttondesign.com',
+        /^localhost:\d+$/
+      ]
+    }
   };
 
   if (environment === 'production') {
