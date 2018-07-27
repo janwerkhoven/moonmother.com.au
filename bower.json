@@ -9,7 +9,6 @@
   "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
   "dependencies": {
     "normalize-css": "^7.0.0",
-    "instafeed.js": "^1.4.1",
-    "velocity": "^1.5.0"
+    "instafeed.js": "^1.4.1"
   }
 }

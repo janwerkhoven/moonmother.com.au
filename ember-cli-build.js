@@ -49,7 +49,7 @@ module.exports = function(defaults) {
 
   // app.import('vendor/google-analytics.js');
   app.import('bower_components/instafeed.js/instafeed.min.js');
-  // app.import('bower_components/velocity/velocity.min.js');
+  app.import('node_modules/animejs/anime.min.js');
 
   return app.toTree();
 };
