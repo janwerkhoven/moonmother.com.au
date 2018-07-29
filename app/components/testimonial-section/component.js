@@ -101,7 +101,7 @@ export default Component.extend({
       outroQuote.classList.remove('active');
     }
 
-    // TODO
+    // TODO: Animate
 
     // // Intro animation of new quote
     // anime({

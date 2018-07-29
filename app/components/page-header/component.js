@@ -23,7 +23,7 @@ export default Component.extend({
   elementId: 'page-header',
   classNameBindings: ['currentRoute', 'collapsed:collapsed'],
 
-  router: service('-routing'),
+  router: service('router'),
 
   currentRoute: readOnly('router.currentRouteName'),
 
