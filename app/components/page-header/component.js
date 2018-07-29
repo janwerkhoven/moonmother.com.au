@@ -3,10 +3,20 @@ import { inject as service } from '@ember/service';
 import { readOnly } from '@ember/object/computed';
 import { scrollTo } from 'moonmother/helpers/scroll-to';
 
-let rotations = [-90, 0, 90];
-let degrees = [-90, 0, 90];
 const totalDuration = 2600;
 const easing = 'easeInOutCubic';
+const positions = {
+  full: {
+    index: [0, 90, -90],
+    about: [-90, 0, 90],
+    services: [90, -90, 0]
+  },
+  half: {
+    index: [0, 60, -60],
+    about: [-60, 0, 60],
+    services: [60, -60, 0]
+  }
+};
 
 export default Component.extend({
   tagName: 'header',
@@ -19,56 +29,72 @@ export default Component.extend({
 
   collapsed: false,
 
-  rotateCelestialsTo(target, instant) {
-    const collapsed = this.collapsed;
-
-    // TODO: Find better way to do this
-    if (collapsed) {
-      if (target === 'about') {
-        rotations = [-60, 0, 60];
-      } else if (target === 'services') {
-        rotations = [60, -60, 0];
-      } else {
-        rotations = [0, 60, -60];
-      }
-    } else {
-      if (target === 'about') {
-        rotations = [-90, 0, 90];
-      } else if (target === 'services') {
-        rotations = [90, -90, 0];
-      } else {
-        rotations = [0, 90, -90];
-      }
-    }
-
+  rotateCelestialsTo(targetRoute = 'index', instant = false) {
     const duration = instant ? 0 : totalDuration;
 
-    const rotationIndex = `${rotations[0]}deg`;
-    const rotationAbout = `${rotations[1]}deg`;
-    const rotationServices = `${rotations[2]}deg`;
+    const stance = this.collapsed ? 'half' : 'full';
+
+    const currentSet = positions[stance][this.currentRoute];
+    const targetSet = positions[stance][targetRoute];
+
+    const currentIndex = currentSet[0];
+    const currentAbout = currentSet[1];
+    const currentServices = currentSet[2];
+
+    const targetIndex = targetSet[0];
+    const targetAbout = targetSet[1];
+    const targetServices = targetSet[2];
+
+    const newIndex =
+      targetIndex <= currentIndex ? targetIndex + 360 : targetIndex;
+    const newAbout =
+      targetAbout <= currentAbout ? targetAbout + 360 : targetAbout;
+    const newServices =
+      targetServices <= currentServices ? targetServices + 360 : targetServices;
 
     anime({
       targets: '.planet#index',
-      rotateZ: rotationIndex,
+      rotateZ: `${newIndex}deg`,
       delay: 0,
       duration,
-      easing
+      easing,
+      complete: function() {
+        anime({
+          targets: '.planet#index',
+          rotateZ: `${targetIndex}deg`,
+          duration: 1
+        });
+      }
     });
 
     anime({
       targets: '.planet#about',
-      rotateZ: rotationAbout,
+      rotateZ: `${newAbout}deg`,
       delay: 100, // Spread the animations for smoother frame rate
       duration,
-      easing
+      easing,
+      complete: function() {
+        anime({
+          targets: '.planet#about',
+          rotateZ: `${targetAbout}deg`,
+          duration: 1
+        });
+      }
     });
 
     anime({
       targets: '.planet#services',
-      rotateZ: rotationServices,
+      rotateZ: `${newServices}deg`,
       delay: 200, // Spread the animations for smoother frame rate
       duration,
-      easing
+      easing,
+      complete: function() {
+        anime({
+          targets: '.planet#services',
+          rotateZ: `${targetServices}deg`,
+          duration: 1
+        });
+      }
     });
 
     // $(`.planet`).each(function(i) {
@@ -101,7 +127,6 @@ export default Component.extend({
     scrollTo('#page-header', totalDuration, easing);
   },
 
-  // Ignored in Fastboot
   didInsertElement() {
     this.rotateCelestialsTo(this.currentRoute, true);
   },
