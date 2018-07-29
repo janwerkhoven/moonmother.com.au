@@ -1,12 +1,18 @@
+import EmberRouter from '@ember/routing/router';
+import config from './config/environment';
 import { inject as service } from '@ember/service';
 import { getOwner } from '@ember/application';
 import { on } from '@ember/object/evented';
-import EmberRouter from '@ember/routing/router';
-import config from './config/environment';
 
 const Router = EmberRouter.extend({
   location: config.locationType,
-  rootURL: config.rootURL
+  rootURL: config.rootURL,
+
+  headData: service(),
+
+  setTitle(title) {
+    this.get('headData').set('title', title);
+  }
 
   // seo: service()
   // googleAnalytics: service()
