@@ -44,7 +44,7 @@ export default Component.extend({
 
   // Returns the width of this <picture> component
   pictureWidth() {
-    // Fastboot (Node) does not have access to this.element
+    // Fatboot guard because Node does not have know about this.element
     if (this.isFastBoot) {
       return 320;
     }
@@ -53,7 +53,7 @@ export default Component.extend({
 
   // Returns the width of the browser window
   screenWidth() {
-    // Fastboot (Node) does not have access to this.element
+    // Fatboot guard because Node does not have know about this.element
     if (this.isFastBoot) {
       return 320;
     }
