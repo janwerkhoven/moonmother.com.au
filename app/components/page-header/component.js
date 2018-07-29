@@ -37,6 +37,8 @@ export default Component.extend({
     const currentSet = positions[stance][this.currentRoute];
     const targetSet = positions[stance][targetRoute];
 
+    // TODO: DRY up below
+
     const currentIndex = currentSet[0];
     const currentAbout = currentSet[1];
     const currentServices = currentSet[2];
@@ -96,31 +98,6 @@ export default Component.extend({
         });
       }
     });
-
-    // $(`.planet`).each(function(i) {
-    //   if ($(this).hasClass('velocity-animating')) {
-    //     return;
-    //   }
-    //   const currentPos = degrees[i];
-    //   let targetPos = positions[i];
-    //   let newPos = targetPos <= currentPos ? targetPos + 360 : targetPos;
-    //   $(this)
-    //     .velocity('stop')
-    //     .delay(i * 100)
-    //     .velocity(
-    //       {
-    //         rotateZ: `${newPos}deg`
-    //       },
-    //       {
-    //         duration,
-    //         easing,
-    //         complete: function() {
-    //           $(this).velocity({ rotateZ: `${targetPos}deg` }, 0);
-    //           degrees[i] = targetPos;
-    //         }
-    //       }
-    //     );
-    // });
   },
 
   scrollToTop() {

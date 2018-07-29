@@ -12,9 +12,9 @@
       <meta itemprop="url" content="https://moonmother.com.au">
     </span>
   </span>
-  <div class="quotes">
+  <div class="quotes" data-current-quote={{currentQuote}}>
     {{#each quotes as |quote index|}}
-      <blockquote class="{{index}}" itemscope itemprop="review" itemtype="https://schema.org/Review">
+      <blockquote itemscope itemprop="review" itemtype="https://schema.org/Review" data-index={{index}}>
         <span itemprop="itemReviewed" itemscope itemtype="https://schema.org/Thing">
           <meta itemprop="name" content="Moon Mother">
           <meta itemprop="url" content="https://moonmother.com.au">
@@ -41,4 +41,9 @@
   <div class="arrow next" onclick={{action 'nextQuote'}}>
     <img src="/assets/img/arrow-right.svg">
   </div>
+  <ul>
+    {{#each quotes as |quote index|}}
+      <li onclick={{action 'gotoQuote' index}}></li>
+    {{/each}}
+  </ul>
 </nav>

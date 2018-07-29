@@ -1,5 +1,4 @@
 import Component from '@ember/component';
-import { computed } from '@ember/object';
 
 const quotes = [
   {
@@ -70,59 +69,85 @@ export default Component.extend({
 
   quotes,
 
-  activeQuote: 1,
+  currentQuote: undefined, // Set to random number on didInsertElement()
 
-  numberOfQuotes: computed(function() {
-    return this.quotes.length;
-  }),
-
-  init() {
-    this._super(...arguments);
-    const max = this.numberOfQuotes;
-    const random = Math.floor(Math.random() * max) + 1;
-    this.set('activeQuote', random);
-  },
-
-  // Not called in Fastboot
   didInsertElement() {
-    const i = this.activeQuote;
-
-    // TODO: Remove jQuery (does not run in Fastboot)
-
-    // const $activeQuote = this.$('blockquote').eq(i - 1);
-    // $activeQuote.addClass('active');
-
-    // TODO: animate
+    this._super(...arguments);
+    const max = this.quotes.length;
+    const random = Math.floor(Math.random() * max) + 1;
+    this.showQuote(random, true);
   },
 
-  showQuote(target) {
-    const max = this.numberOfQuotes;
-    let i = this.activeQuote;
-    if (target === 'next') {
-      i++;
+  showQuote(targetQuote = 0, instant = false) {
+    // Do nothing if we're already seeing the requested quote
+    if (targetQuote === this.currentQuote) {
+      return;
     }
-    if (target === 'prev') {
-      i--;
-    }
-    i = i > max ? 1 : i;
-    i = i < 1 ? max : i;
-    this.set('activeQuote', i);
-    // TODO: Remove jQuery, breaks Fastboot
-    // this.$('blockquote')
-    //   .eq(i - 1)
-    //   .addClass('active')
-    //   .siblings()
-    //   .removeClass('active');
 
-    // TODO: animate
+    // const duration = instant ? 1 : 300;
+
+    const introQuote = this.element.querySelector(
+      `#testimonials blockquote[data-index="${targetQuote}"]`
+    );
+    const outroQuote = this.element.querySelector(
+      `#testimonials blockquote[data-index="${this.currentQuote}"]`
+    );
+
+    if (introQuote) {
+      introQuote.classList.add('active');
+    }
+
+    if (outroQuote) {
+      outroQuote.classList.remove('active');
+    }
+
+    // TODO
+
+    // // Intro animation of new quote
+    // anime({
+    //   targets: introQuote,
+    //   scale: [0.8, 1],
+    //   opacity: [0, 1],
+    //   translateX: ['-10vw', 0],
+    //   duration
+    // });
+    //
+    // // Outro animation of current quote
+    // anime({
+    //   targets: outroQuote,
+    //   scale: 0.8,
+    //   opacity: 0,
+    //   translateX: '10vw',
+    //   duration
+    // });
+
+    // anime({
+    //   targets: '#testimonials #quotes',
+    //   height: ,
+    //   duration
+    // });
+
+    // Do at the end
+    this.set('currentQuote', targetQuote);
   },
 
   actions: {
     nextQuote() {
-      this.showQuote('next');
+      const max = this.quotes.length;
+      let i = this.currentQuote + 1;
+      i = i >= max ? 0 : i;
+      this.showQuote(i);
     },
+
     prevQuote() {
-      this.showQuote('prev');
+      const max = this.quotes.length;
+      let i = this.currentQuote - 1;
+      i = i < 0 ? max - 1 : i;
+      this.showQuote(i);
+    },
+
+    gotoQuote(i) {
+      this.showQuote(i);
     }
   }
 });

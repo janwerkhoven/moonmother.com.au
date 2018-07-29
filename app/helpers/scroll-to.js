@@ -44,6 +44,9 @@ const easings = {
   }
 };
 
+// TODO: Make the scroll not of fixed time, instead use speed
+// TODO: Make the scroll helper indepenedant of the prevent-scroll CSS class
+
 export function scrollTo(
   cssSelector,
   duration = 200,
@@ -53,7 +56,6 @@ export function scrollTo(
   const destination = document.querySelector(cssSelector);
   if (!destination) {
     // TODO: log error
-    console.warn(`Could not find ${cssSelector}`);
     return;
   }
 
@@ -92,9 +94,7 @@ export function scrollTo(
   }
 
   function scroll() {
-    // TODO: Make this indepenedant of CSS class
     document.body.classList.add('prevent-scroll');
-
     const now =
       'now' in window.performance ? performance.now() : new Date().getTime();
     const time = Math.min(1, (now - startTime) / duration);
@@ -105,9 +105,7 @@ export function scrollTo(
     );
 
     if (window.pageYOffset === destinationOffsetToScroll) {
-      // TODO: Make this indepenedant of CSS class
       document.body.classList.remove('prevent-scroll');
-
       if (callback) {
         callback();
       }
