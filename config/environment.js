@@ -6,9 +6,6 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'history',
-    googleAnalytics: {
-      trackingId: 'UA-34474019-12'
-    },
     EmberENV: {
       FEATURES: {},
       EXTEND_PROTOTYPES: {
@@ -16,6 +13,10 @@ module.exports = function(environment) {
       }
     },
     APP: {},
+
+    googleAnalytics: {
+      trackingId: 'UA-34474019-12'
+    },
 
     fastboot: {
       hostWhitelist: [

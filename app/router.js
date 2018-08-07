@@ -8,25 +8,24 @@ const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.rootURL,
 
+  googleAnalytics: service(),
   headData: service(),
 
+  onInit: on('init', function() {
+    this.googleAnalytics.startTracking();
+  }),
+
+  onEachDidTransition: on('didTransition', function() {
+    const currentRoute = getOwner(this).lookup(
+      'route:' + this.currentRouteName
+    );
+    this.googleAnalytics.sendPageView(currentRoute);
+  }),
+
+  // For setting the meta title
   setTitle(title) {
     this.get('headData').set('title', title);
   }
-
-  // seo: service()
-  // googleAnalytics: service()
-
-  // onInit: on('init', function() {
-  //   this.googleAnalytics.startTracking();
-  // }),
-  // onEachDidTransition: on('didTransition', function() {
-  //   const currentRoute = getOwner(this).lookup(
-  //     'route:' + this.currentRouteName
-  //   );
-  //   this.seo.setMetaTags(currentRoute);
-  //   this.googleAnalytics.sendPageView(currentRoute);
-  // })
 });
 
 Router.map(function() {
