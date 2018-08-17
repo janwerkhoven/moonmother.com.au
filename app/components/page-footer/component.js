@@ -1,12 +1,15 @@
 import Component from '@ember/component';
-import { get } from '@ember/object';
 import { inject as service } from '@ember/service';
+import { readOnly } from '@ember/object/computed';
 
 export default Component.extend({
   tagName: 'footer',
   elementId: 'page-footer',
 
+  fastboot: service(),
   googleAnalytics: service(),
+
+  isFastBoot: readOnly('fastboot.isFastBoot'),
 
   // Email and phone are hidden until clicked so we can measure conversions
   showEmail: false,
@@ -47,8 +50,7 @@ export default Component.extend({
       links: true,
       limit: 10,
       resolution: 'standard_resolution',
-      template:
-        '<div><a href={{link}} target="_blank"><img src={{image}} alt="{{caption}}"/></a></div>'
+      template: `<div><a href={{link}} target="_blank" rel="noopener" title="See '{{caption}}' on Instagram"><img src={{image}} alt="{{caption}}"/></a></div>`
     });
     feed.run();
   }
