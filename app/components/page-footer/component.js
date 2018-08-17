@@ -36,6 +36,10 @@ export default Component.extend({
 
   // Not called in Fastboot
   didInsertElement() {
+    // Prevent Instafeed from instantiating if Fastboot (for performance)
+    if (this.isFastBoot) {
+      return;
+    }
     // On how to get accessToken for Instafeed
     // https://www.instagram.com/developer/
     // https://www.instagram.com/moonmotherproductions/
