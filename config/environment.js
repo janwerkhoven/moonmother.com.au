@@ -1,11 +1,25 @@
 /* eslint-env node */
 
 module.exports = function(environment) {
+  // Environment flags
+  const isDevelopment = environment === 'development';
+  const isTest = environment === 'test';
+  const isStaging = environment === 'staging';
+  const isProduction = environment === 'production';
+
   var ENV = {
     modulePrefix: 'moonmother',
     environment,
     rootURL: '/',
     locationType: 'history',
+
+    buildConfig: {
+      isDevelopment,
+      isTest,
+      isStaging,
+      isProduction
+    },
+
     EmberENV: {
       FEATURES: {},
       EXTEND_PROTOTYPES: {
