@@ -26,7 +26,7 @@ export default Component.extend({
 
   didInsertElement() {
     this._super(...arguments);
-    this.get('listenForScrolls').perform();
+    this.listenForScrolls.perform();
   },
 
   listenForScrolls: task(function*() {
