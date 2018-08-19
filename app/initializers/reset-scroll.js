@@ -3,7 +3,7 @@ import Route from '@ember/routing/route';
 export function initialize() {
   Route.reopen({
     activate() {
-      this._super();
+      this._super(...arguments);
       // window.scrollTo(0, 0);
     }
   });

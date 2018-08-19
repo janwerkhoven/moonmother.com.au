@@ -23,7 +23,8 @@
  */
 
 import Component from '@ember/component';
-import { computed, get, set } from '@ember/object';
+import { computed, set } from '@ember/object';
+import { readOnly } from '@ember/object/computed';
 import { inject as service } from '@ember/service';
 
 export default Component.extend({
@@ -35,19 +36,36 @@ export default Component.extend({
   src: undefined, // Passed in
 
   errors: service(),
+  fastboot: service(),
 
   state: 'loading',
 
-  // Possible alternatives:
-  // this.element.parentElement.getBoundingClientRect()
-  // Benefit is that the above incorporates CSS.
-  pictureWidth: computed(function() {
+  isFastBoot: readOnly('fastboot.isFastBoot'),
+
+  // Returns the width of this <picture> component
+  pictureWidth() {
+    // Fatboot guard because Node does not have know about this.element
+    if (this.isFastBoot) {
+      return 320;
+    }
     return parseInt(window.getComputedStyle(this.element.parentElement).width);
-  }),
+  },
+
+  // Returns the width of the browser window
+  screenWidth() {
+    // Fatboot guard because Node does not have know about this.element
+    if (this.isFastBoot) {
+      return 320;
+    }
+    return window.innerWidth;
+  },
 
   // Output an array of { srcset, media } for the <source> elements in this <picture>
+  //
+  // TODO: Recomputed each time the user changes the width of their screen.
+  //
   sources: computed(function() {
-    const src = get(this, 'src'); // https://cdn.interflux.com/images/products/Pacific-2009M-VOC-free-soldering-flux@200x200.jpg
+    const src = this.src; // https://cdn.interflux.com/images/products/Pacific-2009M-VOC-free-soldering-flux@200x200.jpg
     const srcBase = src.split('@')[0]; // https://cdn.interflux.com/images/products/Pacific-2009M-VOC-free-soldering-flux
     const srcSize = src
       .split('@')[1]
@@ -59,19 +77,17 @@ export default Component.extend({
     const heightRatio = srcSize[1] / srcSize[0];
 
     // The width of this <picture> component
-    const pictureWidth = get(this, 'pictureWidth');
+    const pictureWidth = this.pictureWidth();
+
+    // The width of the browser window
+    const screenWidth = this.screenWidth();
 
     // Our source media queries are based on the width of the screen (max-width:
     // ...px). Our <picture> will not always as wide as the screen. To figure
     // out which is the smallest possible image that maintains sharpness, we
     // need to factor in how wide this <picture> is compared to the screen
     // width. Default to 100% if ratio is unknown (not a bad assumption).
-    //
-    // TODO: Recomputed each time the user changes the width of their screen.
-    //
-    const screenWidthRatio = pictureWidth
-      ? window.innerWidth / pictureWidth
-      : 100;
+    const screenWidthRatio = pictureWidth ? screenWidth / pictureWidth : 100;
 
     const n = 12; // We have this image in 12 different sizes (@200x200.jpg, @300x300.jpg, ..., @2000x2000px)
     const max = 2000; // The largest one is 2000px wide
@@ -133,6 +149,10 @@ export default Component.extend({
   // 2. Show user the missing image placeholder
   // 3. Log the missing image error
   onError() {
+    // Guard because Node has no access to this.element
+    if (this.isFastBoot) {
+      return false;
+    }
     if (!this.element) {
       return; // Guard against error that appears after breaking down this component
     }
@@ -140,6 +160,6 @@ export default Component.extend({
     const src = this.element.getElementsByTagName('img')[0].currentSrc;
     const vw = window.innerWidth;
     const dppx = window.devicePixelRatio;
-    get(this, 'errors').log('Missing image', { src, vw, dppx });
+    this.errors.log('Missing image', { src, vw, dppx });
   }
 });

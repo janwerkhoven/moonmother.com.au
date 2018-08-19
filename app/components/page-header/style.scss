@@ -169,13 +169,13 @@ $speed: 2400ms;
       height: 100%;
       border-radius: 50%;
       // Starting positions in case JS does not work or is delayed
-      &#index {
+      &#to-index {
         transform: rotate(0deg);
       }
-      &#about {
+      &#to-about {
         transform: rotate(-90deg);
       }
-      &#services {
+      &#to-services {
         transform: rotate(90deg);
       }
       a {

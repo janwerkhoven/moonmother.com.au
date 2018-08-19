@@ -1,5 +1,5 @@
 <div>
-  <img class="moon" src="/assets/img/moon-icons/waning-cresent.svg">
+  <img class="moon" src="/assets/img/moon-icons/waning-cresent.svg" alt="icon of waning crescent moon">
   <h2>Testimonials</h2>
   <span itemscope itemprop="aggregateRating" itemtype="https://schema.org/AggregateRating">
     <meta itemprop="bestRating" content="5">
@@ -12,9 +12,9 @@
       <meta itemprop="url" content="https://moonmother.com.au">
     </span>
   </span>
-  <div class="quotes">
+  <div class="quotes" data-current-quote={{currentQuote}}>
     {{#each quotes as |quote index|}}
-      <blockquote class="{{index}}" itemscope itemprop="review" itemtype="https://schema.org/Review">
+      <blockquote itemscope itemprop="review" itemtype="https://schema.org/Review" data-index={{index}}>
         <span itemprop="itemReviewed" itemscope itemtype="https://schema.org/Thing">
           <meta itemprop="name" content="Moon Mother">
           <meta itemprop="url" content="https://moonmother.com.au">
@@ -36,9 +36,14 @@
 </div>
 <nav>
   <div class="arrow prev" onclick={{action 'prevQuote'}}>
-    <img src="/assets/img/arrow-left.svg">
+    <img src="/assets/img/arrow-left.svg" alt="icon of left arrow">
   </div>
   <div class="arrow next" onclick={{action 'nextQuote'}}>
-    <img src="/assets/img/arrow-right.svg">
+    <img src="/assets/img/arrow-right.svg" alt="icon of right arrow">
   </div>
+  <ul>
+    {{#each quotes as |quote index|}}
+      <li onclick={{action 'gotoQuote' index}}></li>
+    {{/each}}
+  </ul>
 </nav>

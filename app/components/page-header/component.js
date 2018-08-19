@@ -1,82 +1,84 @@
-import { inject as service } from '@ember/service';
-import { alias } from '@ember/object/computed';
 import Component from '@ember/component';
-import $ from 'jquery';
+import { inject as service } from '@ember/service';
+import { readOnly } from '@ember/object/computed';
+import { scrollTo } from 'moonmother/helpers/scroll-to';
 
-let positions = [-90, 0, 90];
-let degrees = [-90, 0, 90];
-const baseDuration = 2600;
+const totalDuration = 2200;
 const easing = 'easeInOutCubic';
+const routes = ['index', 'about', 'services'];
+const positions = {
+  full: {
+    index: [0, 90, -90],
+    about: [-90, 0, 90],
+    services: [90, -90, 0]
+  },
+  half: {
+    index: [0, 60, -60],
+    about: [-60, 0, 60],
+    services: [60, -60, 0]
+  }
+};
 
 export default Component.extend({
   tagName: 'header',
   elementId: 'page-header',
   classNameBindings: ['currentRoute', 'collapsed:collapsed'],
-  router: service('-routing'),
-  currentRoute: alias('router.currentRouteName'),
+
+  router: service('router'),
+
+  currentRoute: readOnly('router.currentRouteName'),
+
   collapsed: false,
+  isAnimating: false,
 
-  rotateCelestialsTo(id, instant) {
-    const collapsed = this.collapsed;
-
-    // TODO: Find better way to do this
-    if (collapsed) {
-      if (id === 'about') {
-        positions = [-60, 0, 60];
-      } else if (id === 'services') {
-        positions = [60, -60, 0];
-      } else {
-        positions = [0, 60, -60];
-      }
-    } else {
-      if (id === 'about') {
-        positions = [-90, 0, 90];
-      } else if (id === 'services') {
-        positions = [90, -90, 0];
-      } else {
-        positions = [0, 90, -90];
-      }
+  rotateCelestialsTo(targetRoute = 'index', instant = false) {
+    // Running the animation whilst still animating, the planets will move anti-clockwise.
+    if (this.isAnimating) {
+      return;
     }
+    this.set('isAnimating', true);
 
-    const duration = instant ? 0 : baseDuration;
-    $(`.planet`).each(function(i) {
-      if ($(this).hasClass('velocity-animating')) {
-        return;
-      }
-      const currentPos = degrees[i];
-      let targetPos = positions[i];
-      let newPos = targetPos <= currentPos ? targetPos + 360 : targetPos;
-      $(this)
-        .velocity('stop')
-        .delay(i * 100)
-        .velocity(
-          {
-            rotateZ: `${newPos}deg`
-          },
-          {
-            duration,
-            easing,
-            complete: function() {
-              $(this).velocity({ rotateZ: `${targetPos}deg` }, 0);
-              degrees[i] = targetPos;
-            }
+    const duration = instant ? 0 : totalDuration;
+    const stance = this.collapsed ? 'half' : 'full';
+    const currentSet = positions[stance][this.currentRoute];
+    const targetSet = positions[stance][targetRoute];
+
+    const self = this;
+
+    routes.forEach((route, i) => {
+      const currentRotation = currentSet[i];
+      const targetRotation = targetSet[i];
+
+      // Make sure that celestials only move clockwise
+      const newRotation =
+        targetRotation <= currentRotation
+          ? targetRotation + 360
+          : targetRotation;
+
+      anime({
+        targets: `.planet#${route}`,
+        rotateZ: `${newRotation}deg`,
+        delay: i * 100, // Spread the animations for smoother frame rate
+        duration,
+        easing,
+        complete: function() {
+          // Reset the position
+          anime({
+            targets: `.planet#${route}`,
+            rotateZ: `${targetRotation}deg`,
+            duration: 0
+          });
+          // End the animation
+          if (route === 'services') {
+            self.set('isAnimating', false);
           }
-        );
+        }
+      });
     });
   },
 
   scrollToTop() {
-    const duration = baseDuration;
-    $('header').velocity('scroll', {
-      duration,
-      easing,
-      begin() {
-        $('body').addClass('prevent-scroll');
-      },
-      complete() {
-        $('body').removeClass('prevent-scroll');
-      }
-    });
+    scrollTo('#page-header', totalDuration, easing);
   },
 
   didInsertElement() {

@@ -15,7 +15,8 @@ module.exports = {
   },
   globals: {
     ga: true,
-    Instafeed: true
+    Instafeed: true,
+    anime: true
   },
   rules: {
     'prettier/prettier': 'error',

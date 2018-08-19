@@ -23,6 +23,9 @@ main {
     padding: 100px 30px;
     transition: height 4000ms ease;
     box-sizing: border-box;
+    > div {
+      animation: fade-up 2200ms $easeOutCubic;
+    }
     h2 {
       color: white;
       text-transform: uppercase;

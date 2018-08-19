@@ -1,13 +1,11 @@
 import PageContent from 'moonmother/components/page-content/component';
-import { inject as service } from '@ember/service';
+import { scrollTo } from 'moonmother/helpers/scroll-to';
 
 export default PageContent.extend({
-  tagName: 'main',
   elementId: 'services-page',
-  contact: service(),
   actions: {
     scrollToContact() {
-      this.contact.scrollToMe();
+      scrollTo('footer #contact', 3200, 'easeInOutQuint');
     }
   }
 });
