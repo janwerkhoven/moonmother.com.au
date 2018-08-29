@@ -41,7 +41,7 @@ export default Component.extend({
     const duration = instant ? 0 : totalDuration;
     const stance = this.collapsed ? 'half' : 'full';
     const currentSet = positions[stance][this.currentRoute];
-    const targetSet = positions[stance][targetRoute];
+    const targetSet = positions[stance][targetRoute.replace('to-', '')];
 
     const self = this;
 
@@ -56,7 +56,7 @@ export default Component.extend({
           : targetRotation;
 
       anime({
-        targets: `.planet#${route}`,
+        targets: `.planet#to-${route}`,
         rotateZ: `${newRotation}deg`,
         delay: i * 100, // Spread the animations for smoother frame rate
         duration,
@@ -64,7 +64,7 @@ export default Component.extend({
         complete: function() {
           // Reset the position
           anime({
-            targets: `.planet#${route}`,
+            targets: `.planet#to-${route}`,
             rotateZ: `${targetRotation}deg`,
             duration: 0
           });
