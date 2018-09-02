@@ -11,13 +11,13 @@
       <span itemprop="postOfficeBoxNumber">PO BOX 6196</span> <nobr itemprop="streetAddress">St Kilda Rd Central</nobr>, <nobr><span itemprop="addressLocality">Melbourne</span>, <span itemprop="addressRegion">VIC</span>, <span itemprop="postalCode">3182</span></nobr>
       <meta itemprop="addressCountry" content="AU">
     </h4>
-    <button class="dark-grey" onclick={{action 'showEmail'}}>Email us</button>
-    {{#if showEmail}}
-      <p id="email"><a href="mailto:biz@moonmother.com.au" target="_blank" rel="noopener">biz@moonmother.com.au</a></p>
-    {{/if}}
     <button class="dark-grey" onclick={{action 'showPhone'}}>Call us</button>
     {{#if showPhone}}
       <p id="phone"><a href="tel:1300556264" target="_blank" rel="noopener">M 1300 556 264</a></p>
+    {{/if}}
+    <button class="dark-grey" onclick={{action 'showEmail'}}>Email us</button>
+    {{#if showEmail}}
+      <p id="email"><a href="mailto:biz@moonmother.com.au" target="_blank" rel="noopener">biz@moonmother.com.au</a></p>
     {{/if}}
     <div itemprop="founder" itemtype="https://schema.org/Person" itemscope>
       <img src="/assets/img/jenny-moon.jpg" alt="Jenny Moon in person" class="jenny" itemprop="image">
@@ -39,7 +39,65 @@
         <a href="https://www.instagram.com/moonmotherproductions" target="_blank" rel="noopener" onclick={{action sendConversion 'Instagram'}} itemprop="sameAs" title="Find Moon Mother on Instagram"><img src="/assets/img/instagram.svg" alt="Instagram icon"></a>
       </li>
     </ul>
-    <div id="instafeed" onclick={{action sendConversion 'Instagram feed'}}></div>
+    <div id="temporary-instafeed" onclick={{action sendConversion 'Instagram feed'}}>
+      {{#if showTemporaryInstafeed}}
+        <div>
+          <a href="https://www.instagram.com/p/BjrGfm5j44Q/" target="_blank" rel="noopener" title="See 'Moon Mother crew working hard to test and prep gear for @melbjazzfestival' on Instagram">
+            <img src="//scontent.cdninstagram.com/vp/85adbafa8a3085d01d01ee296a9539e7/5C1FFB5D/t51.2885-15/sh0.08/e35/s640x640/33210200_452137125209632_3301586895678472192_n.jpg" alt="Moon Mother crew working hard to test and prep gear for @melbjazzfestival">
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/p/BiD0OsfjLbT/" target="_blank" rel="noopener" title="See 'Short video of @dunerats performing at @thedropfestival in Torquay. #backstage #musicfestival' on Instagram">
+            <img src="//scontent.cdninstagram.com/vp/b786cada7e6c6896926fba03ccdbbcbb/5B8E5C9E/t51.2885-15/e15/p640x640/30830949_250365768842127_3421557439768559616_n.jpg" alt="Short video of @dunerats performing at @thedropfestival in Torquay. #backstage #musicfestival">
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/p/BiD0jeajiVR/" target="_blank" rel="noopener" title="See '@thedropfestival Thankyou for having us on board for this years festival, we loved every second of it and can’t wait for next year! #fullproduction' on Instagram">
+            <img src="//scontent.cdninstagram.com/vp/f097fe9beb06854bbc5eb5e1f39b30f8/5C17D58F/t51.2885-15/sh0.08/e35/s640x640/31326411_1902108323154616_1754153270336552960_n.jpg" alt="@thedropfestival Thankyou for having us on board for this years festival, we loved every second of it and can’t wait for next year! #fullproduction">
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/p/BfiB_DdlTS1/" target="_blank" rel="noopener" title="See 'Last Geelong @nightjarfestival at #johnstonepark for 2018, #eventcontrol is viewable! Can't hide inside the marquee tonight #hidenomore' on Instagram">
+            <img src="//scontent.cdninstagram.com/vp/a69923a69b20111b198699f4832c6d84/5C2797E1/t51.2885-15/sh0.08/e35/s640x640/27891316_159207618112627_8571818454305210368_n.jpg" alt="Last Geelong @nightjarfestival at #johnstonepark for 2018, #eventcontrol is viewable! Can't hide inside the marquee tonight #hidenomore">
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/p/BiBcsW3DUaC/" target="_blank" rel="noopener" title="See 'Anzac Day down at Torquay.  This is always a great day to be apart of! #avproduction #sitemanagement' on Instagram">
+            <img src="//scontent.cdninstagram.com/vp/5778e3bbf5629dc327dc400abf60f685/5C19ED4E/t51.2885-15/e35/30856562_176548006376979_4724858681554894848_n.jpg" alt="Anzac Day down at Torquay.  This is always a great day to be apart of! #avproduction #sitemanagement">
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/p/BfAIfrPFCFX/" target="_blank" rel="noopener" title="See Crowds enjoying the extra space in #johnstonpark #geelong at @nightjarfestival listening to bands on our">
+            <img src="//scontent.cdninstagram.com/vp/954e1a6422e001ea787bb03022f81918/5C1AED20/t51.2885-15/sh0.08/e35/s640x640/27579947_181935359239847_6600618225686282240_n.jpg" alt="Crowds enjoying the extra space in #johnstonpark #geelong at @nightjarfestival listening to bands on our #stage">
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/p/BerYNIWFsp-/" target="_blank" rel="noopener" title="See 'Photo of the finish gate at 2018 #cadelevansroadrace #cycling #lovethisevent' on Instagram">
+            <img src="//scontent.cdninstagram.com/vp/1310685b2284ff2c42e9934b0b1e233c/5C21B7F2/t51.2885-15/sh0.08/e35/s640x640/27574087_156650368456328_5358566563320430592_n.jpg" alt="Photo of the finish gate at 2018 #cadelevansroadrace #cycling #lovethisevent">
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/p/BerX83SFpSn/" target="_blank" rel="noopener" title="See 'Photo of team BMI before #cadelevansroadrace at #steampacketgardens #geelong #cycling #greatevent' on Instagram">
+            <img src="//scontent.cdninstagram.com/vp/f061dd0ef99b5b959e7c376df28c0ed3/5C204709/t51.2885-15/sh0.08/e35/s640x640/26864838_172092673402991_8752261308994289664_n.jpg" alt="Photo of team BMI before #cadelevansroadrace at #steampacketgardens #geelong #cycling #greatevent">
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/p/BepQjKuFqW4/" target="_blank" rel="noopener" title="See '@sarahblasko on our stage-Archie  at @nightjarfestival 4th night in torquay on 25th january #greatevent  #livemusic  #audioproduction #stagemanagement #eventcontrol #safetyofficer  @moonmotherproductions stage @event_stage_hire' on Instagram">
+            <img src="//scontent.cdninstagram.com/vp/27842e54dea0e4318e835c49d43b8281/5C3B958B/t51.2885-15/sh0.08/e35/s640x640/27578835_248510729021702_2339864574741708800_n.jpg" alt="@sarahblasko on our stage-Archie  at @nightjarfestival 4th night in torquay on 25th january #greatevent  #livemusic  #audioproduction #stagemanagement #eventcontrol #safetyofficer  @moonmotherproductions stage @event_stage_hire">
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com/p/BepQy9rlysS/" target="_blank" rel="noopener" title="See 'Sun setting over the crowd at @nightjarfestival 4th night at torquay' on Instagram">
+            <img src="//scontent.cdninstagram.com/vp/7d98d76783e019d9603a82c5a0ad033d/5C2078B6/t51.2885-15/sh0.08/e35/s640x640/27577305_1541702092582640_170260616806662144_n.jpg" alt="Sun setting over the crowd at @nightjarfestival 4th night at torquay">
+          </a>
+        </div>
+      {{/if}}
+    </div>
+
+    <div id="instafeed" onclick={{action sendConversion 'Instagram feed'}} class="{{if showTemporaryInstafeed 'hide' 'show'}}">
+      {{!-- Content is loaded in with JS, after user has footer in view --}}
+    </div>
+
     <p>&copy;2017 Moon Mother Productions. <nobr>All rights reserved.</nobr> <nobr itemscope itemtype="https://schema.org/WebSite">Website by <a href="https://www.hannahsuttondesign.com" target="_blank" rel="noopener" onclick={{action sendConversion 'Hannah Sutton Design'}} itemprop="url"><span itemprop="name">Hannah Sutton Design</span></a></nobr></p>
   </div>
 </section>

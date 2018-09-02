@@ -102,11 +102,15 @@
         }
       }
     }
-    #instafeed {
+    #instafeed,
+    #temporary-instafeed {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
       max-width: 1280px;
+      &.hide {
+        display: none;
+      }
       > div {
         width: 16vw;
         height: 16vw;
