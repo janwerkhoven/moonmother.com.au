@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.rootURL,
 
+  galaxy: service(),
   googleAnalytics: service(),
   headData: service(),
 
@@ -20,6 +21,7 @@ const Router = EmberRouter.extend({
       'route:' + this.currentRouteName
     );
     this.googleAnalytics.sendPageView(currentRoute);
+    this.galaxy.rotateCelestials();
   }),
 
   // For setting the meta title
