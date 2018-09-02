@@ -26,6 +26,7 @@ main {
     > div {
       animation: fade-up 2200ms $easeOutCubic;
     }
+    h1,
     h2 {
       color: white;
       text-transform: uppercase;
@@ -131,6 +132,121 @@ main {
       margin: 0 auto;
       max-width: 800px;
       padding: 50px;
+    }
+  }
+
+  section.text-left-photo-right {
+    background: white;
+    display: flex;
+    .text {
+      h1,
+      h2 {
+        text-size: 30px;
+      }
+    }
+    .photo {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  section.title-left-text-right {
+    background: white;
+    > div {
+      display: flex;
+      padding: 100px 10vw 100px;
+      justify-content: space-around;
+      max-width: 1080px;
+      margin: 0 auto;
+      @media (max-width: 700px) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    .title {
+      width: 40%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media (max-width: 700px) {
+        width: 80%;
+        margin-bottom: 30px;
+      }
+      img {
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 32px;
+        letter-spacing: 1.2px;
+        line-height: 140%;
+        color: #242221;
+        text-align: center;
+        max-width: 400px;
+        @media (max-width: 700px) {
+          text-align: left;
+          align-self: flex-start;
+        }
+        @media (max-width: 400px) {
+          font-size: 8vw;
+        }
+      }
+    }
+    .text {
+      width: 40%;
+      max-width: 360px;
+      max-width: 420px;
+      @media (max-width: 700px) {
+        width: 80%;
+      }
+      p {
+        color: #333333;
+        line-height: 190%;
+        font-size: 12px;
+        letter-spacing: 1.2px;
+        & + p {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+
+  section.icon-title-text-stacked {
+    background: #1e1e1e;
+    color: white;
+    > div {
+      padding: 80px 10vw 100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    img {
+      height: 62px;
+      width: auto;
+    }
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      margin: 50px 0;
+      letter-spacing: 1.2px;
+      line-height: 140%;
+      max-width: 520px;
+      @media (max-width: 400px) {
+        font-size: 8vw;
+      }
+    }
+    p {
+      font-family: $garamond-regular;
+      line-height: 170%;
+      font-size: 20px;
+      text-align: center;
+      max-width: 640px;
+      @media (max-width: 400px) {
+        font-size: 5vw;
+      }
     }
   }
 }
