@@ -31,6 +31,7 @@ export default Service.extend({
   isFirstPageLoad: true,
   lastOrbits: undefined,
   isAnimating: false,
+  shouldAnimateScroll: false,
 
   isFastBoot: readOnly('fastboot.isFastBoot'),
 
@@ -98,9 +99,9 @@ export default Service.extend({
       });
     });
 
-    // Scroll to the top of the page to see animation in full
-    if (shouldAnimate) {
-      scrollTo('#page-header', duration, easing);
-    }
+    // Always scroll to the top of the page, instantly.
+    // Unless it's the galaxy that was clicked, then animate the scroll.
+    const scrollDuration = this.shouldAnimateScroll ? duration : 1;
+    scrollTo('#page-header', scrollDuration, easing);
   }
 });

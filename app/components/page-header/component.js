@@ -17,5 +17,11 @@ export default Component.extend({
       ? this.galaxy.currentRoute
       : 'services';
     return `start-position-${route}`;
-  })
+  }),
+
+  actions: {
+    animateScroll() {
+      this.galaxy.set('shouldAnimate', true);
+    }
+  }
 });
