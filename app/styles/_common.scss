@@ -75,6 +75,13 @@ ul {
 
 p {
   font-family: $lato-regular;
+  a {
+    color: #5c5ce0;
+    &:hover {
+      color: #8383ff;
+      text-decoration: none;
+    }
+  }
 }
 
 img.moon {
