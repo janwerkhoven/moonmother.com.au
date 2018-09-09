@@ -17,18 +17,20 @@ main {
     padding: 100px 30px;
     transition: height 4000ms ease;
     box-sizing: border-box;
-    > div {
-      animation: fade-up 2200ms $easeOutCubic;
-    }
     h1,
     h2 {
       color: white;
-      text-transform: uppercase;
-      font-family: $lato-bold;
-      font-size: 20px;
       line-height: 100%;
       letter-spacing: 3px;
       margin: 28px 0 42px;
+    }
+    h1 {
+      font-family: $garamond-regular;
+      font-size: 35px;
+    }
+    h2 {
+      font-family: $lato-bold;
+      font-size: 25px;
     }
     p {
       color: #dedddd;
@@ -43,6 +45,9 @@ main {
         font-size: 22px;
         max-width: 320px !important;
       }
+    }
+    img.moon {
+      margin-bottom: 48px;
     }
     hr {
       max-width: 240px;
@@ -94,41 +99,7 @@ main {
     }
   }
 
-  section.plain-text {
-    background: white;
-    h1 {
-      font-size: 42px;
-      line-height: 120%;
-      margin: 80px 0 40px;
-    }
-    h2 {
-      font-size: 30px;
-      line-height: 150%;
-      margin: 60px 0 20px;
-    }
-    ul {
-      list-style: disc;
-      padding-left: 20px;
-      margin: 0 0 20px;
-      li {
-        font-family: $lato-regular;
-        font-size: 16px;
-        line-height: 150%;
-        margin: 0;
-      }
-    }
-    p {
-      font-size: 16px;
-      line-height: 150%;
-      margin: 0 0 20px;
-    }
-    > div {
-      margin: 0 auto;
-      max-width: 800px;
-      padding: 50px;
-    }
-  }
-
+  section.text-photo,
   section.text-left-photo-right {
     background: white;
     > div {
@@ -319,7 +290,19 @@ main {
   }
 
   section {
-    &.centered {
+    &.left-right-layout {
+      > div {
+        max-width: 1200px;
+        display: flex;
+        .left {
+          width: 50%;
+        }
+        .right {
+          width: 50%;
+        }
+      }
+    }
+    &.centered-layout {
       > div {
         display: flex;
         flex-direction: column;
@@ -330,6 +313,35 @@ main {
         min-width: 320px;
         margin: 0 auto;
         padding: 110px 10vw;
+      }
+      img {
+        height: 60px;
+        width: auto;
+      }
+      a {
+        position: relative;
+        text-decoration: none;
+        &:hover {
+          &:after {
+            background: rgba(white, 0.5);
+            bottom: -15%;
+          }
+          &:before {
+            background: rgba(white, 0.5);
+            bottom: 95%;
+          }
+        }
+        &:after,
+        &:before {
+          content: ' ';
+          position: absolute;
+          bottom: -15%;
+          left: -1%;
+          height: 1px;
+          width: 102%;
+          background: rgba(white, 0.25);
+          transition: bottom 200ms $easeOutCubic;
+        }
       }
     }
     &.white-bg {
@@ -362,6 +374,7 @@ main {
       h2 {
         font-size: 34px;
         margin: 30px;
+        line-height: 140%;
       }
       p {
         font-family: $garamond-regular;
