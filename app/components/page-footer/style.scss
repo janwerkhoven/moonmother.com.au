@@ -14,7 +14,7 @@
     h3 {
       font-size: 32px;
       color: #242221;
-      margin: 59px auto 28px;
+      margin: 46px auto 28px;
       line-height: 130%;
       @media (max-width: 440px) {
         font-size: 9vw;
@@ -144,7 +144,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          background: $dark-grey;
+          background: $dark-background;
           &:hover {
             outline: 1px solid $light-grey;
           }

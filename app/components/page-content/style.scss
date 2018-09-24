@@ -290,19 +290,43 @@ main {
   }
 
   section {
-    &.left-right-layout {
+    &.left-right {
       > div {
-        max-width: 1200px;
+        margin: 0 auto;
+        padding: 100px 8vw;
         display: flex;
+        justify-content: center;
+        @media (max-width: 700px) {
+          flex-direction: column;
+        }
         .left {
-          width: 50%;
+          margin-right: 2vw;
         }
         .right {
-          width: 50%;
+          margin-left: 2vw;
+        }
+        .left,
+        .right {
+          @media (max-width: 700px) {
+            margin: 0 auto;
+          }
+        }
+        .text {
+          max-width: 400px;
+        }
+        .photo {
+          &.two {
+            display: flex;
+            flex-direction: column;
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
         }
       }
     }
-    &.centered-layout {
+    &.centre-all {
       > div {
         display: flex;
         flex-direction: column;
@@ -344,7 +368,7 @@ main {
         }
       }
     }
-    &.white-bg {
+    &.white-background {
       background-color: white;
       color: #333333;
       h1,
@@ -356,21 +380,63 @@ main {
         color: white;
       }
     }
-    &.medium-grey {
+    &.grey-background {
       background-color: #424241;
       color: white;
       a {
         color: white;
       }
     }
-    &.dark-grey {
+    &.dark-background {
       background-color: #1e1e1e;
       color: white;
       a {
         color: white;
       }
     }
-    &.sans-serif {
+
+    // Common pattern 1
+    &.left-right.white-background {
+      h2 {
+        font-size: 34px;
+        margin: 30px;
+        line-height: 140%;
+        color: #242221;
+      }
+      p,
+      a,
+      li {
+        font-family: $lato-regular;
+        color: #333333;
+      }
+      ul {
+        list-style: disc;
+        padding-left: 6px;
+        margin-top: 20px;
+        li {
+          margin-left: 10px;
+          a {
+            line-height: 140%;
+            font-family: $garamond-regular;
+            font-size: 20px;
+            color: #333333;
+            text-decoration: none;
+          }
+        }
+      }
+      p,
+      li {
+        line-height: 190%;
+        font-size: 13px;
+        letter-spacing: 1.2px;
+        & + p {
+          margin-top: 30px;
+        }
+      }
+    }
+
+    // Common pattern 2
+    &.centre-all.dark-background {
       h2 {
         font-size: 34px;
         margin: 30px;
@@ -381,6 +447,23 @@ main {
         font-size: 21px;
         max-width: 680px;
         line-height: 150%;
+      }
+    }
+
+    // Common pattern
+    &.centre-all.white-background {
+      & + .left-right {
+        > div {
+          padding-top: 1vw;
+        }
+      }
+      > div {
+        padding-bottom: 0;
+      }
+      h2 {
+        font-size: 29px;
+        margin: 30px;
+        line-height: 140%;
       }
     }
   }

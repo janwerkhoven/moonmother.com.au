@@ -1,7 +1,6 @@
 <section id="contact">
   <div>
-    <img class="moon" src="/assets/img/moon-icons/new-moon.svg" alt="icon of a new moon">
-    <h2>Contact us</h2>
+    {{moon-icon name="new-moon"}}
     <h3>Contact our helpful staff.</h3>
     <meta itemprop="name" content="Moon Mother">
     <meta itemprop="url" content="https://moonmother.com.au">
@@ -11,11 +10,11 @@
       <span itemprop="postOfficeBoxNumber">PO BOX 6196</span> <nobr itemprop="streetAddress">St Kilda Rd Central</nobr>, <nobr><span itemprop="addressLocality">Melbourne</span>, <span itemprop="addressRegion">VIC</span>, <span itemprop="postalCode">3182</span></nobr>
       <meta itemprop="addressCountry" content="AU">
     </h4>
-    <button class="dark-grey" onclick={{action 'showPhone'}}>Call us</button>
+    <button class="dark-background" onclick={{action 'showPhone'}}>Call us</button>
     {{#if showPhone}}
       <p id="phone"><a href="tel:1300556264" target="_blank" rel="noopener">M 1300 556 264</a></p>
     {{/if}}
-    <button class="dark-grey" onclick={{action 'showEmail'}}>Email us</button>
+    <button class="dark-background" onclick={{action 'showEmail'}}>Email us</button>
     {{#if showEmail}}
       <p id="email"><a href="mailto:biz@moonmother.com.au" target="_blank" rel="noopener">biz@moonmother.com.au</a></p>
     {{/if}}
