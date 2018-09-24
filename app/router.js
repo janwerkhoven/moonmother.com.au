@@ -37,13 +37,13 @@ Router.map(function() {
   this.route('about');
 
   // The 7 SEO friendly landing pages
+  this.route('av-hire');
   this.route('event-hire');
   this.route('festival-stage-hire');
+  this.route('lighting-hire');
   this.route('mobile-trailer-stage');
   this.route('sound-system');
-  this.route('lighting-hire');
   this.route('truss-hire');
-  this.route('av-hire');
 
   // Catch and redirect all other paths
   this.route('catchall', { path: '*:' });
