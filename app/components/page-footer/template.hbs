@@ -38,7 +38,8 @@
         <a href="https://www.instagram.com/moonmotherproductions" target="_blank" rel="noopener" onclick={{action sendConversion 'Instagram'}} itemprop="sameAs" title="Find Moon Mother on Instagram"><img src="/assets/img/instagram.svg" alt="Instagram icon"></a>
       </li>
     </ul>
-    <div id="temporary-instafeed" onclick={{action sendConversion 'Instagram feed'}}>
+
+    {{!-- <div id="temporary-instafeed" onclick={{action sendConversion 'Instagram feed'}}>
       {{#if showTemporaryInstafeed}}
         <div>
           <a href="https://www.instagram.com/p/BjrGfm5j44Q/" target="_blank" rel="noopener" title="See 'Moon Mother crew working hard to test and prep gear for @melbjazzfestival' on Instagram">
@@ -91,11 +92,11 @@
           </a>
         </div>
       {{/if}}
-    </div>
+    </div> --}}
 
-    <div id="instafeed" onclick={{action sendConversion 'Instagram feed'}} class="{{if showTemporaryInstafeed 'hide' 'show'}}">
+    {{!-- <div id="instafeed" onclick={{action sendConversion 'Instagram feed'}} class="{{if showTemporaryInstafeed 'hide' 'show'}}"> --}}
       {{!-- Content is loaded in with JS, after user has footer in view --}}
-    </div>
+    {{!-- </div> --}}
 
     <p>&copy;2017 Moon Mother Productions. <nobr>All rights reserved.</nobr> <nobr itemscope itemtype="https://schema.org/WebSite">Website by <a href="https://www.hannahsuttondesign.com" target="_blank" rel="noopener" onclick={{action sendConversion 'Hannah Sutton Design'}} itemprop="url"><span itemprop="name">Hannah Sutton Design</span></a></nobr>.</p>
   </div>
