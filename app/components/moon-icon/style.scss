@@ -1,0 +1,16 @@
+i.moon-icon {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  &.new-moon {
+    width: 120px;
+    height: 28.39px;
+    background-size: 120px 28.39px;
+    background-image: url('/assets/img/moon-icons/new-moon.svg');
+  }
+  &.three-moons {
+    width: 58.64px;
+    height: 60px;
+    background-size: 58.64px 60px;
+    background-image: url('/assets/img/moon-icons/three-moons-in-orbit.svg');
+  }
+}
