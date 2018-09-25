@@ -296,7 +296,7 @@ main {
         padding: 100px 8vw;
         display: flex;
         justify-content: center;
-        @media (max-width: 700px) {
+        @media (max-width: 800px) {
           flex-direction: column;
         }
         .left {
@@ -307,7 +307,7 @@ main {
         }
         .left,
         .right {
-          @media (max-width: 700px) {
+          @media (max-width: 800px) {
             margin: 0 auto;
           }
         }
@@ -315,13 +315,25 @@ main {
           max-width: 400px;
         }
         .photo {
+          max-width: 500px;
+          @media (max-width: 900px) {
+            max-width: 400px;
+          }
           &.two {
             display: flex;
             flex-direction: column;
             img {
               width: 100%;
               height: auto;
+              &:last-child {
+                margin-top: 1vw;
+              }
             }
+          }
+        }
+        .right.photo {
+          @media (max-width: 800px) {
+            margin-top: 8vw;
           }
         }
       }
@@ -397,6 +409,12 @@ main {
 
     // Common pattern 1
     &.left-right.white-background {
+      h1 {
+        font-size: 34px;
+        margin: 0 0 30px;
+        line-height: 140%;
+        color: #242221;
+      }
       h2 {
         font-size: 34px;
         margin: 30px;
@@ -421,6 +439,18 @@ main {
             font-size: 20px;
             color: #333333;
             text-decoration: none;
+            &:hover {
+              position: relative;
+              &:after {
+                position: absolute;
+                content: ' ';
+                height: 1px;
+                width: 100%;
+                background: #333333;
+                left: 0;
+                bottom: 1px;
+              }
+            }
           }
         }
       }
@@ -458,6 +488,7 @@ main {
         }
       }
       > div {
+        padding-top: 0;
         padding-bottom: 0;
       }
       h2 {
