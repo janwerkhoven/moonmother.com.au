@@ -3,11 +3,29 @@ i.moon-icon {
   margin: 0 auto;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  width: 120px;
+  height: 28.39px;
+  background-size: 120px 28.39px;
   &.new-moon {
-    width: 120px;
-    height: 28.39px;
-    background-size: 120px 28.39px;
     background-image: url('/assets/img/moon-icons/new-moon.svg');
+  }
+  &.waning-crescent {
+    background-image: url('/assets/img/moon-icons/waning-crescent.svg');
+  }
+  &.waning-crescent-white {
+    background-image: url('/assets/img/moon-icons/waning-crescent-white.svg');
+  }
+  &.waning-gibbous {
+    background-image: url('/assets/img/moon-icons/waning-gibbous.svg');
+  }
+  &.waning-gibbous-white {
+    background-image: url('/assets/img/moon-icons/waning-gibbous-white.svg');
+  }
+  &.waxing-gibbous {
+    background-image: url('/assets/img/moon-icons/waxing-gibbous.svg');
+  }
+  &.waxing-gibbous-white {
+    background-image: url('/assets/img/moon-icons/waxing-gibbous-white.svg');
   }
   &.three-moons {
     width: 58.64px;

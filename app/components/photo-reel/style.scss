@@ -12,6 +12,9 @@ section.photo-reel {
   &.dancefloor {
     background-image: url('/assets/img/photo-reels/fireworks/photoreel@2x.jpg');
   }
+  &.greenstage {
+    background-image: url('/assets/img/photo-reels/greenstage/photoreel.jpg');
+  }
   @media (min-width: 1600px) {
     height: 320px;
     background-size: auto 100%;
