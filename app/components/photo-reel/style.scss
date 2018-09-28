@@ -15,6 +15,9 @@ section.photo-reel {
   &.greenstage {
     background-image: url('/assets/img/photo-reels/greenstage/photoreel.jpg');
   }
+  &.palmtrees {
+    background-image: url('/assets/img/photo-reels/palmtrees/photoreel.jpg');
+  }
   @media (min-width: 1600px) {
     height: 320px;
     background-size: auto 100%;

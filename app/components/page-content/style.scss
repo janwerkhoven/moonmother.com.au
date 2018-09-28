@@ -82,9 +82,20 @@ main {
         @media (max-width: 800px) {
           margin: 0 auto;
         }
+        > p:first-child {
+          @media (max-width: 800px) {
+            margin-top: 30px;
+          }
+        }
+        > i.moon-icon:first-child {
+          @media (max-width: 800px) {
+            margin-top: 100px;
+          }
+        }
       }
       .text {
         max-width: 400px;
+        width: 100%;
       }
       .photo {
         max-width: 500px;
@@ -145,6 +156,7 @@ main {
         min-width: 320px;
         margin: 0 auto;
         padding: 110px 10vw;
+        box-sizing: border-box;
       }
     }
     &.white-background {
@@ -176,17 +188,29 @@ main {
 
     // Common pattern 1
     &.left-right.white-background {
+      & + .left-right {
+        > div {
+          padding-top: 0;
+        }
+      }
       h2:first-child {
         font-size: 34px;
         margin: 0 0 30px;
         line-height: 140%;
         color: #242221;
       }
-      i + h2 {
+      i.moon-icon + h2 {
         font-size: 34px;
         margin: 30px;
         line-height: 140%;
         color: #242221;
+        text-align: center;
+      }
+      i.moon-icon + h3 {
+        font-size: 26px;
+        margin: 30px;
+        line-height: 140%;
+        color: #333333;
         text-align: center;
       }
       h3 {
@@ -248,7 +272,7 @@ main {
     &.centre-all.dark-background {
       h2 {
         font-size: 34px;
-        margin: 30px;
+        margin: 30px 0;
         line-height: 140%;
       }
       p {
@@ -297,7 +321,7 @@ main {
       }
       h2 {
         font-size: 29px;
-        margin: 30px;
+        margin: 30px 0;
         line-height: 140%;
       }
     }
@@ -306,7 +330,7 @@ main {
     &.centre-all.grey-background {
       h2 {
         font-size: 27px;
-        margin: 30px;
+        margin: 30px 0;
         line-height: 140%;
       }
       p,
