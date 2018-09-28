@@ -18,6 +18,9 @@ section.photo-reel {
   &.palmtrees {
     background-image: url('/assets/img/photo-reels/palmtrees/photoreel.jpg');
   }
+  &.redorgan {
+    background-image: url('/assets/img/photo-reels/redorgan/photoreel.jpg');
+  }
   @media (min-width: 1600px) {
     height: 320px;
     background-size: auto 100%;
