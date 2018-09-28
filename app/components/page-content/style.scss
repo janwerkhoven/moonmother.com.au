@@ -38,7 +38,7 @@ main {
           max-width: 320px !important;
         }
       }
-      img.moon {
+      i.moon {
         margin-bottom: 48px;
       }
       hr {
@@ -56,10 +56,6 @@ main {
     &.heading {
       background: $page-wide-heading-bg;
       padding: 110px 20px;
-      h2 {
-        color: $page-wide-heading-text;
-        line-height: 140%;
-      }
     }
     &.left-right {
       > div {

@@ -12,10 +12,13 @@ section#testimonials {
       padding: 65px 0 140px;
     }
   }
-  img.moon + h2 {
-    margin-bottom: 85px;
-    @media (max-width: 600px) {
-      margin-bottom: 65px;
+  i.moon-icon {
+    margin-bottom: 28px;
+  }
+  h2 {
+    margin-bottom: 60px;
+    @media (max-width: 400px) {
+      font-size: 5vw;
     }
   }
   nav {
