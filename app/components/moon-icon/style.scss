@@ -33,18 +33,4 @@ i.moon-icon {
     background-size: 58.64px 60px;
     background-image: url('/assets/img/moon-icons/three-moons-in-orbit.svg');
   }
-  & + h2 {
-    margin-top: 28px;
-    line-height: 140%;
-    text-transform: uppercase;
-    font-family: $lato-bold;
-    font-size: 18px;
-    line-height: 100%;
-    letter-spacing: 2px;
-    text-align: center;
-    color: #424241;
-    @media (max-width: 400px) {
-      font-size: 5vw;
-    }
-  }
 }

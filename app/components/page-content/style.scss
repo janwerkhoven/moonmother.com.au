@@ -20,9 +20,21 @@ main {
         font-family: $garamond-regular;
         font-size: 35px;
       }
-      h2 {
+      i.moon-icon + h2 {
         font-family: $lato-bold;
         font-size: 25px;
+        margin-top: 28px;
+        line-height: 140%;
+        text-transform: uppercase;
+        font-family: $lato-bold;
+        font-size: 18px;
+        line-height: 100%;
+        letter-spacing: 2px;
+        text-align: center;
+        color: white !important; // Ugh
+        @media (max-width: 400px) {
+          font-size: 5vw;
+        }
       }
       p {
         color: #dedddd;
