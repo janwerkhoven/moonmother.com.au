@@ -14,7 +14,7 @@
     h3 {
       font-size: 32px;
       color: #242221;
-      margin: 59px auto 28px;
+      margin: 46px auto 28px;
       line-height: 130%;
       @media (max-width: 440px) {
         font-size: 9vw;
@@ -81,10 +81,10 @@
       flex-direction: column;
       align-items: center;
     }
-    img.moon {
+    i.moon-icon {
       margin-top: 60px;
     }
-    img.moon + h2 {
+    i.moon-icon + h2 {
       color: white;
     }
     ul#social-media {
@@ -102,11 +102,15 @@
         }
       }
     }
-    #instafeed {
+    #instafeed,
+    #temporary-instafeed {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between;
       max-width: 1280px;
+      &.hide {
+        display: none;
+      }
       > div {
         width: 16vw;
         height: 16vw;
@@ -140,7 +144,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          background: $dark-grey;
+          background: $dark-background;
           &:hover {
             outline: 1px solid $light-grey;
           }

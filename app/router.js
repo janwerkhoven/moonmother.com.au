@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.rootURL,
 
+  galaxy: service(),
   googleAnalytics: service(),
   headData: service(),
 
@@ -20,6 +21,7 @@ const Router = EmberRouter.extend({
       'route:' + this.currentRouteName
     );
     this.googleAnalytics.sendPageView(currentRoute);
+    this.galaxy.rotateCelestials();
   }),
 
   // For setting the meta title
@@ -35,13 +37,13 @@ Router.map(function() {
   this.route('about');
 
   // The 7 SEO friendly landing pages
+  this.route('av-hire');
   this.route('event-hire');
   this.route('festival-stage-hire');
+  this.route('lighting-hire');
   this.route('mobile-trailer-stage');
   this.route('sound-system');
-  this.route('lighting-hire');
   this.route('truss-hire');
-  this.route('av-hire');
 
   // Catch and redirect all other paths
   this.route('catchall', { path: '*:' });

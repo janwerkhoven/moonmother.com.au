@@ -1,41 +1,7 @@
 #event-hire-page {
-  #title {
-    padding: 90px 30px;
-    position: relative;
-    background-color: $light-grey;
-  }
-  #content {
-    background: white;
-    h1 {
-      font-size: 42px;
-      line-height: 120%;
-      margin: 80px 0 40px;
-    }
+  .sans-serif {
     h2 {
-      font-size: 30px;
-      line-height: 150%;
-      margin: 60px 0 20px;
-    }
-    ul {
-      list-style: disc;
-      padding-left: 20px;
-      margin: 0 0 20px;
-      li {
-        font-family: $lato-regular;
-        font-size: 16px;
-        line-height: 150%;
-        margin: 0;
-      }
-    }
-    p {
-      font-size: 16px;
-      line-height: 150%;
-      margin: 0 0 20px;
-    }
-    > div {
-      margin: 0 auto;
-      max-width: 800px;
-      padding: 50px;
+      max-width: 500px;
     }
   }
 }

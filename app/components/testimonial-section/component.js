@@ -71,6 +71,7 @@ export default Component.extend({
 
   currentQuote: undefined, // Set to random number on didInsertElement()
 
+  // TODO: Review so quotes show instantly
   didInsertElement() {
     this._super(...arguments);
     const max = this.quotes.length;

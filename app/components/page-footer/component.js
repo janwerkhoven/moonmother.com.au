@@ -24,6 +24,11 @@ export default Component.extend({
   showEmail: false,
   showPhone: false,
 
+  // On page load, we don't load Instagram until user has the footer in view.
+  // If the load happens to slow, the user sees an empty footer, then the new images jerk into place.
+  // To prevent that we show placeholder images until the latest images have been loaded in.
+  showTemporaryInstafeed: true,
+
   sendConversion(button) {
     this.googleAnalytics.sendEvent(
       'conversions',
@@ -95,6 +100,8 @@ export default Component.extend({
     // TODO: Use environment variable to hide accessToken from code
     // TODO: Exclude InstaFeed from the Fastboot build
     //
+    const self = this;
+
     let feed = new Instafeed({
       get: 'user',
       userId: '2932372041',
@@ -103,7 +110,16 @@ export default Component.extend({
       links: true,
       limit: 10,
       resolution: 'standard_resolution',
-      template: `<div><a href={{link}} target="_blank" rel="noopener" title="See '{{caption}}' on Instagram"><img src={{image}} alt="{{caption}}"/></a></div>`
+      template: `
+      <div>
+        <a href="{{link}}" target="_blank" rel="noopener" title="See '{{caption}}' on Instagram">
+          <img src="{{image}}" alt="{{caption}}"/>
+        </a>
+      </div>
+      `,
+      success() {
+        self.set('showTemporaryInstafeed', false);
+      }
     });
     feed.run();
   }

@@ -1,28 +1,30 @@
 <section class="in-the-stars">
   <div>
-    <img class="moon" src="/assets/img/moon-icons/waning-crescent-white.svg" alt="white icon of waning crescent moon">
-    <h2>Some eye catcher here ? :)</h2>
-    <p>Since 1991, Moon Mother has provided audio visual hire for community events, large scale productions, and some of the biggest festivals and world-class events on the Melbourne, and Australian calendar.</p>
-    <button class="white-border">Contact</button>
+    <h1>Festival Stage Hire</h1>
+    <p>Music concerts, sporting events or community festivals, the team at Moon Mother Productions can do it all. Contact us for indoor and outdoor festival stage hire today.</p>
+    <button class="white-border" onclick={{action "scrollToContact"}}>Call us</button>
     <hr class="white left right">
   </div>
 </section>
 
-<section class="heading">
+<section class="left-right white-background">
   <div>
-    <img class="moon" src="/assets/img/moon-icons/waning-cresent.svg" alt="icon of waning crescent moon">
-    <h2>Some title here ? :)</h2>
+    <div class="left text">
+      <h2>Indoor &amp; Outdoor Stage Hire for Your Next Event</h2>
+      <p>Whether you're organising a music festival, a community or sporting event or something else, Moon Mother Productions are the team to call for your festival stage hire. We cater to indoor or outdoor events and have a variety of stage options to suit your needs. A technician from our skilled team will be on hand throughout the stage hire to operate our equipment, ensuring you're able to create the experience you want to provide your festival patrons.</p>
+      <p>The audio production and lighting equipment used with indoor and outdoor stages is all the latest technology and regularly maintained and upgraded when required. When you hire a stage from Moon Mother Productions you are guaranteed to receive only the best equipment and operators across the country.</p>
+    </div>
+    <div class="right photo one">
+      <img width="1200" height="902" src="/assets/img/festival-stage-hire-1.jpg" alt="festival stage with colourful lights shining down from truss">
+    </div>
   </div>
 </section>
 
-<section class="plain-text">
+<section class="centre-all grey-background">
   <div>
-    <h1>Indoor &amp; Outdoor Stage Hire for Your Next Event</h1>
-    <p>Whether you're organising a music festival, a community or sporting event or something else, Moon Mother Productions are the team to call for your festival stage hire. We cater to indoor or outdoor events and have a variety of stage options to suit your needs. A technician from our skilled team will be on hand throughout the stage hire to operate our equipment, ensuring you're able to create the experience you want to provide your festival patrons.</p>
-    <p>The audio production and lighting equipment used with indoor and outdoor stages is all the latest technology and regularly maintained and upgraded when required. When you hire a stage from Moon Mother Productions you are guaranteed to receive only the best equipment and operators across the country.</p>
+    {{moon-icon name="waning-gibbous-white"}}
     <h2>Stages for festivals, community events &amp; more</h2>
-    <p>Music concerts, local sporting events or community festivals are all part of our repertoire. We can set up indoor or outdoor stage hire depending on the type of event – or both, if required. Our team can work with you to ensure we're meeting all types of specific requirements. Just let us know what you need, and we'll happily do the rest. It's that simple with Moon Mother.</p>
-    <p>Moon Mother Productions has been operating since 1991 under the guiding hand of Jenny Moon. Her team offer a complete range of event production services including:</p>
+    <p>Music concerts, local sporting events or community festivals are all part of our repertoire. We can set up indoor or outdoor stage hire depending on the type of event – or both, if required. Our team can work with you to ensure we're meeting all types of specific requirements. Just let us know what you need, and we'll happily do the rest. It's that simple with Moon Mother. Moon Mother Productions has been operating since 1991 under the guiding hand of Jenny Moon. Her team offer a complete range of event production services including:</p>
     <ul>
       <li>
         {{#link-to 'sound-system'}}PA Sound System Hire{{/link-to}}
@@ -39,14 +41,23 @@
       <li>
         {{#link-to 'festival-stage-hire'}}Indoor and outdoor stage hire{{/link-to}}
       </li>
-
       <li>
         {{#link-to 'event-hire'}}Marquees &amp; other equipment{{/link-to}}
       </li>
     </ul>
-    <h2>Choose Moon Mother for your event stage hire today</h2>
-    <p>Our services cover everything from stage hire to complete event management. Whether you need staging, audio, lighting, special effects or even logistics, planning and risk management, our team's <a href="https://moonmother.com.au" title="Moon Mother Productions">60 years of combined experience</a> will get the job done. If you would like to learn more about our services, please feel free to give us a call on <a href="#">calling</a> or <a href="#">emailing us</a> and we'll get back to you as soon as possible with the answers to your questions. We look forward to working with you.</p>
+    <picture class="truss">
+      <source media="(max-width: 700px)" srcset="/assets/img/equipment-mobile.svg">
+      <img src="/assets/img/equipment.svg" alt="Equipment diagram of stage setup by Moon Mother Productions">
+    </picture>
   </div>
 </section>
 
-{{seo-pages-nav}}
+{{photo-reel name="greenstage"}}
+
+<section class="centre-all dark-background">
+  <div>
+    {{moon-icon name="three-moons"}}
+    <h2>Choose Moon Mother for your event stage hire today</h2>
+    <p>Our services cover everything from stage hire to complete event management. Whether you need staging, audio, lighting, special effects or even logistics, planning and risk management, our team's <a href="https://moonmother.com.au" title="Moon Mother Productions">60 years of combined experience</a> will get the job done. If you would like to learn more about our services, please feel free to give us a call on <a href="#" onclick={{action "scrollToContact"}}>calling</a> or <a href="#" onclick={{action "scrollToContact"}}>emailing us</a> and we'll get back to you as soon as possible with the answers to your questions. We look forward to working with you.</p>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+i.moon-icon {
+  display: block;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 120px;
+  height: 28.39px;
+  background-size: 120px 28.39px;
+  &.new-moon {
+    background-image: url('/assets/img/moon-icons/new-moon.svg');
+  }
+  &.waning-crescent {
+    background-image: url('/assets/img/moon-icons/waning-crescent.svg');
+  }
+  &.waning-crescent-white {
+    background-image: url('/assets/img/moon-icons/waning-crescent-white.svg');
+  }
+  &.waning-gibbous {
+    background-image: url('/assets/img/moon-icons/waning-gibbous.svg');
+  }
+  &.waning-gibbous-white {
+    background-image: url('/assets/img/moon-icons/waning-gibbous-white.svg');
+  }
+  &.waxing-gibbous {
+    background-image: url('/assets/img/moon-icons/waxing-gibbous.svg');
+  }
+  &.waxing-gibbous-white {
+    background-image: url('/assets/img/moon-icons/waxing-gibbous-white.svg');
+  }
+  &.three-moons {
+    width: 58.64px;
+    height: 60px;
+    background-size: 58.64px 60px;
+    background-image: url('/assets/img/moon-icons/three-moons-in-orbit.svg');
+  }
+  & + h2 {
+    margin-top: 28px;
+    line-height: 140%;
+    text-transform: uppercase;
+    font-family: $lato-bold;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 2px;
+    text-align: center;
+    color: #424241;
+    @media (max-width: 400px) {
+      font-size: 5vw;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 <div id="galaxy">
   <div id="constelation">
-    <div id="logo" onclick={{action 'expandGalaxy'}}>
+    <div id="logo" onclick={{action 'animateScroll'}}>
       {{#link-to 'index'}}
         <img id="owl" src="/assets/img/logo/owl-and-moon.svg" alt="Logo of Moonmother Productions" itemprop="logo">
         <img id="moon" src="/assets/img/logo/moon.svg" alt="Moon">
@@ -8,19 +8,19 @@
         <img id="production" src="/assets/img/logo/productions.svg" alt="Productions">
       {{/link-to}}
     </div>
-    <div id="to-index" class="planet" onclick={{action 'collapseGalaxy'}}>
+    <div class="celestial index" onclick={{action 'animateScroll'}}>
       {{#link-to 'index'}}
         <img src="/assets/img/galaxy/home.svg" alt="home">
         <span></span>
       {{/link-to}}
     </div>
-    <div id="to-about" class="planet" onclick={{action 'collapseGalaxy'}}>
+    <div class="celestial about" onclick={{action 'animateScroll'}}>
       {{#link-to 'about'}}
         <img src="/assets/img/galaxy/about.svg" alt="about">
         <span></span>
       {{/link-to}}
     </div>
-    <div id="to-services" class="planet" onclick={{action 'collapseGalaxy'}}>
+    <div class="celestial services" onclick={{action 'animateScroll'}}>
       {{#link-to 'services'}}
         <img src="/assets/img/galaxy/services.svg" alt="services">
         <span></span>

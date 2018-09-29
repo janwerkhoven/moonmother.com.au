@@ -75,24 +75,12 @@ ul {
 
 p {
   font-family: $lato-regular;
-}
-
-img.moon {
-  width: 120px;
-  height: auto;
-  margin: 0 auto 28px;
-}
-
-img.moon + h2 {
-  text-transform: uppercase;
-  font-family: $lato-bold;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 2px;
-  text-align: center;
-  color: #424241;
-  @media (max-width: 400px) {
-    font-size: 5vw;
+  a {
+    color: #5c5ce0;
+    &:hover {
+      color: #8383ff;
+      text-decoration: none;
+    }
   }
 }
 
@@ -189,7 +177,7 @@ button {
       padding: 0 60px;
     }
   }
-  &.dark-grey {
+  &.dark-background {
     background: #1e1e1e;
     color: $light-grey;
     font-family: $lato-regular;
