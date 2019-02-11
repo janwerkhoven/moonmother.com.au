@@ -2,62 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://moonmother.com.au/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2017-07-25</lastmod>
   </url>
   <url>
     <loc>https://moonmother.com.au/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2017-07-25</lastmod>
   </url>
   <url>
     <loc>https://moonmother.com.au/services</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2017-07-25</lastmod>
   </url>
   <url>
     <loc>https://moonmother.com.au/event-hire</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2018-08-19</lastmod>
   </url>
   <url>
     <loc>https://moonmother.com.au/festival-stage-hire</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2018-08-19</lastmod>
   </url>
   <url>
     <loc>https://moonmother.com.au/mobile-trailer-stage</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2018-08-19</lastmod>
   </url>
   <url>
     <loc>https://moonmother.com.au/sound-system</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2018-08-19</lastmod>
   </url>
   <url>
     <loc>https://moonmother.com.au/lighting-hire</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2018-08-19</lastmod>
   </url>
   <url>
     <loc>https://moonmother.com.au/truss-hire</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2018-08-19</lastmod>
   </url>
   <url>
     <loc>https://moonmother.com.au/av-hire</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-    <lastmod>2018-08-19</lastmod>
   </url>
 </urlset>
