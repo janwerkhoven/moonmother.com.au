@@ -14,5 +14,5 @@ echo "----------"
 echo "scp install.sh deploy@server-singapore.nabu.io:/var/www/moonmother.com.au"
 scp install.sh deploy@server-singapore.nabu.io:/var/www/moonmother.com.au
 echo "----------"
-echo 'ssh deploy@server-singapore.nabu.io "cd /var/www/moonmother.com.au; ./install.sh $branch $revision; rm ./install.sh"'
-ssh deploy@server-singapore.nabu.io "cd /var/www/moonmother.com.au; ./install.sh $branch $revision; rm ./install.sh"
+echo 'ssh deploy@server-singapore.nabu.io "/var/www/moonmother.com.au/install.sh $branch $revision"'
+ssh deploy@server-singapore.nabu.io "/var/www/moonmother.com.au/install.sh $branch $revision"
