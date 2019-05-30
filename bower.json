@@ -8,7 +8,6 @@
   "private": true,
   "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
   "dependencies": {
-    "normalize-css": "^7.0.0",
-    "instafeed.js": "^1.4.1"
+    "normalize-css": "^7.0.0"
   }
 }
