@@ -76,7 +76,7 @@ export default Component.extend({
       // for scrolls as well.
       if (inView) {
         this.set('inView', true);
-        this.loadInstaFeed();
+        this.fetchInstagramImages();
       }
     };
 
@@ -89,38 +89,59 @@ export default Component.extend({
     }
   }).restartable(),
 
-  loadInstaFeed() {
-    // On how to get accessToken for Instafeed
-    // https://www.instagram.com/developer/
-    // https://www.instagram.com/moonmotherproductions/
-    // https://github.com/adrianengine/jquery-spectragram/wiki/How-to-get-Instagram-API-access-token-and-fix-your-broken-feed
-    // https://www.instagram.com/oauth/authorize/?client_id=12338153407546998e72a429b4dd5684&redirect_uri=http://localhost:4200&response_type=token&scope=public_content
-    // http://localhost:4200/#access_token=2932372041.7c3728d.a7f05e286ab942c6b71b4c58d3f597e4
-    //
-    // TODO: Use environment variable to hide accessToken from code
-    // TODO: Exclude InstaFeed from the Fastboot build
-    //
-    const self = this;
+  // Instagram feed
+  fetchInstagramImages() {
+    fetch(
+      'https://api.instagram.com/v1/users/self/media/recent/?access_token=2932372041.7c3728d.8d1d6d4278fb4d9eac8cdaef23c2dcea'
+    )
+      .then(response => {
+        return response.json();
+      })
+      .then(json => {
+        // We randomly select 10 images
+        const images = this.shuffle(json.data).slice(0, 10);
+        this.renderInstagramImages(images);
+      });
+  },
 
-    let feed = new Instafeed({
-      get: 'user',
-      userId: '2932372041',
-      accessToken: '2932372041.7c3728d.a7f05e286ab942c6b71b4c58d3f597e4',
-      sortBy: 'random',
-      links: true,
-      limit: 10,
-      resolution: 'standard_resolution',
-      template: `
-      <div>
-        <a href="{{link}}" target="_blank" rel="noopener" title="See '{{caption}}' on Instagram">
-          <img src="{{image}}" alt="{{caption}}"/>
-        </a>
-      </div>
-      `,
-      success() {
-        self.set('showTemporaryInstafeed', false);
-      }
+  renderInstagramImages(data) {
+    let html = '';
+    data.forEach(function(item) {
+      const img = item.images['standard_resolution'];
+      const alt = item.caption.text
+        .replace(/"/g, '')
+        .replace(/\r?\n|\r/g, '')
+        .replace(/ {2}/g, '');
+      html += `
+        <div>
+          <a
+            href="${item.link}"
+            target="_blank"
+            rel="noopener"
+            title="${alt}"
+          >
+            <img
+              src="${img.url}"
+              width="${img.width}"
+              height="${img.height}"
+              alt="${alt}"
+            />
+          </a>
+        </div>
+        `;
     });
-    feed.run();
+    this.element.querySelector('#instafeed').innerHTML = html;
+  },
+
+  /**
+   * Shuffles array in place. ES6 version
+   * @param {Array} a items An array containing the items.
+   */
+  shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
   }
 });
