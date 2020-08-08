@@ -14,18 +14,12 @@
   },
   "repository": "https://github.com/janwerkhoven/moonmother.com.au",
   "scripts": {
+    "serve": "ember serve",
     "build": "ember build",
-    "lint:js": "eslint ./*.js app blueprints config lib server tests",
-    "start": "ember serve",
     "test": "ember test",
+    "lint:js": "eslint ./*.js app blueprints config lib server tests",
     "prettify-repo": "prettier --write \"*/**/*.{css,scss,js,json,md}\"",
     "precommit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{css,scss,js,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
   },
   "devDependencies": {
     "animejs": "^2.2.0",
@@ -61,12 +55,10 @@
     "eslint-plugin-prettier": "^2.6.1",
     "fastboot-app-server": "1.1.0",
     "fastboot-watch-notifier": "^3.0.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.0",
     "loader.js": "^4.2.3",
-    "node-sass": "^4.9.2",
     "outdatedbrowser": "^1.1.5",
-    "prettier": "^1.13.7"
+    "prettier": "^1.13.7",
+    "sass": "^1.26.9"
   },
   "engines": {
     "node": "^4.5 || 6.* || >= 7.*"
