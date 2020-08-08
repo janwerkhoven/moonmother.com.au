@@ -11,7 +11,8 @@ module.exports = {
     'plugin:prettier/recommended'
   ],
   env: {
-    browser: true
+    browser: true,
+    node: true
   },
   globals: {
     ga: true,
