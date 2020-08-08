@@ -98,6 +98,12 @@ echo "----------"
 echo "Building dist..."
 ( set -x; yarn build )
 
+if [ -f "fastboot.js" ]; then
+  echo "----------"
+  echo "Spinning up Fastboot"
+  ( set -x; pm2 start fastboot.js )
+fi
+
 echo "----------"
 echo "Configuring Nginx for HTTP..."
 ( set -x; ln -nsf /var/www/$host/remote/nginx-http.conf /etc/nginx/sites-enabled/$host.conf )
