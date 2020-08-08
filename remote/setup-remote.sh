@@ -77,7 +77,11 @@ echo "Configuring Git SSH..."
 
 echo "----------"
 echo "Testing if SSH works..."
-( set -x; git pull )
+(
+  set -x
+  git checkout production
+  git pull
+)
 
 echo "----------"
 echo "Installing Node..."
