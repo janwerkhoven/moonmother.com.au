@@ -18,6 +18,7 @@
     "build": "ember build",
     "test": "ember test",
     "setup": "remote/setup.sh",
+    "deploy": "remote/deploy.sh",
     "lint:js": "eslint ./*.js app blueprints config lib server tests",
     "prettify-repo": "prettier --write \"*/**/*.{css,scss,js,json,md}\"",
     "precommit": "lint-staged"
