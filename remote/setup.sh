@@ -5,8 +5,8 @@ set -o pipefail
 
 user=jw
 host=sydney.floatplane.dev
-domain=reddust.org.au
-repo=git@github.com:janwerkhoven/reddust.org.au.git
+domain=moonmother.com.au
+repo=git@github.com:janwerkhoven/moonmother.com.au.git
 
 echo "----------"
 echo "Setting up remote server for:"
