@@ -4,7 +4,7 @@ set -e
 set -o pipefail
 
 user=jw
-host=sydney.floatplane.dev
+host=singapore.floatplane.dev
 domain=moonmother.com.au
 repo=git@github.com:janwerkhoven/moonmother.com.au.git
 
